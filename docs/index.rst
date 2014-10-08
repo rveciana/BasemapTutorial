@@ -6,8 +6,18 @@
 Basemap tutorial
 ================
 
-Contents:
+
+Getting started
+------------------
 
 .. toctree::
    :maxdepth: 2
 
+   installation
+   first_map
+   projections
+   
+.. toctree::
+   :maxdepth: 2
+   
+   external_resources
