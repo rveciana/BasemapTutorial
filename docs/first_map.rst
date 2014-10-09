@@ -2,7 +2,7 @@ Drawing the first map
 =======================
 Let's create a the simplest map:
 
-.. literalinclude:: ../code_examples/first_map.py
+.. literalinclude:: ../code_examples/first_map/first_map.py
 
 
 #. The first two lines include the Basemap library and matplotlib. Both are necessary
@@ -14,6 +14,6 @@ Let's create a the simplest map:
 
 The map is still a bit poor, so let's fill the oceans and continents with some colors. The methods *fillcontinents()* and *drawmapboundary()* will do it: 
 
-.. literalinclude:: ../code_examples/first_map_fill.py
+.. literalinclude:: ../code_examples/first_map/first_map_fill.py
 	:emphasize-lines: 7-10
 .. image:: images/first_map_fill.png
