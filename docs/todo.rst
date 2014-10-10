@@ -1,0 +1,1 @@
+colorbar i explicar tema versions ( <1 no va bé )

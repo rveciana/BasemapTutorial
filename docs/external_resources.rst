@@ -12,3 +12,4 @@ Clipping:
 Zoom:
 
 * `Zooming in Basemap <http://www.geophysique.be/2010/05/05/matplotlib-basemap-tutorial-part-03-masked-arrays-zoom/>`_
+* `Matplotlib portion zooming techniques <http://stackoverflow.com/questions/13583153/how-to-zoomed-a-portion-of-image-and-insert-in-the-same-plot-in-matplotlib>`_
