@@ -23,6 +23,9 @@ Many projections require extra arguments:
 
 The map has now an equidistant projection centered at longitude = 10 and laitude = 50, which is over Europe. Some projections require more parameters, described in `each projection page at the manual <http://matplotlib.org/basemap/users/mapsetup.html>`_.
 
+Extension
+---------
+
 All the examples until now take the whole globe. Drawing only a region can be done with two methods:
 
 * Passing the width and height:
