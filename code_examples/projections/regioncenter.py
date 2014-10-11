@@ -11,4 +11,7 @@ map.drawmapboundary(fill_color='aqua')
 map.fillcontinents(color='coral',lake_color='aqua')
 map.drawcoastlines()
 
+for i in range(0, 10000000, 1000000):
+    map.plot(i, i, marker='o',color='k')
+
 plt.show()

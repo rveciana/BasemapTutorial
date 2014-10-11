@@ -26,9 +26,30 @@ The map has now an equidistant projection centered at longitude = 10 and laitude
 Extension
 ---------
 
-All the examples until now take the whole globe. Drawing only a region can be done with two methods:
+All the examples until now take the whole globe. Drawing only a region can be done either passing a bounding box or the center of the map and the map size. The official docs say that both methods can be used most of the times, but there are many exceptions.
 
-* Passing the width and height:
+Passing the bounding box
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Passing the bounding box:
+.. literalinclude:: ../code_examples/projections/regionbbox.py
+    :emphasize-lines: 4-5
+.. image:: images/projections/regionbbox.png
 
+The lower-left and upper-right corners are past as parameters, in longitude-latitude units, not in map units. This is the reason why in some projections fails, since a square in longitude-latitude may not give a good bounding box in the projected units.
+
+In the example, the `UTM (Transverse Mercator) projection <http://matplotlib.org/basemap/users/tmerc.html>`_ is used. The bounding box method is easier in this case, since calculating the width in UTM units from the center of the map is much more difficult.
+
+Passing the center, width and height
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. literalinclude:: ../code_examples/projections/regioncenter.py
+    :emphasize-lines: 4-8
+.. image:: images/projections/regioncenter.png
+
+In this case, the center of the projection, the width and height of the projection are passed as paramters.
+
+The center is easy, just pass it in longitude-latitude. The size is a bit more tricky:
+
+The units are the projection units in meters. The point *(0, 0)* is the lower left corner, and the point *(width, height)* is the upper right. So the origin of the positions is *not* the one defined by the projection as in GDAL. The projection just defines the size of the units used, not the origin.
+
+The example shows the position of several points using the *plot* function.
