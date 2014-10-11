@@ -16,7 +16,15 @@ Getting started
    installation
    first_map
    projections
-   
+
+Cookbook
+---------
+
+.. toctree::
+   :maxdepth: 2
+
+   clip
+
 .. toctree::
    :maxdepth: 2
    
