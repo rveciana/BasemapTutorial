@@ -3,6 +3,11 @@ External resources
 
 * `Official basemap documentation <http://matplotlib.org/basemap/>`_
 
+Installation:
+
+* `The official docs <http://matplotlib.org/basemap/users/installing.html>`_
+* `A good blog post <http://peak5390.wordpress.com/2012/12/08/matplotlib-basemap-tutorial-installing-matplotlib-and-basemap/>`_
+
 Clipping:
 
 * `The entry at GeoExamples <http://geoexamples.blogspot.com.es/2014/10/basemap-raster-clipping-with-shapefile.html>`_
