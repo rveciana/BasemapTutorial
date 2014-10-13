@@ -17,6 +17,14 @@ Getting started
    first_map
    projections
 
+All Basemap methods
+-------------------
+
+.. toctree::
+   :maxdepth: 2
+   
+   utilities
+
 Cookbook
 ---------
 

@@ -3,4 +3,101 @@ colorbar personalitzada
 
 WRF o GRIB
 
-http://stackoverflow.com/questions/4931376/generating-matplotlib-graphs-without-a-running-x-server
+
+Functions:
+
+Constructor (Basemap)
+
+interp(): bilinear interpolation between rectilinear grids.
+
+maskoceans(): mask ‘wet’ points of an input array.
+
+shiftgrid(): shifts global lat/lon grids east or west.
+
+addcyclic(): Add cyclic (wraparound) point in longitude.
+
+arcgisimage
+
+barbs
+
+bluemarble
+
+colorbar
+
+contour
+
+contourf
+
+drawcoastlines
+
+drawcounties
+
+drawcountries
+
+drawgreatcircle
+
+drawlsmask
+
+drawmapboundary
+
+drawmapscale
+
+drawmeridians
+
+drawparallels
+
+drawrivers
+
+drawstates
+
+etopo
+
+fillcontinents
+
+gcpoints
+
+hexbin
+
+imshow
+
+is_land
+
+makegrid
+
+nightshade
+
+pcolor
+
+pcolormesh
+
+plot
+
+quiver
+
+readshapefile
+
+rotate_vector
+
+scatter
+
+set_axes_limits
+
+shadedrelief
+
+shiftdata
+
+streamplot
+
+----- tissot
+
+transform_scalar
+
+transform_vector
+
+warpimage
+
+wmsimage
+
+
+
+
