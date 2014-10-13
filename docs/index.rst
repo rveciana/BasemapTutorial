@@ -24,8 +24,10 @@ Cookbook
    :maxdepth: 1
 
    clip
+   
 
 .. toctree::
    :maxdepth: 2
    
+   cron
    external_resources

@@ -8,6 +8,11 @@ Installation:
 * `The official docs <http://matplotlib.org/basemap/users/installing.html>`_
 * `A good blog post <http://peak5390.wordpress.com/2012/12/08/matplotlib-basemap-tutorial-installing-matplotlib-and-basemap/>`_
 
+Zoom:
+
+* `Zooming in Basemap <http://www.geophysique.be/2010/05/05/matplotlib-basemap-tutorial-part-03-masked-arrays-zoom/>`_
+* `Matplotlib portion zooming techniques <http://stackoverflow.com/questions/13583153/how-to-zoomed-a-portion-of-image-and-insert-in-the-same-plot-in-matplotlib>`_
+
 Clipping:
 
 * `The entry at GeoExamples <http://geoexamples.blogspot.com.es/2014/10/basemap-raster-clipping-with-shapefile.html>`_
@@ -16,10 +21,9 @@ Clipping:
 * `Creating polygons from a shapefile <http://stackoverflow.com/questions/15968762/shapefile-and-matplotlib-plot-polygon-collection-of-shapefile-coordinates>`_
 * `Understanding Basemap transformations <http://matplotlib.org/users/transforms_tutorial.html>`_
 
-Zoom:
+Crontab:
 
-* `Zooming in Basemap <http://www.geophysique.be/2010/05/05/matplotlib-basemap-tutorial-part-03-masked-arrays-zoom/>`_
-* `Matplotlib portion zooming techniques <http://stackoverflow.com/questions/13583153/how-to-zoomed-a-portion-of-image-and-insert-in-the-same-plot-in-matplotlib>`_
+* `Generating matplotlib graphs without a running X server <http://stackoverflow.com/questions/4931376/generating-matplotlib-graphs-without-a-running-x-server>`_
 
 Other python/GIS resources:
 
