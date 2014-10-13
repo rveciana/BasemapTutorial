@@ -25,6 +25,8 @@ Cookbook
 
    clip
    
+Other
+-----
 
 .. toctree::
    :maxdepth: 2
