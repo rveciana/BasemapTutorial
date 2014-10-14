@@ -8,6 +8,11 @@ Installation:
 * `The official docs <http://matplotlib.org/basemap/users/installing.html>`_
 * `A good blog post <http://peak5390.wordpress.com/2012/12/08/matplotlib-basemap-tutorial-installing-matplotlib-and-basemap/>`_
 
+Basic functions:
+
+* `Basemap page with all the marker information <http://matplotlib.org/api/markers_api.html>`_
+* `Basemap page with all the information about color codes <http://matplotlib.org/api/colors_api.html>`_
+
 Zoom:
 
 * `Zooming in Basemap <http://www.geophysique.be/2010/05/05/matplotlib-basemap-tutorial-part-03-masked-arrays-zoom/>`_

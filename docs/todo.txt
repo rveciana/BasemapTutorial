@@ -3,6 +3,7 @@ colorbar personalitzada
 
 WRF o GRIB
 
+inverse projection & map(x, y)
 
 Functions:
 

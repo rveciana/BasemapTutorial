@@ -16,6 +16,7 @@ Getting started
    installation
    first_map
    projections
+   basic_functions
 
 All Basemap methods
 -------------------

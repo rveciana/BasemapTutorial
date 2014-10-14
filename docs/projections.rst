@@ -4,7 +4,7 @@ Managing projections
 All maps must have a projection. The projection and its features are all assigned when the object *Basemap* is created.
 The way to do it is quite different from other libraries (i.e. GDAL), so understanding this point is very important for working with Basemap.
 
-projection
+Projection
 ----------
 
 The projection argument sets the map projection to be used:
