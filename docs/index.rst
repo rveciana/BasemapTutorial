@@ -23,6 +23,7 @@ All Basemap methods
 .. toctree::
    :maxdepth: 2
    
+   backgrounds
    utilities
 
 Cookbook
