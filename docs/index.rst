@@ -24,6 +24,7 @@ All Basemap methods
 .. toctree::
    :maxdepth: 2
    
+   plotting_data
    backgrounds
    utilities
 

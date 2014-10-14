@@ -11,6 +11,7 @@ Drawing a point in a map is usually done using the `plot method <http://matplotl
 .. image:: images/basic_functions/point.png
 
 * Use the Basemap instance to calculate the position of the point in the map coordinates when you have the longitude and latitude of the point
+	* If latlon keyword is set to True, x,y are intrepreted as longitude and latitude in degrees. Won't work in old *basemap* versions
 * The *plot* method needs the x and y position in the map coordinates, the marker and the color
 	* By default, the marker is a point. `This page explains all the options <http://matplotlib.org/api/markers_api.html>`_
 	* By default, the color is black (k). `This page explains all the color options <http://matplotlib.org/api/colors_api.html>`_
