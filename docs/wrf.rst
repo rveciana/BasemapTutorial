@@ -15,6 +15,8 @@ At the ucar website is possible to `download a WRF sample output file <http://ww
 	
 	:TRUELAT2 = 60.f ;
 	
+.. note:: Make sure that the gdal library installed can read NetCDF files. Check it writting *gdalinfo --formats*
+	
 Plotting a field as a contour
 -----------------------------
 
