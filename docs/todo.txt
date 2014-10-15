@@ -3,6 +3,8 @@ colorbar personalitzada
 
 WRF o GRIB
 
+GDAL
+
 inverse projection & map(x, y)
 
 Functions:
@@ -71,7 +73,7 @@ pcolor
 
 pcolormesh
 
-plot
+---- plot
 
 quiver
 
@@ -79,7 +81,7 @@ readshapefile
 
 rotate_vector
 
-scatter
+---- scatter
 
 set_axes_limits
 

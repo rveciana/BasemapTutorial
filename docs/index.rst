@@ -35,6 +35,7 @@ Cookbook
    :maxdepth: 1
 
    clip
+   wrf
    
 Other
 -----
