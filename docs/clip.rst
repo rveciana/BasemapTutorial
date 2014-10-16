@@ -3,7 +3,7 @@ Clipping a raster with a shapefile
 Getting some data
 -----------------
 
-The example plots some elevation data, taken from the SRTM. After looking for some options, the easiest to work with was this one: http://srtm.csi.cgiar.org/SELECTION/inputCoord.asp
+The example plots some elevation data, taken from the SRTM. After looking for some options, the easiest to work with was this one: http://srtm.csi.cgiar.org/SELECTION/inputCoord.asp or download the file directly: http://srtm.csi.cgiar.org/SRT-ZIP/SRTM_V41/SRTM_Data_GeoTiff/srtm_37_04.zip
 
 The shapefile will be the border of Andorra, taken from Natural Earth
 
