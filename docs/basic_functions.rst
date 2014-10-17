@@ -28,3 +28,17 @@ If you have more than one point, you may prefer the `scatter method <http://matp
 Plotting raster data
 --------------------
 
+There are two main methods for plotting a raster, *contour*, that plots contour lines, and *contourf*, that plots filled contour lines, or isobands.
+
+.. literalinclude:: ../code_examples/basic_functions/contourf.py
+	
+.. image:: images/basic_functions/contourf.png
+
+* The map is created with the same extension of the raster file, to make things easier.
+* Before plotting the contour, two matrices have to be created, containing the positions of the x and y coordinates for each point in the data matrix.
+	* `linspace <http://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html>`_ is a numpy function that creates an array from an initial value to an end value with n elements. In this case, the map coordinates go from 0 to *map.urcrnrx* or *map.urcrnry*, and have the same size that the data array *data.shape[1]* and *data.shape[0]*
+	* `meshgrid <http://docs.scipy.org/doc/numpy/reference/generated/numpy.meshgrid.html>`_ is a numpy function that take two arrays and create a matrix with them. This is what we need, since the *x* coordinates repeat in every column, and the *y* in every line
+* The contourf method will take the *x*, *y* and *data* matrices and plot them in the default *colormap*, called jet
+
+ 
+	 

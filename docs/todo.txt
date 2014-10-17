@@ -1,6 +1,8 @@
 colorbar i explicar tema versions ( <1 no va bé )
 colorbar personalitzada
 
+
+http://matplotlib.org/basemap/users/mapcoords.html
 WRF o GRIB
 
 GDAL
@@ -65,7 +67,8 @@ imshow
 
 is_land
 
-makegrid
+makegrid --> Explicar molt bé que es pot fer servir quan coneixem totes les longituds / latituds de les coordenades, així com alguna funció per trobar aquestes coordenades
+			returnxy no va en la meva versió
 
 nightshade
 
