@@ -1,6 +1,23 @@
 Plotting data
 =============
 
+contourf
+--------
+
+Creates a filled contour plot.
+
+`contourf(x, y, data) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.contourf>`_
+
+* x and y are matrices of the same size as data, containing the positions of the elements in the map coordinates
+* data is the matrix containing the data values to plot
+* The default colormap is *jet*, but the argument *cmap* can be used to change the behaviour
+* The argument tri = True makes the grid to be assumed as unstructured. See `this post <http://matplotlib.org/examples/pylab_examples/tricontour_vs_griddata.html>`_ to check the differences
+* Other possible arguments are documented in the `matplotlib function docs <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.contourf>`_
+
+.. literalinclude:: ../code_examples/basic_functions/contourf.py
+	:emphasize-lines: 22
+.. image:: images/basic_functions/contourf.png
+
 plot
 ----
 
