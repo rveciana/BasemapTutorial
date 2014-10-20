@@ -7,7 +7,7 @@ makegrid
 --------
 
 makegrid method creates an arbitrary grid of equally spaced points in the map projection
-=======
+
 greatcircle
 -----------
 

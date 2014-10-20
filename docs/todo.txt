@@ -1,6 +1,6 @@
 colorbar i explicar tema versions ( <1 no va bé )
 colorbar personalitzada
-
+símbols amb lletres, etc
 
 http://matplotlib.org/basemap/users/mapcoords.html
 WRF o GRIB
@@ -29,7 +29,7 @@ bluemarble
 
 colorbar
 
-contour
+----- contour
 
 ----- contourf
 
