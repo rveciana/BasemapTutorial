@@ -28,7 +28,7 @@ If you have more than one point, you may prefer the `scatter method <http://matp
 Plotting raster data
 --------------------
 
-There are two main methods for plotting a raster, *contour*, that plots contour lines, and *contourf*, that plots filled contour lines, or isobands.
+There are two main methods for plotting a raster, *pcolor*, that creates a pseudocolor plot, and *contour/contourf*, that plots contour lines or filled contour lines (isobands).
 
 .. literalinclude:: ../code_examples/basic_functions/contourf.py
 	
@@ -40,5 +40,5 @@ There are two main methods for plotting a raster, *contour*, that plots contour 
 	* `meshgrid <http://docs.scipy.org/doc/numpy/reference/generated/numpy.meshgrid.html>`_ is a numpy function that take two arrays and create a matrix with them. This is what we need, since the *x* coordinates repeat in every column, and the *y* in every line
 * The contourf method will take the *x*, *y* and *data* matrices and plot them in the default *colormap*, called jet
 
- 
+ pcolormesh:
 	 

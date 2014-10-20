@@ -39,7 +39,7 @@ drawcounties
 
 drawcountries
 
-drawgreatcircle
+----- drawgreatcircle
 
 drawlsmask
 
@@ -47,9 +47,9 @@ drawmapboundary
 
 drawmapscale
 
-drawmeridians
+---- drawmeridians
 
-drawparallels
+---- drawparallels
 
 drawrivers
 
