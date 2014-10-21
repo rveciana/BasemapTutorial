@@ -52,4 +52,4 @@ The center is easy, just pass it in longitude-latitude. The size is a bit more t
 
 The units are the projection units in meters. The point *(0, 0)* is the lower left corner, and the point *(width, height)* is the upper right. So the origin of the positions is *not* the one defined by the projection as in GDAL. The projection just defines the size of the units used, not the origin.
 
-The example shows the position of several points using the *plot* function.
+The example shows the position of several points using the *plot* function to show how the coordinates range from 0 to width and heght.
