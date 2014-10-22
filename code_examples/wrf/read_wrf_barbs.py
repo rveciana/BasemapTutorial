@@ -17,6 +17,7 @@ map = Basemap(llcrnrlon=-93.7, llcrnrlat=28., urcrnrlon=-66.1, urcrnrlat=39.5,
 
 x, y = map(ds_lon.ReadAsArray()[1], ds_lat.ReadAsArray()[1])
 
+
 u = ds_u.ReadAsArray()[1]
 v = ds_v.ReadAsArray()[1]
 

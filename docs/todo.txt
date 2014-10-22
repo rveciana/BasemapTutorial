@@ -9,6 +9,16 @@ GDAL
 
 inverse projection & map(x, y)
 
+
+3d Charts on map http://matplotlib.org/examples/mplot3d/index.html
+
+http://matplotlib.org/api/sankey_api.html Napoleó Russia
+
+http://matplotlib.org/examples/axes_grid/inset_locator_demo2.html
+
+------------------------------------------------------------------------
+
+
 Functions:
 
 Constructor (Basemap)
@@ -19,7 +29,7 @@ maskoceans(): mask ‘wet’ points of an input array.
 
 shiftgrid(): shifts global lat/lon grids east or west.
 
-addcyclic(): Add cyclic (wraparound) point in longitude.
+addcyclic(): Add cyclic (wraparound) point in longitude. --> http://matplotlib.org/basemap/users/examples.html
 
 arcgisimage
 
@@ -72,9 +82,9 @@ makegrid --> Explicar molt bé que es pot fer servir quan coneixem totes les lon
 
 nightshade
 
-pcolor
+---- pcolor
 
-pcolormesh
+---- pcolormesh
 
 ---- plot
 

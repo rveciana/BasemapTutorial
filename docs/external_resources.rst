@@ -26,6 +26,12 @@ Clipping:
 * `Creating polygons from a shapefile <http://stackoverflow.com/questions/15968762/shapefile-and-matplotlib-plot-polygon-collection-of-shapefile-coordinates>`_
 * `Understanding Basemap transformations <http://matplotlib.org/users/transforms_tutorial.html>`_
 
+Styling:
+
+* `Colors in matplotlib <http://matplotlib.org/api/colors_api.html>`_
+* `Arrow styles in matplotlib <http://matplotlib.org/1.3.0/api/artist_api.html#matplotlib.patches.FancyArrowPatch>`_
+* `How Bad Is Your Colormap? <https://jakevdp.github.io/blog/2014/10/16/how-bad-is-your-colormap/>`_
+
 Crontab:
 
 * `Generating matplotlib graphs without a running X server <http://stackoverflow.com/questions/4931376/generating-matplotlib-graphs-without-a-running-x-server>`_
@@ -33,3 +39,4 @@ Crontab:
 Other python/GIS resources:
 
 * `Python GDAL/OGR Cookbook <http://pcjericks.github.io/py-gdalogr-cookbook/>`_
+* `Huge set of Matplotlib examples <http://matplotlib.org/examples/>`_
