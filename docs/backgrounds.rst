@@ -47,7 +47,7 @@ Note that:
 	
 .. image:: images/backgrounds/drawcountries.png
 
-Without drawing the coastline, the result is a bit weird:
+Without drawing the coastline, the result is a bit strange:
 
 .. image:: images/backgrounds/drawcountries_alone.png
 
