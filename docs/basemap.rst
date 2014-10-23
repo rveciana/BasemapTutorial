@@ -49,3 +49,26 @@ lon_0     The longitude of the center of the map
 lat_0     The latitude  of the center of the map
 ========= ===========
 
+Using the Basemap instance to convert units
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The basemap instance can be used to calculate positions on the map and the inverse operation, converting positions on the map to geographical coordinates.
+
+.. code-block:: python
+
+	from mpl_toolkits.basemap import Basemap
+	import matplotlib.pyplot as plt
+	
+	map = Basemap(projection='aeqd', lon_0 = 10, lat_0 = 50)
+	
+	print map(10, 50)
+	print map(20015077.3712, 20015077.3712, inverse=True)
+
+The output will be:
+	
+	(20015077.3712, 20015077.3712)
+	(10.000000000000002, 50.000000000000014)
+
+When inverse is False, which is its default value, the input values are a longitude and a latitude, and the output, the position of this point in the map coordinates. When *inverse* is set to true, the behaviour is the opposite, the arguments are an x and y positions in the map coordinates, and the output is the position of this point in geographical coordinates.
+
+
