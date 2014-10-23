@@ -22,6 +22,35 @@ The function has the following arguments:
 
 .. image:: images/first_map/first_map.png
 
+drawcountries
+--------------
+
+Draws the coastlines from the layer included with the library.
+
+The function has the following arguments:
+
+`drawcountries(linewidth=1.0, linestyle='solid', color='k', antialiased=1, ax=None, zorder=None) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawcoastlines>`_
+
+* linewidth sets, of course, the line width in pixels
+* linestyle sets the line type. By default is solid, but can be dashed, o rany matplotlib option
+* color is k (black) by default. Follows also matplotlib conventions
+* antialiased is true by default
+* zorder sets the layer position. By default, the order is set by Basemap
+
+Note that:
+
+* The resolution indicated when creating the :ref:`basemap` instance makes the layer to have a better or coarser resolution
+* The coastline is in another function, and the country coasts are not considered coast, which makes necessary to combine the the moethod with others to get a good map
+
+.. literalinclude:: ../code_examples/backgrounds/drawcountries.py
+	:emphasize-lines: 10
+	
+.. image:: images/backgrounds/drawcountries.png
+
+Without drawing the coastline, the result is a bit weird:
+
+.. image:: images/backgrounds/drawcountries_alone.png
+
 .. _drawmeridians:
 
 drawmeridians

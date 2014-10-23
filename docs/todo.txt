@@ -47,7 +47,7 @@ colorbar
 
 drawcounties
 
-drawcountries
+----- drawcountries
 
 ----- drawgreatcircle
 
@@ -57,9 +57,9 @@ drawmapboundary
 
 drawmapscale
 
----- drawmeridians
+----- drawmeridians
 
----- drawparallels
+----- drawparallels
 
 drawrivers
 
@@ -82,11 +82,11 @@ makegrid --> Explicar molt bé que es pot fer servir quan coneixem totes les lon
 
 nightshade
 
----- pcolor
+----- pcolor
 
----- pcolormesh
+----- pcolormesh
 
----- plot
+----- plot
 
 quiver
 
@@ -102,7 +102,7 @@ shadedrelief
 
 shiftdata
 
-streamplot
+----- streamplot
 
 ----- tissot
 
