@@ -21,7 +21,7 @@ An important point when using this method is that the projection must be set usi
 
 .. literalinclude:: ../code_examples/backgrounds/arcgisimage.py
 
-The example shows Menorca island, and can be used with many layers:
+The example shows Menorca island using the UTM projection at the zone 31N, and can be used with many layers:
 
 The default *ESRI_Imagery_World_2D* layer
 
