@@ -50,10 +50,35 @@ The function has the following arguments:
 
 .. image:: images/first_map/first_map.png
 
+drawcounties
+------------
+
+Draws the USA counties from the laeyr included with the library
+
+`drawcounties(linewidth=0.1, linestyle='solid', color='k', antialiased=1, facecolor='none', ax=None, zorder=None, drawbounds=False) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawcounties>`_
+
+* linewidth sets, of course, the line width in pixels
+* linestyle sets the line type. By default is solid, but can be dashed, o rany matplotlib option
+* color is k (black) by default. Follows also matplotlib conventions
+* antialiased is true by default
+* zorder sets the layer position. By default, the order is set by Basemap
+
+.. note:: facecolor argument, which is supposed to colour the counties, doesn't seem to work at least in some Basemap versions.
+
+Note that:
+
+* The resolution is fix, and doesn't depend on the resolution parameter passed to the class constructor
+* The coastline is in another function, and the country coasts are not considered coast, which makes necessary to combine the the moethod with others to get a good map
+
+.. literalinclude:: ../code_examples/backgrounds/drawcounties.py
+	:emphasize-lines: 10
+	
+.. image:: images/backgrounds/drawcounties.png
+
 drawcountries
 --------------
 
-Draws the coastlines from the layer included with the library.
+Draws the country borders from the layer included with the library.
 
 The function has the following arguments:
 
