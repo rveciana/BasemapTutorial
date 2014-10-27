@@ -80,4 +80,24 @@ pcolormesh
 
 .. note:: pcolor and pcolormesh are very similar. You can see a good explanation `here <http://thomas-cokelaer.info/blog/2014/05/matplotlib-difference-between-pcolor-pcolormesh-and-imshow/>`_
 
+Calculating the position of a point on the map
+----------------------------------------------
+
+.. code-block:: python
+
+	from mpl_toolkits.basemap import Basemap
+	import matplotlib.pyplot as plt
+	
+	map = Basemap(projection='aeqd', lon_0 = 10, lat_0 = 50)
+	
+	print map(10, 50)
+	print map(20015077.3712, 20015077.3712, inverse=True)
+
+The output will be:
+	
+	(20015077.3712, 20015077.3712)
+	(10.000000000000002, 50.000000000000014)
+	
+When inverse is False, the input is a point in longitude and latitude, and the output is the point in the map coordinates. When inverse is True, the behaviour is the opposite.
+
 	 

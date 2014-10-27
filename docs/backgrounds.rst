@@ -1,7 +1,35 @@
 Background methods
 ==================
 
-I'va called background methods those functions useful for drawing borders, lands, etc. to distinguish them from those aimed to draw user data.
+I've called background methods those functions useful for drawing borders, lands, etc. to distinguish them from those aimed to draw user data.
+
+arcgisimage
+-----------
+
+Downloads and plots an image using the `arcgis REST API service <http://server.arcgisonline.com/arcgis/rest/services>`_
+
+`arcgisimage(server='http://server.arcgisonline.com/ArcGIS', service='ESRI_Imagery_World_2D', xpixels=400, ypixels=None, dpi=96, verbose=False, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.arcgisimage>`_
+
+* server can be used to connect to another server using the same REST API
+* service is the layer to draw. To get the full list of available layers, check the `API webpage <http://server.arcgisonline.com/arcgis/rest/services>`_, 
+* xpixels actually sets the zoom of the image. A bigger number will ask a bigger image, so the image will have more detail. So when the zoom is bigger, the xsize must be bigger to maintain the resolution
+* ypixels can be used to force the image to have a different number of pixels in the y direction that the ones defined with the aspect ratio. By default, the aspect ratio is maintained, which seems a good value
+* dpi is the image resolution at the output device. Changing its value will change the number of pixels, but not the zoom level 
+* verbose prints the url used to get the remote image. It's interesting for debugging
+
+An important point when using this method is that the projection must be set using the *epsg* argument, unless 4326, or *cyl* in *Basemap notation* is used. To see how to set a projection this way, see the section :ref:`epsg`
+
+.. literalinclude:: ../code_examples/backgrounds/arcgisimage.py
+
+The example shows Menorca island, and can be used with many layers:
+
+The default *ESRI_Imagery_World_2D* layer
+
+.. image:: images/backgrounds/arcgisimage.png
+
+The *World_Shaded_Relief* layer
+
+.. image:: images/backgrounds/arcgisimage_shaded_relief.png
 
 drawcoastlines
 --------------
