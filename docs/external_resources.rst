@@ -26,6 +26,11 @@ Clipping:
 * `Creating polygons from a shapefile <http://stackoverflow.com/questions/15968762/shapefile-and-matplotlib-plot-polygon-collection-of-shapefile-coordinates>`_
 * `Understanding Basemap transformations <http://matplotlib.org/users/transforms_tutorial.html>`_
 
+Shapefiles:
+
+* `StackOverflow question about drawing polygons <http://stackoverflow.com/questions/15968762/shapefile-and-matplotlib-plot-polygon-collection-of-shapefile-coordinates>`_
+* `Patch collection example <http://matplotlib.org/examples/api/patch_collection.html>`_
+
 Styling:
 
 * `Colors in matplotlib <http://matplotlib.org/api/colors_api.html>`_
