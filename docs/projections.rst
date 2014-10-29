@@ -23,6 +23,25 @@ Many projections require extra arguments:
 
 The map has now an equidistant projection centered at longitude = 10 and laitude = 50, which is over Europe. Some projections require more parameters, described in `each projection page at the manual <http://matplotlib.org/basemap/users/mapsetup.html>`_.
 
+.. _epsg:
+
+Using epsg to set the projection
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The EPSG code is a `standard to name projections using a numerical code <http://spatialreference.org/ref/epsg/>`_. Basemap allows to create the maps using this notation, but only in certain cases. To use it, pass the *epsg* argument to the *Basemap* contructor with the code.
+
+The epsg codes supported by Basemap are at the file *<python_packages_path>/mpl_toolkits/basemap/data/epsg*. Even if the desired epsg appears in the file, sometimes the library can't use the projection, raising the error 
+
+	ValueError: 23031 is not a supported EPSG code
+
+Projections with the name "utm" are not well supported (i.e. 23031 or 15831), but the ones named tmerc can be used. The way I found to do it was opening the file and looking for a suitable option.
+
+This example shows the island of Menorca using the UTM projection, zone 31N.
+
+ .. literalinclude:: ../code_examples/projections/epsg.py
+
+.. image:: images/projections/epsg.png
+
 .. _extension:
 
 Extension
