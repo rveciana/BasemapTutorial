@@ -156,6 +156,7 @@ Plots a relief image called *etopo* taken from the `NOAA <http://www.ngdc.noaa.g
 `etopo(ax=None, scale=None, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.etopo>`_
 
 * The scale is useful to downgrade the original image resolution to speed up the process. A value of 0.5 will divide the size of the image by 4
+* The image is warped to the final projection, so all projectinos work properly with this method
 
 .. literalinclude:: ../code_examples/backgrounds/etopo.py
 
