@@ -148,6 +148,19 @@ Draws the parallels on the map
 
 The example shows some avance functions, such as labeling or zorder, using the `polyconic projection <http://matplotlib.org/basemap/users/poly.html>`_. To see a simpler example, take a look ar :ref:`drawmeridians`
 
+etopo
+-----
+
+Plots a relief image called *etopo* taken from the `NOAA <http://www.ngdc.noaa.gov/mgg/global/global.html>`_. The image has a 1'' arch resolution, so when zooming in, the results are quite poor.
+
+`etopo(ax=None, scale=None, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.etopo>`_
+
+* The scale is useful to downgrade the original image resolution to speed up the process. A value of 0.5 will divide the size of the image by 4
+
+.. literalinclude:: ../code_examples/backgrounds/etopo.py
+
+.. image:: images/backgrounds/etopo.png
+
 wmsimage
 --------
 
