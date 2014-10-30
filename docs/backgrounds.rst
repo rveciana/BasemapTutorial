@@ -172,7 +172,7 @@ The problem is that using only these parameters won't add the layer properly. Th
 
 * An other important point when using this method is that the projection must be set using the *epsg* argument, unless 4326, or *cyl* in *Basemap notation* is used. To see how to set a projection this way, see the section :ref:`epsg`
 
-.. note:: The method requires `OWSLib <https://pypi.python.org/pypi/OWSLib>`_. To install it, just type sudo pip install OWSLib
+.. note:: The method requires `OWSLib <https://pypi.python.org/pypi/OWSLib>`_. To install it, just type *sudo pip install OWSLib*
 
 The `Basemap test files <https://github.com/matplotlib/basemap/blob/master/examples/testwmsimage.py>`_ shows how to use the method wuite well.  
 
@@ -180,5 +180,4 @@ The `Basemap test files <https://github.com/matplotlib/basemap/blob/master/examp
 
 .. image:: images/backgrounds/wmsimage.png
 
-
-* http://www.geosignal.org
+The source of the map data is http://www.geosignal.org, which has many layers for France.
