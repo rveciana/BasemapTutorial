@@ -147,3 +147,38 @@ Draws the parallels on the map
 .. image:: images/backgrounds/draw_parallels.png
 
 The example shows some avance functions, such as labeling or zorder, using the `polyconic projection <http://matplotlib.org/basemap/users/poly.html>`_. To see a simpler example, take a look ar :ref:`drawmeridians`
+
+wmsimage
+--------
+
+Downloads and plots an image, using the `WMS protocol <http://en.wikipedia.org/wiki/Web_Map_Service>`_
+
+`wmsimage(server, xpixels=400, ypixels=None, format='png', verbose=False, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.wmsimage>`_
+
+.. note:: Many arguments aren't documented, making this method a little bit difficult to use
+
+* server can be used to connect to another server using the same REST API
+* xpixels actually sets the zoom of the image. A bigger number will ask a bigger image, so the image will have more detail. So when the zoom is bigger, the xsize must be bigger to maintain the resolution
+* ypixels can be used to force the image to have a different number of pixels in the y direction that the ones defined with the aspect ratio. By default, the aspect ratio is maintained, which seems a good value
+* format sets the image format to ask at the WMS server. Usually, the possibilities are png/gif/jpeg. 
+* verbose prints the url used to get the remote image. It's interesting for debugging, since prints all the available layers, projections in EPSG codes, and other information
+
+The problem is that using only these parameters won't add the layer properly. There are more mandatory arguments:
+
+* layers is a list of the WMS layers to use. To get all the possible layers, take a look at the WMS GetCapabilities or, easier, use verbose=True to print them
+	* When the layer name has a space, the method won't work or, at least, I couldn't make it work. Unfortunately, many services offer layers with spaces in its name 
+* styles is a list with the styles to ask to the WMS service for the layers. Usually will work without this parameter, since the server has usually default styles
+* Other parameters, such as date, elevation or colorscale have the same names and do the same things as in the WMS standard
+
+* An other important point when using this method is that the projection must be set using the *epsg* argument, unless 4326, or *cyl* in *Basemap notation* is used. To see how to set a projection this way, see the section :ref:`epsg`
+
+.. note:: The method requires `OWSLib <https://pypi.python.org/pypi/OWSLib>`_. To install it, just type sudo pip install OWSLib
+
+The `Basemap test files <https://github.com/matplotlib/basemap/blob/master/examples/testwmsimage.py>`_ shows how to use the method wuite well.  
+
+.. literalinclude:: ../code_examples/backgrounds/wmsimage.py
+
+.. image:: images/backgrounds/wmsimage.png
+
+
+* http://www.geosignal.org
