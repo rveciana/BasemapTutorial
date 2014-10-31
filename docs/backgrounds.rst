@@ -53,7 +53,7 @@ The function has the following arguments:
 drawcounties
 ------------
 
-Draws the USA counties from the laeyr included with the library
+Draws the USA counties from the layer included with the library
 
 `drawcounties(linewidth=0.1, linestyle='solid', color='k', antialiased=1, facecolor='none', ax=None, zorder=None, drawbounds=False) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawcounties>`_
 
@@ -85,7 +85,7 @@ The function has the following arguments:
 `drawcountries(linewidth=1.0, linestyle='solid', color='k', antialiased=1, ax=None, zorder=None) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawcoastlines>`_
 
 * linewidth sets, of course, the line width in pixels
-* linestyle sets the line type. By default is solid, but can be dashed, o rany matplotlib option
+* linestyle sets the line type. By default is solid, but can be dashed, or any matplotlib option
 * color is k (black) by default. Follows also matplotlib conventions
 * antialiased is true by default
 * zorder sets the layer position. By default, the order is set by Basemap
@@ -147,6 +147,29 @@ Draws the parallels on the map
 .. image:: images/backgrounds/draw_parallels.png
 
 The example shows some avance functions, such as labeling or zorder, using the `polyconic projection <http://matplotlib.org/basemap/users/poly.html>`_. To see a simpler example, take a look ar :ref:`drawmeridians`
+
+drawstates
+----------
+
+Draws the American countries states borders from the layer included with the library. Draws also the Australian states.
+
+`drawstates(linewidth=0.5, linestyle='solid', color='k', antialiased=1, ax=None, zorder=None) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawstates>`_
+
+* linewidth sets, of course, the line width in pixels
+* linestyle sets the line type. By default is solid, but can be dashed, or any matplotlib option
+* color is k (black) by default. Follows also matplotlib conventions
+* antialiased is true by default
+* zorder sets the layer position. By default, the order is set by Basemap
+
+Note that:
+
+* The resolution is fix, and doesn't depend on the resolution parameter passed to the class constructor
+* The country border is not drawn, creating a strange effect if the method is not combined with drawcountries
+
+.. literalinclude:: ../code_examples/backgrounds/drawstates.py
+	:emphasize-lines: 14
+	
+.. image:: images/backgrounds/drawstates.png
 
 etopo
 -----
