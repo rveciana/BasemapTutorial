@@ -31,6 +31,20 @@ The *World_Shaded_Relief* layer
 
 .. image:: images/backgrounds/arcgisimage_shaded_relief.png
 
+bluemarble
+----------
+
+Plots the `bluemarble image <http://visibleearth.nasa.gov/>`_ on the map.
+
+`bluemarble(ax=None, scale=None, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.bluemarble>`_
+
+* The scale is useful to downgrade the original image resolution to speed up the process. A value of 0.5 will divide the size of the image by 4
+* The image is warped to the final projection, so all projectinos work properly with this method
+
+.. literalinclude:: ../code_examples/backgrounds/bluemarble.py
+
+.. image:: images/backgrounds/bluemarble.png
+
 drawcoastlines
 --------------
 
