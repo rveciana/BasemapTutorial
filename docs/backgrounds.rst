@@ -162,6 +162,22 @@ Plots a relief image called *etopo* taken from the `NOAA <http://www.ngdc.noaa.g
 
 .. image:: images/backgrounds/etopo.png
 
+fillcontinents
+--------------
+
+Draws filled polygons with the continents
+
+`fillcontinents(color='0.8', lake_color=None, ax=None, zorder=None, alpha=None) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.fillcontinents>`_
+
+* color sets the continent color. By default is a gry color. `This page explains all the color options <http://matplotlib.org/api/colors_api.html>`_
+* lake color sets the color of the lakes. By default doesn't draw them, but you may set it to aqua to plot them blue
+* alpha is a vaue from 0 to 1 to set the transparency
+* zorder sets the position of the layer related to others. It can be used to hide (or show) a contourf layer, that should be only on the sea, for instance
+
+.. literalinclude:: ../code_examples/first_map/first_map_fill.py
+
+.. image:: images/first_map/first_map_fill.png
+
 wmsimage
 --------
 
