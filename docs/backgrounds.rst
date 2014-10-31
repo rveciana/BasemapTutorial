@@ -175,6 +175,7 @@ Draws filled polygons with the continents
 * zorder sets the position of the layer related to others. It can be used to hide (or show) a contourf layer, that should be only on the sea, for instance
 
 .. literalinclude:: ../code_examples/first_map/first_map_fill.py
+	:emphasize-lines: 10
 
 .. image:: images/first_map/first_map_fill.png
 
