@@ -30,6 +30,7 @@ Shapefiles:
 
 * `StackOverflow question about drawing polygons <http://stackoverflow.com/questions/15968762/shapefile-and-matplotlib-plot-polygon-collection-of-shapefile-coordinates>`_
 * `Patch collection example <http://matplotlib.org/examples/api/patch_collection.html>`_
+* `Inverse function for zip <http://stackoverflow.com/questions/13635032/what-is-the-inverse-function-of-zip-in-python>`_
 
 Styling:
 

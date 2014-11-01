@@ -12,6 +12,6 @@ map.readshapefile('../sample_files/comarques', 'comarques', drawbounds = False)
 
 for info, shape in zip(map.comarques_info, map.comarques):
     if info['nombre'] == 'Selva':
-        x, y = zip(*shape) #http://stackoverflow.com/questions/13635032/what-is-the-inverse-function-of-zip-in-python
+        x, y = zip(*shape) 
         map.plot(x, y, marker=None,color='m')
 plt.show()
