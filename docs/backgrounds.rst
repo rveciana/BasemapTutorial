@@ -53,7 +53,7 @@ The function has the following arguments:
 drawcounties
 ------------
 
-Draws the USA counties from the laeyr included with the library
+Draws the USA counties from the layer included with the library
 
 `drawcounties(linewidth=0.1, linestyle='solid', color='k', antialiased=1, facecolor='none', ax=None, zorder=None, drawbounds=False) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawcounties>`_
 
@@ -85,7 +85,7 @@ The function has the following arguments:
 `drawcountries(linewidth=1.0, linestyle='solid', color='k', antialiased=1, ax=None, zorder=None) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawcoastlines>`_
 
 * linewidth sets, of course, the line width in pixels
-* linestyle sets the line type. By default is solid, but can be dashed, o rany matplotlib option
+* linestyle sets the line type. By default is solid, but can be dashed, or any matplotlib option
 * color is k (black) by default. Follows also matplotlib conventions
 * antialiased is true by default
 * zorder sets the layer position. By default, the order is set by Basemap
@@ -147,3 +147,91 @@ Draws the parallels on the map
 .. image:: images/backgrounds/draw_parallels.png
 
 The example shows some avance functions, such as labeling or zorder, using the `polyconic projection <http://matplotlib.org/basemap/users/poly.html>`_. To see a simpler example, take a look ar :ref:`drawmeridians`
+
+drawstates
+----------
+
+Draws the American countries states borders from the layer included with the library. Draws also the Australian states.
+
+`drawstates(linewidth=0.5, linestyle='solid', color='k', antialiased=1, ax=None, zorder=None) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawstates>`_
+
+* linewidth sets, of course, the line width in pixels
+* linestyle sets the line type. By default is solid, but can be dashed, or any matplotlib option
+* color is k (black) by default. Follows also matplotlib conventions
+* antialiased is true by default
+* zorder sets the layer position. By default, the order is set by Basemap
+
+Note that:
+
+* The resolution is fix, and doesn't depend on the resolution parameter passed to the class constructor
+* The country border is not drawn, creating a strange effect if the method is not combined with drawcountries
+
+.. literalinclude:: ../code_examples/backgrounds/drawstates.py
+	:emphasize-lines: 14
+	
+.. image:: images/backgrounds/drawstates.png
+
+etopo
+-----
+
+Plots a relief image called *etopo* taken from the `NOAA <http://www.ngdc.noaa.gov/mgg/global/global.html>`_. The image has a 1'' arch resolution, so when zooming in, the results are quite poor.
+
+`etopo(ax=None, scale=None, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.etopo>`_
+
+* The scale is useful to downgrade the original image resolution to speed up the process. A value of 0.5 will divide the size of the image by 4
+* The image is warped to the final projection, so all projectinos work properly with this method
+
+.. literalinclude:: ../code_examples/backgrounds/etopo.py
+
+.. image:: images/backgrounds/etopo.png
+
+fillcontinents
+--------------
+
+Draws filled polygons with the continents
+
+`fillcontinents(color='0.8', lake_color=None, ax=None, zorder=None, alpha=None) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.fillcontinents>`_
+
+* color sets the continent color. By default is a gry color. `This page explains all the color options <http://matplotlib.org/api/colors_api.html>`_
+* lake color sets the color of the lakes. By default doesn't draw them, but you may set it to aqua to plot them blue
+* alpha is a vaue from 0 to 1 to set the transparency
+* zorder sets the position of the layer related to others. It can be used to hide (or show) a contourf layer, that should be only on the sea, for instance
+
+.. literalinclude:: ../code_examples/first_map/first_map_fill.py
+	:emphasize-lines: 10
+
+.. image:: images/first_map/first_map_fill.png
+
+wmsimage
+--------
+
+Downloads and plots an image, using the `WMS protocol <http://en.wikipedia.org/wiki/Web_Map_Service>`_
+
+`wmsimage(server, xpixels=400, ypixels=None, format='png', verbose=False, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.wmsimage>`_
+
+.. note:: Many arguments aren't documented, making this method a little bit difficult to use
+
+* server can be used to connect to another server using the same REST API
+* xpixels actually sets the zoom of the image. A bigger number will ask a bigger image, so the image will have more detail. So when the zoom is bigger, the xsize must be bigger to maintain the resolution
+* ypixels can be used to force the image to have a different number of pixels in the y direction that the ones defined with the aspect ratio. By default, the aspect ratio is maintained, which seems a good value
+* format sets the image format to ask at the WMS server. Usually, the possibilities are png/gif/jpeg. 
+* verbose prints the url used to get the remote image. It's interesting for debugging, since prints all the available layers, projections in EPSG codes, and other information
+
+The problem is that using only these parameters won't add the layer properly. There are more mandatory arguments:
+
+* layers is a list of the WMS layers to use. To get all the possible layers, take a look at the WMS GetCapabilities or, easier, use verbose=True to print them
+	* When the layer name has a space, the method won't work or, at least, I couldn't make it work. Unfortunately, many services offer layers with spaces in its name 
+* styles is a list with the styles to ask to the WMS service for the layers. Usually will work without this parameter, since the server has usually default styles
+* Other parameters, such as date, elevation or colorscale have the same names and do the same things as in the WMS standard
+
+* An other important point when using this method is that the projection must be set using the *epsg* argument, unless 4326, or *cyl* in *Basemap notation* is used. To see how to set a projection this way, see the section :ref:`epsg`
+
+.. note:: The method requires `OWSLib <https://pypi.python.org/pypi/OWSLib>`_. To install it, just type *sudo pip install OWSLib*
+
+The `Basemap test files <https://github.com/matplotlib/basemap/blob/master/examples/testwmsimage.py>`_ shows how to use the method wuite well.  
+
+.. literalinclude:: ../code_examples/backgrounds/wmsimage.py
+
+.. image:: images/backgrounds/wmsimage.png
+
+The source of the map data is http://www.geosignal.org, which has many layers for France.

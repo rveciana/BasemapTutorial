@@ -32,6 +32,26 @@ Draws the scale of the map at the indicated position
 
 .. image:: images/utilities/drawmapscale.png 
 
+gcpoints
+--------
+
+Calculates n points along a great circle given two coordinates
+
+`gcpoints(lon1, lat1, lon2, lat2, npoints) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.gcpoints>`_
+
+* lon1 and lat1 are the geographical coordinates of the initial point
+* lon2 and lat2 are the geographical coordinates of the final point
+* npoints is the number of points to calculate
+
+.. note:: To draw a great circle, the :ref:`greatcircle` function it may be easier to use. This function is useful to get the points values, or draw cases when greatcircle fails because of edges problems
+
+.. literalinclude:: ../code_examples/utilities/gcpoints.py
+	:emphasize-lines: 10
+	
+.. image:: images/utilities/gcpoints.png 
+
+.. _greatcircle:
+
 greatcircle
 -----------
 
@@ -80,14 +100,12 @@ The function has the following arguments:
 Tissot's indicatrices for the Orthographic projection:             
 
 .. image:: images/utilities/tissot_orthographic.png 
-	:scale: 50 %
 	
 Tissot's indicatrices for the Mercator projection:
 
 .. image:: images/utilities/tissot_mercator.png
-	:scale: 50 %
 	
 Tissot's indicatrices for the Albers Equal Area projection:
 
 .. image:: images/utilities/tissot_albers_equal_area.png
-	:scale: 50 %
+
