@@ -23,7 +23,7 @@ EPSG A projection
 
 Functions:
 
-Constructor (Basemap)
+----- Constructor (Basemap)
 
 interp(): bilinear interpolation between rectilinear grids.
 
@@ -37,9 +37,9 @@ arcgisimage
 
 barbs
 
-bluemarble
+----- bluemarble
 
-colorbar
+----- colorbar
 
 ----- contour
 
@@ -47,7 +47,7 @@ colorbar
 
 ----- drawcoastlines
 
-drawcounties
+----- drawcounties
 
 ----- drawcountries
 
@@ -57,7 +57,7 @@ drawlsmask
 
 drawmapboundary
 
-drawmapscale
+----- drawmapscale
 
 ----- drawmeridians
 
@@ -65,13 +65,13 @@ drawmapscale
 
 drawrivers
 
-drawstates
+----- drawstates
 
-etopo
+----- etopo
 
-fillcontinents
+----- fillcontinents
 
-gcpoints
+----- gcpoints
 
 hexbin
 
@@ -92,7 +92,7 @@ nightshade
 
 quiver
 
-readshapefile
+----- readshapefile
 
 rotate_vector
 
@@ -114,7 +114,7 @@ transform_vector
 
 warpimage
 
-wmsimage
+----- wmsimage
 
 
 
