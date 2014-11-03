@@ -1,6 +1,32 @@
 Plotting data
 =============
 
+.. _annotate:
+
+annotate
+--------
+
+Creates text with an arrow indicating the point of interest. To create a :ref:`text` without an arrow, look at the :ref:`text` section.
+
+`annotate(*args, **kwargs) <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.annotate>`_
+
+* The text method does not belong to Basemap, but directly to matplotlib, so it must be called from the plot or axe instance
+* The first argument is the text string
+* xy is a list with the x and y coordinates of the point pointed by the arrow. This will be interprete depending on the xycoords argument
+* xycoords indicates the type of coordinates used in xy:
+    * data means the coordinates are the ones used by the data (the projection coordinates)
+    * offset points means an offset in points
+    * axes pixels indicates pixels from the lower left corner of the axes
+    * The other options are at the `annotation docs <http://matplotlib.org/api/text_api.html#matplotlib.text.Annotation>`_
+* xytext a list with the x and y coordinates of the text, an the beginning of the arrow
+* textcoords indicates the type of coordinates used in xytext, with the same options as in xycoords
+* arrowprops this optional argument sets the arrow properties, as explained in the `Line2D <matplotlib.org/api/lines_api.html#matplotlib.lines.Line2D>`_ docs
+* color the color of the text. `This page explains all the color options <http://matplotlib.org/api/colors_api.html>`_
+
+.. literalinclude:: ../code_examples/plotting_data/annotate.py
+
+.. image:: images/plotting_data/annotate.png
+
 contour
 --------
 
@@ -134,3 +160,32 @@ Plots streamlines from a vectorial field.
 
 .. note:: The matplotlib and basemap versions must be quite new to use this function. From Ubuntu 14.04, for instance you need to use *sudo pip install --upgrade matplotlib*. Do then the same with Basemap
 
+.. _text:
+
+text
+----
+
+Plots a text on the map
+
+`text(x, y, s, fontdict=None, withdash=False, **kwargs) <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.text>`_
+
+* The text method does not belong to Basemap, but directly to matplotlib, so it must be called from the plot or axe instance
+* x and y are the coordinates in the map projection. Arrays of coordinates are not accepted, so to add multiple labels, call the metho multiple times
+* s is the text string
+* withdash creates a text with a dash when set to true
+* fontdict can be used to group the text properties
+
+The text can have many many options such as:
+
+* fontsize the font size
+* fontweight font wheight, such as bold
+* ha horitzontal align, like center, left or right
+* va vertical align, like center, top or bottom
+* color the color. `This page explains all the color options <http://matplotlib.org/api/colors_api.html>`_
+* bbox creates a box around the text: bbox=dict(facecolor='red', alpha=0.5)
+
+.. literalinclude:: ../code_examples/plotting_data/text.py
+
+.. image:: images/plotting_data/text.png
+
+To draw a text label with an arrow, use :ref:`annotate`.

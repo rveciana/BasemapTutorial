@@ -17,6 +17,7 @@ Getting started
    first_map
    projections
    basic_functions
+   shapefile
 
 All Basemap methods
 -------------------
