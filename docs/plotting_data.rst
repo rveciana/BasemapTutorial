@@ -88,6 +88,8 @@ The information is much better at `the matplotlib.hexbin docs <http://matplotlib
 * linewidths is the line width of the edge of the hexagons. By default is None, so no borders are plot
 * alpha sets the transparency of the layer
 
+.. note:: Old versions of the library don't supoort hexbin
+
 .. literalinclude:: ../code_examples/plotting_data/hexbin.py
 	:linenos:
 	
