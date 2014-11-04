@@ -27,6 +27,8 @@ Creates text with an arrow indicating the point of interest. To create a :ref:`t
 
 .. image:: images/plotting_data/annotate.png
 
+.. _barbs:
+
 barbs
 -----
 
@@ -204,6 +206,32 @@ If the arguments are arrays, the output is a line (without markers in this case)
 .. literalinclude:: ../code_examples/plotting_data/plot_line.py
 	:emphasize-lines: 11-17
 .. image:: images/plotting_data/plot_line.png
+
+quiver
+------
+
+Plots a vector field on the map. Many of the behaviour is similar to the :ref:`barbs` method.
+
+`quiver(x, y, u, v, *args, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.quiver>`_
+
+The `documentation at matplotlib <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.quiver>`_ is much more detailed than at the basemap docs. 
+
+* x and y give the positions of the grid data if the latlon argument is true, the valeus are supposed to be in geographical coordinates. If not, in the map coordinates
+* u and v are the north-south and west-east magnitudes
+* The fifth argument, which is optional, sets a value to assign the color to the arrow
+* scale makes the arrows to be longer or shorter
+* minshaft value below which arrow grows. The value should be greater than 1
+* pivot changes the point of rotation of the arrows. By default is 'tip', but can be changed to 'middle'
+
+.. literalinclude:: ../code_examples/plotting_data/quiver.py
+
+.. image:: images/plotting_data/quiver.png
+
+* The main problem when using quiver is that the point density may be too high, and the method can't skip points by itself. 
+	* To do it, a matrix taking only 1/4 th of the elements is created
+	* The matrix points has the element positions to take
+	* The arguments passed to barbs are selected using the points matrix, so taking only one of every 4 elements
+* The wind speed is calculated to pass the color values to the quiver method. The length of the array must be the same as in x, y, u & v, of course
 
 scatter
 -------
