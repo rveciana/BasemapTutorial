@@ -27,6 +27,35 @@ Creates text with an arrow indicating the point of interest. To create a :ref:`t
 
 .. image:: images/plotting_data/annotate.png
 
+barbs
+-----
+
+Plots wind barbs on the map
+
+`barbs(x, y, u, v, *args, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.barbs>`_
+
+`The barbs docs from the matplotlib documentation <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.barbs>`_ is much more detailed.
+
+* x and y give the positions of the grid data if the latlon argument is true, the valeus are supposed to be in geographical coordinates. If not, in the map coordinates
+* u and v are the north-south and west-east magnitudes of the wind in knots (the values to create the barbs are 5, 10, 15 and so on)
+
+There are many other optional arguments, `documented at the matplotlib docs <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.barbs>`_. Some interesting arguments are:
+
+* pivot changes the point of rotation of the barbs. By default is 'tip', but can be changed to 'middle'
+* barbcolor changes the color. If a sequence, the colors are alternated with the sequence values
+* fill_empty fills the circles when the wind is lower than 5 kt
+* barb_increments can be used to change the values where the barbs add ticks and flags
+
+.. literalinclude:: ../code_examples/plotting_data/barbs.py
+
+.. image:: images/plotting_data/barbs.png
+
+* The main problem when using barbs is that the point density may be too high, and the method can't skip points by itself. 
+	* To do it, a matrix taking only 1/4 th of the elements is created
+	* The matrix points has the element positions to take
+	* The arguments passed to barbs are selected using the points matrix, so taking only one of every 4 elements
+* The pivot argument has been used to rotate the barbs from the middle, since the effect rotating from the upper part (pivot = 'tip') creates strange effects when the wind rotates
+
 contour
 --------
 
@@ -103,21 +132,29 @@ The information is much better at `the matplotlib.hexbin docs <http://matplotlib
 	* The reduce_C_function argument is used to show the maximum value in each bin instead of the mean
 	* linewidths and edgecolors make a border to be plotted in each hexagon
 
-Basic usage
+.. figure:: images/plotting_data/hexbin1.png
+    :alt: Basic usage 
+    :figclass: align-center
 
-.. image:: images/plotting_data/hexbin1.png
+    Basic usage
 
-Log scale, different hexagon size
+.. figure:: images/plotting_data/hexbin2.png
+    :alt: Log scale, different hexagon size
+    :figclass: align-center
 
-.. image:: images/plotting_data/hexbin2.png
+    Log scale, different hexagon size
 
-Log scale with a more convenient color bar
+.. figure:: images/plotting_data/hexbin3.png
+    :alt: Log scale with a more convenient color bar
+    :figclass: align-center
 
-.. image:: images/plotting_data/hexbin3.png
+    Log scale with a more convenient color bar
 
-Using the C argument and plotting the bin edges
+.. figure:: images/plotting_data/hexbin4.png
+    :alt: Using the C argument and plotting the bin edges
+    :figclass: align-center
 
-.. image:: images/plotting_data/hexbin4.png
+    Using the C argument and plotting the bin edges
 
 pcolor
 ------
