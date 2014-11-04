@@ -8,6 +8,40 @@ makegrid
 
 makegrid method creates an arbitrary grid of equally spaced points in the map projection
 
+colorbar
+--------
+
+Draws the color legend at one of the edges of the map. The use is almost the same as in matplotlib colorbar
+
+`colorbar(mappable=None, location='right', size='5%', pad='2%', fig=None, ax=None, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.colorbar>`_
+
+* mappable is the most important argument. Is the field on the map to be explained with the colorscale. It can be a contourf, a pcolormesh, contour, etc. If the value is None, the last drawn field is represented
+* location sets the border of the map where the color scale is drawn. Can be top, right, left or bottom
+* size sets the width of the color bar, in % of the parent axe
+* pad sets the separation between the axes and the color bar, also in % of the parent axe
+* fig is the figure the colorbar is associated with
+
+Most of the matplotlib.colorbar arguments will work too, such as label
+
+The colorbar method returns an object, which has some interesting methods too:
+
+* add_lines adds to the color bar, the lines from an other field (look at the example to see how does it work)
+* set_ticks changes the positions of the ticks and labels on the color bar
+
+.. literalinclude:: ../code_examples/utilities/colorbar.py
+
+.. image:: images/utilities/colorbar.png 
+
+* A colormesh and a contour fields are plotted, to be able to use some advenced colorbar attributes
+* The first colorbar (line 27), shows the default use of the colorbar. The pcolormesh is passed as the argument, to force the method to draw this one instead of the contour field
+* The second colorbar uses some more arguments
+	* The position is changed to bottom
+	* A label is set
+	* The method add_lines is used with the contour field, so the colorbar shows the pcolormesh and contour field legends at once
+	* The ticks are set at random positions, to show how to change them
+	
+To see an example with logarithmic scales, take a look at the :ref:`hexbin` example
+ 
 drawmapscale
 ------------
 

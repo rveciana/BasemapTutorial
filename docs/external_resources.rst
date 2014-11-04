@@ -12,6 +12,8 @@ Basic functions:
 
 * `Basemap page with all the marker information <http://matplotlib.org/api/markers_api.html>`_
 * `Basemap page with all the information about color codes <http://matplotlib.org/api/colors_api.html>`_
+* `Colormesh docs <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.pcolormesh>`_
+* `Setting colormesh levels <http://matplotlib.org/dev/examples/images_contours_and_fields/pcolormesh_levels.html>`_
 
 Zoom:
 
@@ -38,9 +40,18 @@ Styling:
 * `Arrow styles in matplotlib <http://matplotlib.org/1.3.0/api/artist_api.html#matplotlib.patches.FancyArrowPatch>`_
 * `How Bad Is Your Colormap? <https://jakevdp.github.io/blog/2014/10/16/how-bad-is-your-colormap/>`_
 
+Colorbar:
+
+* `Colorbar official docs <http://matplotlib.org/api/colorbar_api.html>`_
+
 Crontab:
 
 * `Generating matplotlib graphs without a running X server <http://stackoverflow.com/questions/4931376/generating-matplotlib-graphs-without-a-running-x-server>`_
+
+External examples:
+
+* `Drawing heat maps in Basemap <http://bagrow.com/dsv/heatmap_basemap.html>`_
+* `Another Basemap tutorial <http://www.geophysique.be/tutorials/>`_
 
 Other python/GIS resources:
 
