@@ -202,6 +202,20 @@ Draws filled polygons with the continents
 
 .. image:: images/first_map/first_map_fill.png
 
+shadedrelief
+------------
+
+Plots a shaded relief image. The origin is the www-shadedrelief.com web page. The original image size is 10800x5400
+
+`shadedrelief(ax=None, scale=None, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.shadedrelief>`_
+
+* The scale is useful to downgrade the original image resolution to speed up the process. A value of 0.5 will divide the size of the image by 4. The original size is quite big, 10800x5400 pixels
+* The image is warped to the final projection, so all projectinos work properly with this method
+
+.. literalinclude:: ../code_examples/backgrounds/shadedrelief.py
+
+.. image:: images/backgrounds/shadedrelief.png
+
 wmsimage
 --------
 
