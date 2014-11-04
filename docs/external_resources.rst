@@ -43,11 +43,15 @@ Styling:
 Colorbar:
 
 * `Colorbar official docs <http://matplotlib.org/api/colorbar_api.html>`_
-*  
 
 Crontab:
 
 * `Generating matplotlib graphs without a running X server <http://stackoverflow.com/questions/4931376/generating-matplotlib-graphs-without-a-running-x-server>`_
+
+External examples:
+
+* `Drawing heat maps in Basemap <http://bagrow.com/dsv/heatmap_basemap.html>`_
+* `Another Basemap tutorial <http://www.geophysique.be/tutorials/>`_
 
 Other python/GIS resources:
 

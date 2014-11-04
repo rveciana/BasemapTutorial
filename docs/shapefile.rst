@@ -23,6 +23,8 @@ There are some restrictions:
 
 As the image sshows, the result will be only the boundary of the polygons (or the polylines). To fill them, look at the last section :ref:`fillingpolygons`
 
+.. _shapefile_points:
+
 Reading point data
 ^^^^^^^^^^^^^^^^^^
 

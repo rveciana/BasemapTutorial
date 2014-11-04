@@ -1,13 +1,13 @@
 colorbar i explicar tema versions ( <1 no va bé )
 colorbar personalitzada
-símbols amb lletres, etc
+
+subplots http://stackoverflow.com/questions/3584805/in-matplotlib-what-does-111-means-in-fig-add-subplot111
 
 http://matplotlib.org/basemap/users/mapcoords.html
 WRF o GRIB
 
 GDAL
 
-inverse projection & map(x, y)
 
 
 3d Charts on map http://matplotlib.org/examples/mplot3d/index.html
@@ -16,7 +16,9 @@ http://matplotlib.org/api/sankey_api.html Napoleó Russia
 
 http://matplotlib.org/examples/axes_grid/inset_locator_demo2.html
 
-EPSG A projection
+-----EPSG A projection
+----- inverse projection & map(x, y)
+----- símbols amb lletres, etc
 
 ------------------------------------------------------------------------
 
@@ -73,7 +75,7 @@ drawrivers
 
 ----- gcpoints
 
-hexbin
+----- hexbin
 
 imshow
 

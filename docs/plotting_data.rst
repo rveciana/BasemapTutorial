@@ -62,7 +62,60 @@ Creates a filled contour plot.
 	:emphasize-lines: 22
 .. image:: images/basic_functions/contourf.png
 
+.. _hexbin:
 
+hexbin
+------
+
+Plots an hexagonal bin from a set of positions. Can plot the number of occurrences in each bin (hexagon) or give a weight to each occurence
+
+`hexbin(x, y, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.hexbin>`_
+
+The information is much better at `the matplotlib.hexbin docs <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.hexbin>`_
+
+* x and y are numpy arrays with the coordinates of the points. Regular lists won't work, they have to be numpy arrays.
+* gridsize sets the number of bins (hexagons) in the x direction. By default is 100
+* C argument is also a numpy array with the values at each point. Those values are processed by default with numpy.mean function at each bin (hexagon)
+* reduce_C_function is the function applied to the elements in each bin (hexagon). By default, is numpy.mean
+* bins argument can change the behaviour of the counting function. 
+	* By default is None, which means that the number of occurrences are plotted. 
+	* 'log' makes the logarithm of the number of occurrences is plotted
+	* An integer value divides the number of occurrences by this number (useful for percentages if the number is the total of points) 
+	* A sequence makes the lower bound of the bin to be used 
+* mincnt is the minimum of occurrences in each bin (hexagon) to be plotted. By default is 0, so to avoid plotting hexagons without occurrences, set it to 1
+* cmap sets the color map
+* edgecolors is the color of the hexagons border. This linewidths argument must not be None to see a result
+* linewidths is the line width of the edge of the hexagons. By default is None, so no borders are plot
+* alpha sets the transparency of the layer
+
+.. literalinclude:: ../code_examples/plotting_data/hexbin.py
+	:linenos:
+	
+* The example creates four examples to show different options
+* Lines 14 to 25 read all the points, corresponding to lighning data, as explained at the section :ref:`shapefile_points`.
+* The first example shows the minimum use of hexbin. Note that the bins are quite small, that the zones with no occurrences are plotted with dark blue while the zones outsode the shaefile data bounding box stay without data
+* The second example changes the bin (hexagon) size using the gridsize argument, sets a minimum of occurrences to plot the data with mincnt and makes the colors to behave in a logarithmic scale with bins. Note that the color bar shows the value of the logarithm
+* To avoid the color bar to show the logarithm value, I found `this solution at StackOverflow <http://stackoverflow.com/questions/17201172/a-logarithmic-colorbar-in-matplotlib-scatter-plot>`_ that substitutes the bins argument but draws the same while getting a better color bar
+* The last example shows how to use the C argument. 
+    * The amplitude module of the lightning has been stored at the c variable, and passed to the C argument 
+	* The reduce_C_function argument is used to show the maximum value in each bin instead of the mean
+	* linewidths and edgecolors make a border to be plotted in each hexagon
+
+Basic usage
+
+.. image:: images/plotting_data/hexbin1.png
+
+Log scale, different hexagon size
+
+.. image:: images/plotting_data/hexbin2.png
+
+Log scale with a more convenient color bar
+
+.. image:: images/plotting_data/hexbin3.png
+
+Using the C argument and plotting the bin edges
+
+.. image:: images/plotting_data/hexbin4.png
 
 pcolor
 ------

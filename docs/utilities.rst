@@ -39,6 +39,8 @@ The colorbar method returns an object, which has some interesting methods too:
 	* A label is set
 	* The method add_lines is used with the contour field, so the colorbar shows the pcolormesh and contour field legends at once
 	* The ticks are set at random positions, to show how to change them
+	
+To see an example with logarithmic scales, take a look at the :ref:`hexbin` example
  
 drawmapscale
 ------------
