@@ -120,6 +120,34 @@ Without drawing the coastline, the result is a bit strange:
 
 .. _drawmeridians:
 
+drawmapboundary
+---------------
+
+Draws the earth boundary on the map, with optional filling.
+
+`drawmapboundary(color='k', linewidth=1.0, fill_color=None, zorder=None, ax=None) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawmapboundary>`_
+
+* linewidth sets, of course, the line width in pixels
+* color sets the edge color and is k (black) by default. Follows also matplotlib conventions
+* fill_color sets the color that fills the globe, and is None by default . Follows also matplotlib conventions
+* zorder sets the layer position. By default, the order is set by Basemap
+
+.. literalinclude:: ../code_examples/backgrounds/drawmapboundary.py
+
+.. figure:: images/backgrounds/drawmapboundary_ortho.png
+    :alt: Orthographic projection result
+    :figclass: align-center
+
+    Orthographic projection result
+
+.. figure:: images/backgrounds/drawmapboundary_sin.png
+    :alt: Sinusoidal Projection result
+    :figclass: align-center
+
+    Sinusoidal Projection result
+
+
+
 drawmeridians
 -------------
 
