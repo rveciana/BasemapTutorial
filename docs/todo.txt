@@ -35,9 +35,9 @@ shiftgrid(): shifts global lat/lon grids east or west.
 
 addcyclic(): Add cyclic (wraparound) point in longitude. --> http://matplotlib.org/basemap/users/examples.html
 
-arcgisimage
+----- arcgisimage
 
-barbs
+----- barbs
 
 ----- bluemarble
 
@@ -92,7 +92,7 @@ nightshade
 
 ----- plot
 
-quiver
+----- quiver
 
 ----- readshapefile
 
@@ -102,7 +102,7 @@ rotate_vector
 
 set_axes_limits
 
-shadedrelief
+----- shadedrelief
 
 shiftdata
 

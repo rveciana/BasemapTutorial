@@ -162,6 +162,28 @@ Draws the parallels on the map
 
 The example shows some avance functions, such as labeling or zorder, using the `polyconic projection <http://matplotlib.org/basemap/users/poly.html>`_. To see a simpler example, take a look ar :ref:`drawmeridians`
 
+drawrivers
+----------
+
+Draws the rivers from the layer included with the library. 
+
+`drawrivers(linewidth=0.5, linestyle='solid', color='k', antialiased=1, ax=None, zorder=None) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawrivers>`_
+
+* linewidth sets, of course, the line width in pixels
+* linestyle sets the line type. By default is solid, but can be dashed, or any matplotlib option
+* color is k (black) by default. Follows also matplotlib conventions
+* antialiased is true by default
+* zorder sets the layer position. By default, the order is set by Basemap
+
+Note that:
+
+* The resolution is fix, and doesn't depend on the resolution parameter passed to the class constructor
+
+.. literalinclude:: ../code_examples/backgrounds/drawrivers.py
+	:emphasize-lines: 14
+	
+.. image:: images/backgrounds/drawrivers.png
+
 drawstates
 ----------
 
