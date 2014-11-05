@@ -113,6 +113,26 @@ The gnomonic projection makes the great circles to be a straight line in any dir
 
 .. image:: images/utilities/drawgreatcircle_gnomonic.png 
 
+nightshade
+----------
+
+Draws the regions of the map which are dark at the specified date
+
+`nightshade(date, color='k', delta=0.25, alpha=0.5, ax=None, zorder=2) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.nightshade>`_
+
+* date is a `datetime.datetime <https://docs.python.org/2/library/datetime.html>`_ object
+* color is the color of the drawn shadow
+* delta is the resolution to which the shadow zone is calculated. By default is 0.25, and small values fail easily
+* alpha is the transparency value
+* zorder can change the layer vertical position
+
+The example shows the current dark zones in the `van der Grinten Projection <http://matplotlib.org/basemap/users/vandg.html>`_:
+
+.. literalinclude:: ../code_examples/utilities/nightshade.py
+
+.. image:: images/utilities/nightshade.png 
+
+
 tissot
 ------
 
