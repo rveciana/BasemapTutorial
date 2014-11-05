@@ -118,7 +118,27 @@ Without drawing the coastline, the result is a bit strange:
 
 .. image:: images/backgrounds/drawcountries_alone.png
 
-.. _drawmeridians:
+drawlsmask
+----------
+
+A method that draws at once lakes, land and oceans. Avoids *fillcontinents* and *drawmapboundary*. Besides, it can change the data origin to a custom array of points.
+
+A difference from the other methods is that the zorder can't be set in this method.
+
+`drawlsmask(land_color='0.8', ocean_color='w', lsmask=None, lsmask_lons=None, lsmask_lats=None, lakes=True, resolution='l', grid=5, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawlsmask>`_
+
+* land_color sets the color assigned to the land (a grey by default)
+* ocean_color sets the colors of the oceans (white by default)
+* lsmask An array with alternative data. If None, the default data from the library is taken. The array must contain 0's for oceans and 1's for land
+* lsmask_lons the longitudes for the alternative land sea mask
+* lsmask_lats the latitudes for the alternative land sea mask
+* resolution can change the resolution of the data defined by the Basemap instance
+* grid The mask array grid resolution in minutes of arc. Default is 5 minutes
+
+.. literalinclude:: ../code_examples/backgrounds/drawlsmask.py
+
+.. image:: images/backgrounds/drawlsmask.png
+
 
 drawmapboundary
 ---------------
@@ -146,7 +166,7 @@ Draws the earth boundary on the map, with optional filling.
 
     Sinusoidal Projection result
 
-
+.. _drawmeridians:
 
 drawmeridians
 -------------

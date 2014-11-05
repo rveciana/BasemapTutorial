@@ -55,9 +55,9 @@ addcyclic(): Add cyclic (wraparound) point in longitude. --> http://matplotlib.o
 
 ----- drawgreatcircle
 
-drawlsmask
+----- drawlsmask
 
-drawmapboundary
+----- drawmapboundary
 
 ----- drawmapscale
 
@@ -65,7 +65,7 @@ drawmapboundary
 
 ----- drawparallels
 
-drawrivers
+----- drawrivers
 
 ----- drawstates
 
