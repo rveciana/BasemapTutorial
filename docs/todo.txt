@@ -25,7 +25,9 @@ http://matplotlib.org/examples/axes_grid/inset_locator_demo2.html
 
 Functions:
 
------ Constructor (Basemap)
+----- Constructor (Basemap) 
+
+Explain all the options, such as anchor
 
 interp(): bilinear interpolation between rectilinear grids.
 
@@ -79,12 +81,12 @@ addcyclic(): Add cyclic (wraparound) point in longitude. --> http://matplotlib.o
 
 imshow
 
-is_land
+----- is_land
 
 makegrid --> Explicar molt bé que es pot fer servir quan coneixem totes les longituds / latituds de les coordenades, així com alguna funció per trobar aquestes coordenades
 			returnxy no va en la meva versió
 
-nightshade
+----- nightshade
 
 ----- pcolor
 

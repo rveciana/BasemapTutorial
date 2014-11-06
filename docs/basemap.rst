@@ -71,4 +71,24 @@ The output will be:
 
 When inverse is False, which is its default value, the input values are a longitude and a latitude, and the output, the position of this point in the map coordinates. When *inverse* is set to true, the behaviour is the opposite, the arguments are an x and y positions in the map coordinates, and the output is the position of this point in geographical coordinates.
 
+Basemap object fields
+^^^^^^^^^^^^^^^^^^^^^
 
+When a Basemap objet is created, has some fields with data:
+
+* Some of them contain the polygons with the resolution set with the resolution parameter. They are all matplotlib Polygon objects:
+	* landpolygons
+	* lakepolygons
+	* boundarylons
+	* coastpolygons
+	* coastpolygontypes
+	* coastsegs
+* Other fields give information about the used projection
+	* proj4string A string that can be used with proj4 (or GDAL) to have the used projection definition
+	* projection The code of the used projection, as indicated in the projection argument
+	* projparams A dict with the projection parameters. The ones passed and the ones put by default by Basemap 
+	* rmajor The semi-major axis of the ellipsoid used with the projection
+	* rminor The semi-minor axis of the ellipsoid used with the projection
+	* xmax, ymax, xmin, ymin The bounding box in the projection units
+	* anchor The point on the map where the axis coords start. By default is the center of the map, but can be chnged to any corner or side
+	* celestial indicates if the longitudes west of Greenwich are negative 

@@ -23,6 +23,8 @@ Many projections require extra arguments:
 
 The map has now an equidistant projection centered at longitude = 10 and laitude = 50, which is over Europe. Some projections require more parameters, described in `each projection page at the manual <http://matplotlib.org/basemap/users/mapsetup.html>`_.
 
+The Basemap object has the field *proj4string* that has the string to be used with `proj4 <http://trac.osgeo.org/proj/>`_ for calculating the projection parameters without using Basemap. 
+
 .. _epsg:
 
 Using epsg to set the projection

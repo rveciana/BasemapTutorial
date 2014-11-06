@@ -113,6 +113,30 @@ The gnomonic projection makes the great circles to be a straight line in any dir
 
 .. image:: images/utilities/drawgreatcircle_gnomonic.png 
 
+is_land
+-------
+
+Returns *True* if the indicated point is on the land, and *False* if on an ocean or lake
+
+`is_land(xpt, ypt) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.is_land>`_
+
+* xpt and ypt are the point coordinates where the land/water has to be calculated. 
+	* The coordinates must be in the map coordinates
+	* The resolution indicated in the Basemap constructor must not be None
+	* The indicated resolution polygon will be used to calculated if the point is on a land zone, so the results change depending on that
+* No arrays of coordinates are allowed, so the query must be done point by point
+* `There is an alternative way to calculate this for many points <http://stackoverflow.com/questions/13796315/plot-only-on-continent-in-matplotlib/13811775#13811775>`_ using the landpolygons attribute and the matplotlib PATH.contains_points method
+
+.. literalinclude:: ../code_examples/utilities/is_land.py
+
+The alternative way, which accepts multiple points and, in fact could be used with any polygon get from a shapefile (See :ref:`fillingpolygons`)
+
+.. literalinclude:: ../code_examples/utilities/is_land_alternative.py
+
+* locations is a numpy array containing numpy arrays with the projected points
+* The PATH objects are calculated for each of the polygons 
+* For each PATH, all the points are evaluated using contains_points. The result is casted into a numpy array so can be added with the previous evaluations. If one of the polygons contains the point, the result element will be true
+
 nightshade
 ----------
 

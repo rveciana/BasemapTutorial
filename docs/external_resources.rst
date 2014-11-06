@@ -48,6 +48,10 @@ Crontab:
 
 * `Generating matplotlib graphs without a running X server <http://stackoverflow.com/questions/4931376/generating-matplotlib-graphs-without-a-running-x-server>`_
 
+Utilities:
+
+* `Alternative way to get is_land functionality, much faster <http://stackoverflow.com/a/13811775/1086633>`_
+
 External examples:
 
 * `Drawing heat maps in Basemap <http://bagrow.com/dsv/heatmap_basemap.html>`_
