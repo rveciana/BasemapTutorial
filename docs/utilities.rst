@@ -148,6 +148,27 @@ The example shows the current dark zones in the `van der Grinten Projection <htt
 
 .. image:: images/utilities/nightshade.png 
 
+set_axes_limits
+---------------
+
+This method is usually called internally, and changes the matplotlib axes to the shape of the projection.
+
+`set_axes_limits(ax=None) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.set_axes_limits>`_
+
+* ax is the axis instance that needs its limits to be set
+
+Most of the methods, such as drawcountries, drawrivers, readshapefile... call this method at the end, so it's difficult to put an example to show how does it work:
+
+.. literalinclude:: ../code_examples/utilities/set_axes_limits.py
+
+.. image:: images/utilities/set_axes_limits.png 
+
+* After creating the map, the points 1, 2 and 3 are calculated in the map coordinates using the Basemap instance
+* The line connecting the three points is plot on the main map
+* Then, three new axes are created using fig.add_axes(x, y, width, height), in fractions of the plot size. In all the cases, the three points are plotted
+	* The first axis uses the set_axes_limits, so the final shape is a circle, correct for the orthographic projection. Note that plot is called as a method from the axis, not from the Basemap instance
+	* The second axis example doesn't call the method, so the shape is not correct. The plot method is also called from the axis instance
+	* In the third case, the plot method is called from the Basemap instance, so the method set_axes_limits is called internally from the basemap.plot method, and the final shape is correct
 
 tissot
 ------
