@@ -1,9 +1,7 @@
 Basic functions
 ===============
-
 Drawing a point in a map
 ------------------------
-
 Drawing a point in a map is usually done using the `plot method <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.plot>`_:
 
 .. literalinclude:: ../code_examples/basic_functions/point.py
@@ -27,14 +25,12 @@ If you have more than one point, you may prefer the `scatter method <http://matp
 
 Plotting raster data
 --------------------
-
 There are two main methods for plotting a raster, *contour/contourf*, that plots contour lines or filled contour lines (isobands) and *pcolor/pcolormesh*, that creates a pseudocolor plot.
 
 .. _basic_contourf:
 
 contourf
 ^^^^^^^^
-
 .. literalinclude:: ../code_examples/basic_functions/contourf.py
 	
 .. image:: images/basic_functions/contourf.png
@@ -52,7 +48,6 @@ contourf
 
 contour  
 ^^^^^^^
-
 .. literalinclude:: ../code_examples/basic_functions/contour.py
 	:emphasize-lines: 22-24
 	
@@ -69,7 +64,6 @@ contour
 	
 pcolormesh
 ^^^^^^^^^^
-
 .. literalinclude:: ../code_examples/basic_functions/pcolormesh.py
 	
 .. image:: images/basic_functions/pcolormesh.png
@@ -77,12 +71,10 @@ pcolormesh
 * The data must be prepared as in the :ref:`basic_contourf` case
 * The colormap can be changed as in the :ref:`basic_contour` example
 
-
 .. note:: pcolor and pcolormesh are very similar. You can see a good explanation `here <http://thomas-cokelaer.info/blog/2014/05/matplotlib-difference-between-pcolor-pcolormesh-and-imshow/>`_
 
 Calculating the position of a point on the map
 ----------------------------------------------
-
 .. code-block:: python
 
 	from mpl_toolkits.basemap import Basemap
@@ -99,5 +91,4 @@ The output will be:
 	(10.000000000000002, 50.000000000000014)
 	
 When inverse is False, the input is a point in longitude and latitude, and the output is the point in the map coordinates. When inverse is True, the behaviour is the opposite.
-
 	 

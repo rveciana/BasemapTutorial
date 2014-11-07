@@ -1,12 +1,10 @@
 Managing projections
 =====================
-
 All maps must have a projection. The projection and its features are all assigned when the object *Basemap* is created.
 The way to do it is quite different from other libraries (i.e. GDAL), so understanding this point is very important for working with Basemap.
 
 Projection
 ----------
-
 The projection argument sets the map projection to be used:
 
 .. literalinclude:: ../code_examples/projections/cyl.py
@@ -29,7 +27,6 @@ The Basemap object has the field *proj4string* that has the string to be used wi
 
 Using epsg to set the projection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 The EPSG code is a `standard to name projections using a numerical code <http://spatialreference.org/ref/epsg/>`_. Basemap allows to create the maps using this notation, but only in certain cases. To use it, pass the *epsg* argument to the *Basemap* contructor with the code.
 
 The epsg codes supported by Basemap are at the file *<python_packages_path>/mpl_toolkits/basemap/data/epsg*. Even if the desired epsg appears in the file, sometimes the library can't use the projection, raising the error 
@@ -48,7 +45,6 @@ This example shows the island of Menorca using the UTM projection, zone 31N.
 
 Extension
 ---------
-
 All the examples until now take the whole globe. Drawing only a region can be done either passing a bounding box or the center of the map and the map size. The official docs say that both methods can be used most of the times, but there are many exceptions.
 
 .. note:: Using cyl, merc, mill, cea and gall projections, the corners are assumed to be -180, -90, 180, 90 (all the globe) by default if they are not set. The other projection need the extension to be set by ont of the three methods.
@@ -56,7 +52,6 @@ All the examples until now take the whole globe. Drawing only a region can be do
 
 Passing the bounding box
 ^^^^^^^^^^^^^^^^^^^^^^^^
-
 .. literalinclude:: ../code_examples/projections/regionbbox.py
     :emphasize-lines: 4-5
 .. image:: images/projections/regionbbox.png
@@ -69,7 +64,6 @@ In the example, the `UTM (Transverse Mercator) projection <http://matplotlib.org
 
 Passing the bounding box in the map coordinates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 .. literalinclude:: ../code_examples/projections/regionbboxmc.py
     :emphasize-lines: 5-8
 .. image:: images/projections/regionbboxmc.png
@@ -80,7 +74,6 @@ Some projections (the ones that look *like a satellite image*) accept setting th
 
 Passing the center, width and height
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 .. literalinclude:: ../code_examples/projections/regioncenter.py
     :emphasize-lines: 4-8
 .. image:: images/projections/regioncenter.png

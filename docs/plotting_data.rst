@@ -1,6 +1,5 @@
 Plotting data
 =============
-
 .. _annotate:
 
 annotate
@@ -31,7 +30,6 @@ Creates text with an arrow indicating the point of interest. To create a :ref:`t
 
 barbs
 -----
-
 Plots wind barbs on the map
 
 `barbs(x, y, u, v, *args, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.barbs>`_
@@ -60,7 +58,6 @@ There are many other optional arguments, `documented at the matplotlib docs <htt
 
 contour
 --------
-
 Creates a contour plot.
 
 `contour(x, y, data) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.contour>`_
@@ -78,7 +75,6 @@ Creates a contour plot.
 
 contourf
 --------
-
 Creates a filled contour plot.
 
 `contourf(x, y, data) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.contourf>`_
@@ -97,7 +93,6 @@ Creates a filled contour plot.
 
 hexbin
 ------
-
 Plots an hexagonal bin from a set of positions. Can plot the number of occurrences in each bin (hexagon) or give a weight to each occurence
 
 `hexbin(x, y, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.hexbin>`_
@@ -160,14 +155,12 @@ The information is much better at `the matplotlib.hexbin docs <http://matplotlib
 
 pcolor
 ------
-
 The behaviour of this function is almost the same as in :ref:`pcolormesh`. A good explanation `here <http://thomas-cokelaer.info/blog/2014/05/matplotlib-difference-between-pcolor-pcolormesh-and-imshow/>`_
 
 .. _pcolormesh:
 
 pcolormesh
 ----------
-
 Creates a pseudo-color plot
 
 `pcolormesh(x, y, data, *args, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.pcolormesh>`_
@@ -183,7 +176,6 @@ Creates a pseudo-color plot
 
 plot
 ----
-
 Plots markers or lines on the map
 
 The function has the following arguments:
@@ -209,7 +201,6 @@ If the arguments are arrays, the output is a line (without markers in this case)
 
 quiver
 ------
-
 Plots a vector field on the map. Many of the behaviour is similar to the :ref:`barbs` method.
 
 `quiver(x, y, u, v, *args, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.quiver>`_
@@ -235,7 +226,6 @@ The `documentation at matplotlib <http://matplotlib.org/api/pyplot_api.html#matp
 
 scatter
 -------
-
 Plot multiple markers on the map
 
 `scatter(x, y, *args, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.scatter>`_
@@ -251,7 +241,6 @@ Plot multiple markers on the map
 
 streamplot
 ----------
-
 Plots streamlines from a vectorial field. 
 
 `streamplot(x, y, u, v, *args, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.streamplot>`_
@@ -284,7 +273,6 @@ Plots streamlines from a vectorial field.
 
 text
 ----
-
 Plots a text on the map
 
 `text(x, y, s, fontdict=None, withdash=False, **kwargs) <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.text>`_

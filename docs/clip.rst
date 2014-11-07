@@ -2,7 +2,6 @@ Clipping a raster with a shapefile
 ===================================
 Getting some data
 -----------------
-
 The example plots some elevation data, taken from the SRTM. After looking for some options, the easiest to work with was this one: http://srtm.csi.cgiar.org/SELECTION/inputCoord.asp or download the file directly: http://srtm.csi.cgiar.org/SRT-ZIP/SRTM_V41/SRTM_Data_GeoTiff/srtm_37_04.zip
 
 The shapefile will be the border of Andorra, taken from Natural Earth
@@ -33,7 +32,6 @@ To clip the image, a `Basemap path <http://matplotlib.org/users/path_tutorial.ht
 
 Drawing the map
 ^^^^^^^^^^^^^^^
-
 The map is drawn as usual. I have used a latlon projection, so all the values for the raster and shapefile can be used directly. If the output raster was in an other projection, the shapefile coordinates should be appended to the path using the output projection (*m(pts[j][0], pts[j][1])*).
 
 The x and y coordinates are calculated from the GDAL geotransform, and then turned into a matrix using meshgrid

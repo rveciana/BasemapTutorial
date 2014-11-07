@@ -1,6 +1,5 @@
 Running scripts from the crontab
 ================================
-
 The following script will fail when is run from the crontab:
 
 .. code-block:: python

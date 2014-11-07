@@ -1,11 +1,9 @@
 Working with shapefiles
 -----------------------
-
 The way used by Basemap to handle vectorial files is quite different from other libraries, and deserves some attention.
 
 Basic usage
 ^^^^^^^^^^^
-
 Let's start with the easiest way to plot a shapefile:
 
 .. literalinclude:: ../code_examples/shapefile/readshapefile_polygon.py
@@ -27,7 +25,6 @@ As the image sshows, the result will be only the boundary of the polygons (or th
 
 Reading point data
 ^^^^^^^^^^^^^^^^^^
-
 Plotting points is a bit more complicated. First, the shapefile is read, and then the points can be plotted using scatter, plot or the matplotlib function that fits better the needs.
 
 .. literalinclude:: ../code_examples/shapefile/readshapefile_points.py
@@ -48,7 +45,6 @@ The example shows the lightnings fallen over Catalonia during a storm
 
 Polygon information
 ^^^^^^^^^^^^^^^^^^^
-
 This example shows how to use the shapefile atttributes to select only some geometries.
 
 .. literalinclude:: ../code_examples/shapefile/readshapefile_polygon_info.py
@@ -65,7 +61,6 @@ This example shows how to use the shapefile atttributes to select only some geom
 
 Filling polygons
 ^^^^^^^^^^^^^^^^
-
 The basic way to plot a shapefile doesn't fill the polygons if this is the shape type. Here's how to do it:
 
 .. literalinclude:: ../code_examples/shapefile/readshapefile_polygon_fill.py

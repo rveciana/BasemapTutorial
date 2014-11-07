@@ -1,6 +1,5 @@
 Reading WRF model data
 =======================
-
 Basemap is specially good at drawing numerical weather prediction models outputs, such as WRF. `WRF <http://en.wikipedia.org/wiki/Weather_Research_and_Forecasting_Model>`_ is a widely used model, but most of the example can be run with other model outputs, just adapting the variable names.
 
 At the ucar website is possible to `download a WRF sample output file <http://www.unidata.ucar.edu/software/netcdf/examples/wrfout_v2_Lambert.nc>`_
@@ -19,7 +18,6 @@ At the ucar website is possible to `download a WRF sample output file <http://ww
 	
 Plotting a field as a contour
 -----------------------------
-
 .. literalinclude:: ../code_examples/wrf/read_wrf.py
 
 .. image:: images/wrf/read_wrf.png
@@ -31,7 +29,6 @@ Plotting a field as a contour
 
 Projecting the map
 ------------------
-
 As its name suggests, the model uses a Lambert conformal projection. The metadata file tells us how is this Lambert Conformal projection defined, so plotting the map is easy:
 
 .. literalinclude:: ../code_examples/wrf/read_wrf_projected.py
@@ -42,7 +39,6 @@ As its name suggests, the model uses a Lambert conformal projection. The metadat
 
 Wind barbs
 ----------
-
 Basemap has a function that makes drawing wind barbs very simlpe (unlike using other GIS libraries, btw):
 
 .. literalinclude:: ../code_examples/wrf/read_wrf_barbs.py
@@ -54,4 +50,3 @@ Basemap has a function that makes drawing wind barbs very simlpe (unlike using o
 	* To eliminate some of the points, the *numpy.arange* function is used,to select the pixels to be used
 	* After having to arrays with the positions, a 2d matrix is created with this values, using *numpy.meshgrid*. Now is possible to select only these points from any array, as shown when using the *barbs* method
 * A contour with the wind speed is plotted under the barbs, to make the map more interesting. Note that since the fields are numpy arrays, the module is easily calculated
-

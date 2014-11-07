@@ -1,11 +1,9 @@
 Background methods
 ==================
-
 I've called background methods those functions useful for drawing borders, lands, etc. to distinguish them from those aimed to draw user data.
 
 arcgisimage
 -----------
-
 Downloads and plots an image using the `arcgis REST API service <http://server.arcgisonline.com/arcgis/rest/services>`_
 
 `arcgisimage(server='http://server.arcgisonline.com/ArcGIS', service='ESRI_Imagery_World_2D', xpixels=400, ypixels=None, dpi=96, verbose=False, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.arcgisimage>`_
@@ -33,7 +31,6 @@ The *World_Shaded_Relief* layer
 
 bluemarble
 ----------
-
 Plots the `bluemarble image <http://visibleearth.nasa.gov/>`_ on the map.
 
 `bluemarble(ax=None, scale=None, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.bluemarble>`_
@@ -47,7 +44,6 @@ Plots the `bluemarble image <http://visibleearth.nasa.gov/>`_ on the map.
 
 drawcoastlines
 --------------
-
 Draws the coastlines.
 
 The function has the following arguments:
@@ -66,7 +62,6 @@ The function has the following arguments:
 
 drawcounties
 ------------
-
 Draws the USA counties from the layer included with the library
 
 `drawcounties(linewidth=0.1, linestyle='solid', color='k', antialiased=1, facecolor='none', ax=None, zorder=None, drawbounds=False) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawcounties>`_
@@ -91,7 +86,6 @@ Note that:
 
 drawcountries
 --------------
-
 Draws the country borders from the layer included with the library.
 
 The function has the following arguments:
@@ -120,7 +114,6 @@ Without drawing the coastline, the result is a bit strange:
 
 drawlsmask
 ----------
-
 A method that draws at once lakes, land and oceans. Avoids *fillcontinents* and *drawmapboundary*. Besides, it can change the data origin to a custom array of points.
 
 A difference from the other methods is that the zorder can't be set in this method.
@@ -142,7 +135,6 @@ A difference from the other methods is that the zorder can't be set in this meth
 
 drawmapboundary
 ---------------
-
 Draws the earth boundary on the map, with optional filling.
 
 `drawmapboundary(color='k', linewidth=1.0, fill_color=None, zorder=None, ax=None) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawmapboundary>`_
@@ -170,7 +162,6 @@ Draws the earth boundary on the map, with optional filling.
 
 drawmeridians
 -------------
-
 Draws the meridians on the map
 
 `drawmeridians(meridians, color='k', linewidth=1.0, zorder=None, dashes=[1, 1], labels=[0, 0, 0, 0], labelstyle=None, fmt='%g', xoffset=None, yoffset=None, ax=None, latmax=None, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawmeridians>`_
@@ -192,7 +183,6 @@ This example shows the simplest way to use the function, using the Azimuthal equ
 
 drawparallels
 -------------
-
 Draws the parallels on the map
 
 `drawparallels(circles, color='k', linewidth=1.0, zorder=None, dashes=[1, 1], labels=[0, 0, 0, 0], labelstyle=None, fmt='%g', xoffset=None, yoffset=None, ax=None, latmax=None, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawparallels>`_
@@ -212,7 +202,6 @@ The example shows some avance functions, such as labeling or zorder, using the `
 
 drawrivers
 ----------
-
 Draws the rivers from the layer included with the library. 
 
 `drawrivers(linewidth=0.5, linestyle='solid', color='k', antialiased=1, ax=None, zorder=None) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawrivers>`_
@@ -234,7 +223,6 @@ Note that:
 
 drawstates
 ----------
-
 Draws the American countries states borders from the layer included with the library. Draws also the Australian states.
 
 `drawstates(linewidth=0.5, linestyle='solid', color='k', antialiased=1, ax=None, zorder=None) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawstates>`_
@@ -257,7 +245,6 @@ Note that:
 
 etopo
 -----
-
 Plots a relief image called *etopo* taken from the `NOAA <http://www.ngdc.noaa.gov/mgg/global/global.html>`_. The image has a 1'' arch resolution, so when zooming in, the results are quite poor.
 
 `etopo(ax=None, scale=None, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.etopo>`_
@@ -271,7 +258,6 @@ Plots a relief image called *etopo* taken from the `NOAA <http://www.ngdc.noaa.g
 
 fillcontinents
 --------------
-
 Draws filled polygons with the continents
 
 `fillcontinents(color='0.8', lake_color=None, ax=None, zorder=None, alpha=None) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.fillcontinents>`_
@@ -288,7 +274,6 @@ Draws filled polygons with the continents
 
 shadedrelief
 ------------
-
 Plots a shaded relief image. The origin is the www-shadedrelief.com web page. The original image size is 10800x5400
 
 `shadedrelief(ax=None, scale=None, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.shadedrelief>`_
@@ -302,7 +287,6 @@ Plots a shaded relief image. The origin is the www-shadedrelief.com web page. Th
 
 wmsimage
 --------
-
 Downloads and plots an image, using the `WMS protocol <http://en.wikipedia.org/wiki/Web_Map_Service>`_
 
 `wmsimage(server, xpixels=400, ypixels=None, format='png', verbose=False, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.wmsimage>`_

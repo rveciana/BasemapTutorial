@@ -4,6 +4,8 @@ The sample files for the examples where used for the [8as Jornadas Sig Libre](ht
 - **comarques.shp** Catalan *comarques* or regions
 - **dem.tiff** Digital Elevation Model at 5 meters of resolution for the zone of Montserrat, downloaded from[vissir, by ICC](http://www.icc.cat/vissir/)
 
+- **by.png** is the Creative Commons Attribution logo, [taken from their web page](https://creativecommons.org/about/downloads)
+
 The file **wrf.tiff** is a converted version from the [original WRF in NetCDF format from the UNIDATA site](http://www.unidata.ucar.edu/software/netcdf/examples/files.html). The original file is large, about 76MB, so I took only a part of it to show some examples. To generate it, i looked at the metadata file, and executed:
 
     gdal_translate -b 2 'NETCDF:"wrfout_v2_Lambert.nc":XLONG' lon.tiff

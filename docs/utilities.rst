@@ -1,16 +1,13 @@
 Basemap utility functions
 =========================
-
 .. _makegrid:
 
 makegrid 
 --------
-
 makegrid method creates an arbitrary grid of equally spaced points in the map projection
 
 colorbar
 --------
-
 Draws the color legend at one of the edges of the map. The use is almost the same as in matplotlib colorbar
 
 `colorbar(mappable=None, location='right', size='5%', pad='2%', fig=None, ax=None, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.colorbar>`_
@@ -44,7 +41,6 @@ To see an example with logarithmic scales, take a look at the :ref:`hexbin` exam
  
 drawmapscale
 ------------
-
 Draws the scale of the map at the indicated position
 
 `drawmapscale(lon, lat, lon0, lat0, length, barstyle='simple', units='km', fontsize=9, yoffset=None, labelstyle='simple', fontcolor='k', fillcolor1='w', fillcolor2='k', ax=None, format='%d', zorder=None) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawmapscale>`_
@@ -68,7 +64,6 @@ Draws the scale of the map at the indicated position
 
 gcpoints
 --------
-
 Calculates n points along a great circle given two coordinates
 
 `gcpoints(lon1, lat1, lon2, lat2, npoints) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.gcpoints>`_
@@ -88,7 +83,6 @@ Calculates n points along a great circle given two coordinates
 
 greatcircle
 -----------
-
 `A great circle <http://en.wikipedia.org/wiki/Great_circle>`_ is the maximum circle that can be drawn that passes through two points in a sphere (excepting when the points are the antipodes)
 
 `drawgreatcircle(lon1, lat1, lon2, lat2, del_s=100.0, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawgreatcircle>`_
@@ -115,7 +109,6 @@ The gnomonic projection makes the great circles to be a straight line in any dir
 
 is_land
 -------
-
 Returns *True* if the indicated point is on the land, and *False* if on an ocean or lake
 
 `is_land(xpt, ypt) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.is_land>`_
@@ -139,7 +132,6 @@ The alternative way, which accepts multiple points and, in fact could be used wi
 
 nightshade
 ----------
-
 Draws the regions of the map which are dark at the specified date
 
 `nightshade(date, color='k', delta=0.25, alpha=0.5, ax=None, zorder=2) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.nightshade>`_
@@ -159,7 +151,6 @@ The example shows the current dark zones in the `van der Grinten Projection <htt
 
 tissot
 ------
-
 `Tissot's indicatrix <http://en.wikipedia.org/wiki/Tissot%27s_indicatrix>`_, or Tissot's ellipse of distortion is the representation of a circle in a map, showing how the projection distorts it. Usually, many of them are represented to show how the distortion varies with the position.
 
 The function has the following arguments:
@@ -186,4 +177,3 @@ Tissot's indicatrices for the Mercator projection:
 Tissot's indicatrices for the Albers Equal Area projection:
 
 .. image:: images/utilities/tissot_albers_equal_area.png
-
