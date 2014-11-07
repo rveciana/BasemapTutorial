@@ -285,6 +285,23 @@ Plots a shaded relief image. The origin is the www-shadedrelief.com web page. Th
 
 .. image:: images/backgrounds/shadedrelief.png
 
+warpimage
+---------
+
+Displays an image as a background. 
+
+`warpimage(image='bluemarble', scale=None, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.warpimage>`_
+
+* By default, displays the NASA Bluemarble image
+* The image must be in latlon projection, so the x size must be double than the y size
+* The image must cover the whole world, with the longitude starting at -180
+
+.. literalinclude:: ../code_examples/backgrounds/warpimage.py
+
+.. image:: images/backgrounds/warpimage.png
+
+* The image must be resized to fit the proportions. The script won't work if the computer hasn't got the /tmp directory. 
+
 wmsimage
 --------
 Downloads and plots an image, using the `WMS protocol <http://en.wikipedia.org/wiki/Web_Map_Service>`_

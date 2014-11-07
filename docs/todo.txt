@@ -79,7 +79,7 @@ addcyclic(): Add cyclic (wraparound) point in longitude. --> http://matplotlib.o
 
 ----- hexbin
 
-imshow
+----- imshow
 
 ----- is_land
 
@@ -116,7 +116,7 @@ transform_scalar
 
 transform_vector
 
-warpimage
+----- warpimage
 
 ----- wmsimage
 
