@@ -153,6 +153,45 @@ The information is much better at `the matplotlib.hexbin docs <http://matplotlib
 
     Using the C argument and plotting the bin edges
 
+imshow
+------
+Plots an image on the map. The image can be a regular rgb image, or a field coloured with a cmap.
+
+`imshow(*args, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.imshow>`_ 
+
+As in other cases, the best docs are at `the matplotlib documentation <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.imshow>`_.
+
+* The first argument is the image array. If it has three bands, RGB will be assumed, and the image will be plotted. If it has one band, a pseudocolor will be created according to the cmap argument (jet by default). Arrays with two or more than three bands will make the method tp raise an error
+* extent sets the position of four corners of the image, in map coordinates. It has to be a sequence with the elements (x0, x1, y0, y1)
+* origin changes the initial line position of the image. By default, the first line position is defined by image.origin, and this can be changed using the values 'upper' or 'lower'
+* cmap is the desired colormap if the image has one band.
+* alpha sets the transparency with values from 0 to 1
+* interpolation changes the interpolation mode when resizing the image. Possible values are 'none', 'nearest', 'bilinear', 'bicubic', 'spline16', 'spline36', 'hanning', 'hamming', 'hermite', 'kaiser', 'quadric', 'catrom', 'gaussian', 'bessel', 'mitchell', 'sinc', 'lanczos
+
+The first example shows hot to use jpg image and a field as a pseudocolored image:
+
+.. literalinclude:: ../code_examples/plotting_data/imshow.py
+
+.. image:: images/plotting_data/imshow.png
+
+* plt.imread reads any common image file into a numpy array
+* The elevation data is plotted with the terrain colormap and with an alpha value to allow viewing both layers at once
+* Note that the extent hasn't been set, since the map extent is the same as the image extension
+
+The second example shows how to add a logo directly on the map or on a new created axie:
+
+.. literalinclude:: ../code_examples/plotting_data/imshow_logo.py
+
+.. image:: images/plotting_data/imshow_logo.png
+
+* The first icon is drawn on the map using the extent argument. The coordinates have been converted to the map units
+* The second logo is outside the globe, so no map coordinates can be used to place it properly
+	* An axis named axicon is created. The numbers set the x and y position, and width and heoght of the axis. All them un fractions of the plot size.
+	* The image is plotted, but with the argument origin to avoid to have upside down
+	* xticks and ytixcks are set to null, so they are not drawn on the logo
+
+I learnt how to do it from these examples: `1 <http://stackoverflow.com/questions/3765056/combine-picture-and-plot-with-python-matplotlib>`_ and `2 <http://stackoverflow.com/questions/11487797/python-matplotlib-basemap-overlay-small-image-on-map-plot>`_
+
 pcolor
 ------
 The behaviour of this function is almost the same as in :ref:`pcolormesh`. A good explanation `here <http://thomas-cokelaer.info/blog/2014/05/matplotlib-difference-between-pcolor-pcolormesh-and-imshow/>`_

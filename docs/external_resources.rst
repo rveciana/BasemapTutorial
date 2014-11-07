@@ -13,6 +13,11 @@ Basic functions:
 * `Basemap page with all the information about color codes <http://matplotlib.org/api/colors_api.html>`_
 * `Colormesh docs <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.pcolormesh>`_
 * `Setting colormesh levels <http://matplotlib.org/dev/examples/images_contours_and_fields/pcolormesh_levels.html>`_
+* imshow
+	* `Combining an image and a plot in matplotlib <http://stackoverflow.com/questions/3765056/combine-picture-and-plot-with-python-matplotlib>`_
+	* `Adding small images to basemap <http://stackoverflow.com/questions/11487797/python-matplotlib-basemap-overlay-small-image-on-map-plot>`_
+	* `Image rotation using imshow <http://stackoverflow.com/questions/14320159/matplotlib-imshow-data-rotated>`_
+	* `Complex example using imshow, shiftgrid and transform_scalar <http://matplotlib.org/basemap/users/examples.html>`_
 
 Zoom:
 
