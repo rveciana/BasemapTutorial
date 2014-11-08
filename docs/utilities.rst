@@ -170,6 +170,46 @@ Most of the methods, such as drawcountries, drawrivers, readshapefile... call th
 	* The second axis example doesn't call the method, so the shape is not correct. The plot method is also called from the axis instance
 	* In the third case, the plot method is called from the Basemap instance, so the method set_axes_limits is called internally from the basemap.plot method, and the final shape is correct
 
+shiftdata
+---------
+
+Adds values to the longitudes so they can fit the correct map origin. Changes also the data array so it can fit the new origin. Sometimes, the longitude data is given in an interval different from -180, 180. From 0 to 360, for instance. To draw the data properly, this values must be shifted.
+
+`shiftdata(lonsin, datain=None, lon_0=None) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.shiftdata>`_
+
+* lonsin the original longitudes. They have to be either a one dimension or two dimension arrays, but always in a regular lat/lon grid
+* datain is the data array. If the longitudes have to be cut (-180 becomes 360, for instance), the order of the data array has to be cnahged. If the data is given, this opration is done
+* lon_0 is the map origin. The longitudes will be fit in the interval [lon_0-180,lon_0+180]
+
+.. note: The longitudes must be in a regular interval, even though they are a 1d or a 2d array
+
+.. literalinclude:: ../code_examples/utilities/shiftdata.py
+
+* The coordinates and data arrays are fake data. Coordinates are created with a simple range, and the data array is the sumatory of the x and y positions, so the llower left position will be the one with a lower data value, and the highest, the upper right
+	* Note that longitudes start at 30
+* The longitudes and data is shifted using the shiftdata method
+* The new coordinated are passed to 2d using meshgrid, and re-projeccted to the map projection using the basemap instance
+* The filled contour can be now created
+* The final result has a white band, which could be avoided using the addcyclic method
+
+.. figure:: images/utilities/shiftdata.png
+    :alt: The result applying the method to the data array 
+    :figclass: align-center
+
+    The result applying the method to the data array 
+
+.. figure:: images/utilities/shiftdata0.png
+    :alt: The result without applying the method to the data array. Not that the blue (value 0) is not at longitude 0 
+    :figclass: align-center
+
+    The result without applying the method to the data array. Not that the blue (value 0) is not at longitude 0
+
+.. figure:: images/utilities/shiftdata1.png
+    :alt: The result whitout applying shiftdata
+    :figclass: align-center
+
+    The result whitout applying shiftdata. Note that the result is not as expected, since the longitudes are outside the right interval
+
 tissot
 ------
 `Tissot's indicatrix <http://en.wikipedia.org/wiki/Tissot%27s_indicatrix>`_, or Tissot's ellipse of distortion is the representation of a circle in a map, showing how the projection distorts it. Usually, many of them are represented to show how the distortion varies with the position.
