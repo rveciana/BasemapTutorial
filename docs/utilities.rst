@@ -6,8 +6,28 @@ makegrid
 --------
 makegrid method creates an arbitrary grid of equally spaced points in the map projection
 
-colorbar
---------
+.. _addcyclic:
+
+addcyclic
+---------
+Adds a longitude value, and a columns of values to the data array. Useful to fill the missing data when the data covers the whole longitudes.
+
+`mpl_toolkits.basemap.addcyclic(arrin, lonsin) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.addcyclic>`_
+
+* Note that it's not a basemap method, but a separate function
+* arrin is the input data. A column will be added to fill the gap between the -180 and 180 longitudes
+* lonsin is a single dimension array containing the longitudes
+
+.. literalinclude:: ../code_examples/utilities/addcyclic.py
+
+.. image:: images/utilities/addcyclic.png 
+
+* The example is the same as in :ref:`shiftdata`. The difference is that the white band disappears.
+* Note the order of the output variables: longitudes and data
+* Note that the longitudes are a one dimension array
+
+colorbars
+---------
 Draws the color legend at one of the edges of the map. The use is almost the same as in matplotlib colorbar
 
 `colorbar(mappable=None, location='right', size='5%', pad='2%', fig=None, ax=None, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.colorbar>`_
@@ -170,6 +190,8 @@ Most of the methods, such as drawcountries, drawrivers, readshapefile... call th
 	* The second axis example doesn't call the method, so the shape is not correct. The plot method is also called from the axis instance
 	* In the third case, the plot method is called from the Basemap instance, so the method set_axes_limits is called internally from the basemap.plot method, and the final shape is correct
 
+.. _shiftdata:
+
 shiftdata
 ---------
 
@@ -190,7 +212,7 @@ Adds values to the longitudes so they can fit the correct map origin. Changes al
 * The longitudes and data is shifted using the shiftdata method
 * The new coordinated are passed to 2d using meshgrid, and re-projeccted to the map projection using the basemap instance
 * The filled contour can be now created
-* The final result has a white band, which could be avoided using the addcyclic method
+* The final result has a white band, which could be avoided using the addcyclic method: :ref:`addcyclic`
 
 .. figure:: images/utilities/shiftdata.png
     :alt: The result applying the method to the data array 

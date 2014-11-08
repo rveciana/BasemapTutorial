@@ -35,7 +35,7 @@ maskoceans(): mask ‘wet’ points of an input array.
 
 shiftgrid(): shifts global lat/lon grids east or west.
 
-addcyclic(): Add cyclic (wraparound) point in longitude. --> http://matplotlib.org/basemap/users/examples.html
+----- addcyclic(): Add cyclic (wraparound) point in longitude. --> http://matplotlib.org/basemap/users/examples.html
 
 ----- arcgisimage
 
@@ -106,7 +106,7 @@ rotate_vector
 
 ----- shadedrelief
 
-shiftdata
+----- shiftdata
 
 ----- streamplot
 
