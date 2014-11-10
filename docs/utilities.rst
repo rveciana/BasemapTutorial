@@ -127,6 +127,11 @@ The gnomonic projection makes the great circles to be a straight line in any dir
 
 .. image:: images/utilities/drawgreatcircle_gnomonic.png 
 
+.. _interp:
+
+interp
+------
+
 is_land
 -------
 Returns *True* if the indicated point is on the land, and *False* if on an ocean or lake
@@ -149,6 +154,43 @@ The alternative way, which accepts multiple points and, in fact could be used wi
 * locations is a numpy array containing numpy arrays with the projected points
 * The PATH objects are calculated for each of the polygons 
 * For each PATH, all the points are evaluated using contains_points. The result is casted into a numpy array so can be added with the previous evaluations. If one of the polygons contains the point, the result element will be true
+
+maskoceans
+----------
+Takes a data array and masks the values at the points in the oceans and lakes
+
+`mpl_toolkits.basemap.maskoceans(lonsin, latsin, datain, inlands=True, resolution='l', grid=5) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.maskoceans>`_
+
+* This function is not a method of the basemap instance, but a separate one in the baemap module
+* lonsin and latsin are the location of the points in 2 dimensions arrays. Only latlon projections can be used with this method
+* datain is the array containing the values to mask with the oceans
+* inland sets if the lakes have to be masked too (true by default)
+* resolution selects the resolution of the land-sea boundaries to use then masking the arrays, 'l' by default. The one defined by the basemap instance is not used
+* grid sets, in arch minutes, the resolution of the mask grid. 10, 5, 2.5 and 1.25 values are available
+
+* The output array has the same dimensions as the input data array
+* See the examples to understand the difference between the resolution and grid arguments
+
+.. literalinclude:: ../code_examples/utilities/maskoceans.py
+	:linenos:
+	
+.. image:: images/utilities/maskoceans0.png
+
+The first example (line 22), creates the mask directly. The result is coarse, due to the low resolution of the input data, not because of the maskoceans arguments
+
+.. image:: images/utilities/maskoceans1.png
+
+* The second example creates a finer grid (lines 29 to 36) to avoid the effect of the big pixels due to the data. Look at the :ref:`interp` for details 
+* The maskoceans function, however, is called with the lowest resolution in both grid and resolution arguments. 
+* Note that the lakes at Florida are not masked, because the resolution is low, and that the Florida coast still shows the pixels, because of the big grid value. 
+
+.. image:: images/utilities/maskoceans2.png
+
+In this case, the resolution has been set to 'h', the maximum. The lakes are now masked, but the Florida coast still shows the pixel size used to create the mask.
+	
+.. image:: images/utilities/maskoceans3.png
+
+Finally, when the grid is set at the finer resolution, the Florida coast smoothly matches the coast line. 
 
 nightshade
 ----------

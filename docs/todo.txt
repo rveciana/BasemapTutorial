@@ -3,7 +3,6 @@ colorbar personalitzada
 
 subplots http://stackoverflow.com/questions/3584805/in-matplotlib-what-does-111-means-in-fig-add-subplot111
 
-http://matplotlib.org/basemap/users/mapcoords.html
 WRF o GRIB
 
 GDAL
@@ -19,6 +18,8 @@ http://matplotlib.org/examples/axes_grid/inset_locator_demo2.html
 -----EPSG A projection
 ----- inverse projection & map(x, y)
 ----- símbols amb lletres, etc
+----- http://matplotlib.org/basemap/users/mapcoords.html
+
 
 ------------------------------------------------------------------------
 
@@ -31,7 +32,7 @@ Explain all the options, such as anchor
 
 interp(): bilinear interpolation between rectilinear grids.
 
-maskoceans(): mask ‘wet’ points of an input array.
+----- maskoceans(): mask ‘wet’ points of an input array.
 
 shiftgrid(): shifts global lat/lon grids east or west.
 
