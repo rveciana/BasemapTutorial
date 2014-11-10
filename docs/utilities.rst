@@ -137,6 +137,7 @@ Useful to create smoother plots or to have more elements when using barbs or qui
 
 `interp(datain, xin, yin, xout, yout, checkbounds=False, masked=False, order=1) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.interp>`_
 
+* This function is not a method of the basemap instance, but a separate one in the baemap module
 * datain is the data array to interpolate. It has to be a 2d numpy array
 * xin and yin are the coordinates of the input data array, in one dimendion each. 
 	* This point is important, since implies that the input grid has to be regular (so no lon-lat grid in a different projection)
