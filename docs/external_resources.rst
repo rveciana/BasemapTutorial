@@ -55,6 +55,8 @@ Crontab:
 Utilities:
 
 * `Alternative way to get is_land functionality, much faster <http://stackoverflow.com/a/13811775/1086633>`_
+* `Example of maskoceans usage <https://github.com/matplotlib/basemap/blob/master/examples/maskoceans.py>`_
+* `Good example of interp usage <https://github.com/matplotlib/basemap/blob/master/examples/streamplot_demo.py>`_
 
 External examples:
 

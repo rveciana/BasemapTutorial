@@ -131,6 +131,40 @@ The gnomonic projection makes the great circles to be a straight line in any dir
 
 interp
 ------
+Interpolates a grid to another grid, with different sizes. 
+
+Useful to create smoother plots or to have more elements when using barbs or quiver. Also useful when using :ref:`maskoceans`.
+
+`interp(datain, xin, yin, xout, yout, checkbounds=False, masked=False, order=1) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.interp>`_
+
+* datain is the data array to interpolate. It has to be a 2d numpy array
+* xin and yin are the coordinates of the input data array, in one dimendion each. 
+	* This point is important, since implies that the input grid has to be regular (so no lon-lat grid in a different projection)
+	* y has to be in increasing order
+* xout and yout are the coordinates of the output data array. They have to be 2d numpy arrays.
+* checkbounds if set to True, the xin and yin values are checked to be in the bounds of xout and yout. If False, and there are values outside the bounds, the output data array values will be clipped to the boundary values
+* masked makes the points outside the new grid to be masked if is set to True, or an arbitrary value if given
+* order sets the interpolation method:
+	* 0 uses the nearest neighbour method
+	* 1 uses a bilinear interpolation
+	* 3 uses a cubic spline, and requires scipy.ndimage to be installed 
+
+.. literalinclude:: ../code_examples/utilities/interp.py
+
+* The example is taken from the :ref:`barbs` method example, but zoomin in a lot so the number of barbs is too low, and gives a reason to interpolate
+* The positions of the wind barbs (x, y) are calculated using the basemap instance
+* The new grid is created, using linspace
+	* Since the grid is in the map projection, the x and y 2d array can be converted to a 1d array, since the values are the same for all the lines or columns
+	* The new grid is created multiplying the number of elements by 2, with the same bounding values, using linspace
+	* The new grid has to be in 2d arrays, which is done with the meshgrid method
+* interp can be now called
+	* Since x and y are two dimension arrays, only a single column is passed for x, and a single column for y
+	* y axis is not in increasing order (coordinates gofrom north to south), so they have to be reversed using the `numpy.flipud <http://docs.scipy.org/doc/numpy/reference/generated/numpy.flipud.html>`_ method. The output has to be reversed again to have the data properly ordered 
+* Once the new grid is created, the barbs can be drawn in the new resolution 
+ 
+.. image:: images/utilities/interp.png 
+
+In gray, the original points, and in red, the interpolated ones
 
 is_land
 -------
@@ -154,6 +188,8 @@ The alternative way, which accepts multiple points and, in fact could be used wi
 * locations is a numpy array containing numpy arrays with the projected points
 * The PATH objects are calculated for each of the polygons 
 * For each PATH, all the points are evaluated using contains_points. The result is casted into a numpy array so can be added with the previous evaluations. If one of the polygons contains the point, the result element will be true
+
+.. _maskoceans:
 
 maskoceans
 ----------
@@ -180,7 +216,7 @@ The first example (line 22), creates the mask directly. The result is coarse, du
 
 .. image:: images/utilities/maskoceans1.png
 
-* The second example creates a finer grid (lines 29 to 36) to avoid the effect of the big pixels due to the data. Look at the :ref:`interp` for details 
+* The second example creates a finer grid (lines 29 to 36) to avoid the effect of the big pixels due to the data. Look at the :ref:`interp` for details
 * The maskoceans function, however, is called with the lowest resolution in both grid and resolution arguments. 
 * Note that the lakes at Florida are not masked, because the resolution is low, and that the Florida coast still shows the pixels, because of the big grid value. 
 

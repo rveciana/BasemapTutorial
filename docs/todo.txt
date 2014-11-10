@@ -30,7 +30,7 @@ Functions:
 
 Explain all the options, such as anchor
 
-interp(): bilinear interpolation between rectilinear grids.
+----- interp(): bilinear interpolation between rectilinear grids.
 
 ----- maskoceans(): mask ‘wet’ points of an input array.
 
@@ -120,7 +120,5 @@ transform_vector
 ----- warpimage
 
 ----- wmsimage
-
-
 
 
