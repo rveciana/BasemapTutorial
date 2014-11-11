@@ -37,7 +37,8 @@ Plots wind barbs on the map
 `The barbs docs from the matplotlib documentation <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.barbs>`_ is much more detailed.
 
 * x and y give the positions of the grid data if the latlon argument is true, the valeus are supposed to be in geographical coordinates. If not, in the map coordinates
-* u and v are the north-south and west-east magnitudes of the wind in knots (the values to create the barbs are 5, 10, 15 and so on)
+* u and v are the left-right and up-down magnitudes of the wind in knots (the values to create the barbs are 5, 10, 15 and so on). 
+	* Note that they are NOT in north-south ans west-east. If the input projection has non-cylindrical projections (those other than cyl, merc, cyl, gall and mill), the u and v should be rotated, using :ref:`rotate_vector` or :ref:`transform_vector` methods
 
 There are many other optional arguments, `documented at the matplotlib docs <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.barbs>`_. Some interesting arguments are:
 
@@ -54,6 +55,7 @@ There are many other optional arguments, `documented at the matplotlib docs <htt
 	* To do it, a matrix taking only 1/4 th of the elements is created
 	* The matrix points has the element positions to take
 	* The arguments passed to barbs are selected using the points matrix, so taking only one of every 4 elements
+* u and v are supposed to be in the map coordinates, not north-south or west-east. If they were in geographical coordinates, :ref:`rotate_vector` could be used to rotate them properly
 * The pivot argument has been used to rotate the barbs from the middle, since the effect rotating from the upper part (pivot = 'tip') creates strange effects when the wind rotates
 
 contour
@@ -247,7 +249,8 @@ Plots a vector field on the map. Many of the behaviour is similar to the :ref:`b
 The `documentation at matplotlib <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.quiver>`_ is much more detailed than at the basemap docs. 
 
 * x and y give the positions of the grid data if the latlon argument is true, the valeus are supposed to be in geographical coordinates. If not, in the map coordinates
-* u and v are the north-south and west-east magnitudes
+* u and v are the left-right and up-down magnitudes
+	* Note that they are NOT in north-south ans west-east. If the input projection has non-cylindrical projections (those other than cyl, merc, cyl, gall and mill), the u and v should be rotated, using :ref:`rotate_vector` or :ref:`transform_vector` methods
 * The fifth argument, which is optional, sets a value to assign the color to the arrow
 * scale makes the arrows to be longer or shorter
 * minshaft value below which arrow grows. The value should be greater than 1
@@ -261,6 +264,7 @@ The `documentation at matplotlib <http://matplotlib.org/api/pyplot_api.html#matp
 	* To do it, a matrix taking only 1/4 th of the elements is created
 	* The matrix points has the element positions to take
 	* The arguments passed to barbs are selected using the points matrix, so taking only one of every 4 elements
+* u and v are supposed to be in the map coordinates, not north-south or west-east. If they were in geographical coordinates, :ref:`rotate_vector` could be used to rotate them properly
 * The wind speed is calculated to pass the color values to the quiver method. The length of the array must be the same as in x, y, u & v, of course
 
 scatter
@@ -287,7 +291,9 @@ Plots streamlines from a vectorial field.
 * x and y are matrices of the same size as *u* and *v* data, containing the positions of the elements in the map coordinates. 
 	* `As the docs explain <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.streamplot>`_, x and y must be evenly spaced. This mean that when the original values come from a different projection, the data matrix must be re-projected, and the x and y matrices re-calculated, as you can see in the example.
 	* To calculate an evenly spaced grid, the method :ref:`makegrid` can be used. It's better to use the *returnxy=True* attribute to get the grid in the map projection units.  
-* u and v are the x and y velocities. The dimensions must be the same as *x* and *y*
+* u and v are the left-right and up-down magnitudes
+	* Note that they are NOT in north-south ans west-east. If the input projection has non-cylindrical projections (those other than cyl, merc, cyl, gall and mill), the u and v should be rotated, using :ref:`rotate_vector` or :ref:`transform_vector` methods
+	* The dimensions must be the same as *x* and *y*
 * color can set the same color for the streamlines, or change depending of the data:
 	* If the value is a scalar, all the streamlines will have the indicated color, depending on the colormap
 	* If the value is an array of the same size as data (the module of the wind in the example), the color will change according to it, using the color map

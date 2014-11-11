@@ -247,6 +247,34 @@ The example shows the current dark zones in the `van der Grinten Projection <htt
 
 .. image:: images/utilities/nightshade.png 
 
+.. _rotate_vector:
+
+rotate_vector
+-------------
+
+Given two matrices of the east-west and north-south components of a vectorial field, and the longitude and latitude of the points, rotates the vectors so they represent the direction properly on the map projection
+
+Some functions, such as barbs, quiver or streamplot, that use vectorial data, aske the vector components to be in the map coordinates i.e. u is from left to right, v from up do down. If the available data is in geographical coordinates i.e. west-east and north-south, these coordinates have to be rotated or the vector direction won't be plot properly. This is the aim of the rotate_vector method.
+
+The method :ref:`transform_vector` does the same function, but changing the grid size at the same time (interpolating the points)
+
+`rotate_vector(uin, vin, lons, lats, returnxy=False) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.rotate_vector>`_
+
+* uin and vin are the input data matrices. The directions are the geographical, so the u component is west-east and the v component, north-south
+* lons, lats are 2D numpy arrays with the positions of the uin an vin matrices, in geographical coordinates
+* returnxy makes the method to return the lons and lats matrices reprojected to the map coordinates. Just as calling the basemap instance
+
+.. literalinclude:: ../code_examples/utilities/rotate_vector.py
+
+.. image:: images/utilities/rotate_vector.png 
+
+* lons and lats are created in an equal spaced grid covering all the globe, using `linspace <http://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html>`_
+* v10 and u10 are created so they represent a south to north wind (v10 = 10, u10 = 0)
+* The rotation is done, using the created matrices, and calculating the positions of the locatinos in the map projection (returnxy = True)
+* Two maps are drawn, creating the subplots with add_subplot
+	* The first draws the barbs without rotating them. Even though they are supposed to be south-north, the basemap instance takes them as if they were in the map projection, so the barbs go from the bottom to the top, which is not south to north
+	* The second shows the result of the rotation
+
 set_axes_limits
 ---------------
 
@@ -339,3 +367,8 @@ Tissot's indicatrices for the Mercator projection:
 Tissot's indicatrices for the Albers Equal Area projection:
 
 .. image:: images/utilities/tissot_albers_equal_area.png
+
+.. _transform_vector:
+
+transform_vector
+----------------
