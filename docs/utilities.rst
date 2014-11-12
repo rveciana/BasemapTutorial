@@ -372,3 +372,35 @@ Tissot's indicatrices for the Albers Equal Area projection:
 
 transform_vector
 ----------------
+Given two matrices of the east-west and north-south components of a vectorial field, and the longitude and latitude of the points, rotates the vectors so they represent the direction properly on the map projection, while interpolates the points to a new matrix..
+
+Some functions, such as barbs, quiver or streamplot, that use vectorial data, aske the vector components to be in the map coordinates i.e. u is from left to right, v from up do down. If the available data is in geographical coordinates i.e. west-east and north-south, these coordinates have to be rotated or the vector direction won't be plot properly. This is the aim of the rotate_vector method.
+
+When drawing barbs, quiver or stream lines, the number of available points may be too low, so interpolating them to a new matrix with more elements can be used to get a plot with a nice number of elements.
+ 
+The method :ref:`rotate_vector` does the same function, but without interpolating the points
+
+`transform_vector(uin, vin, lons, lats, nx, ny, returnxy=False, checkbounds=False, order=1, masked=False) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.transform_vector>`_
+
+* uin and vin are the input data matrices. The directions are the geographical, so the u component is west-east and the v component, north-south
+* lons, lats are 1D numpy arrays with the positions of the uin an vin matrices, in geographical coordinates. The input lon-lat grid has to be regular (projections cyl, merc, mill, cea and gall)
+* nx and ny are the x any y domensions of the output grid. The output grid covers all the map, not the original points outside its domain. So the final number of points visible on the map will be nx x ny
+* returnxy makes the method to return the lons and lats matrices reprojected to the map coordinates. Just as calling the basemap instance
+* checkbounds if set to True, the xin and yin values are checked to be in the bounds of xout and yout. If False, and there are values outside the bounds, the output data array values will be clipped to the boundary values
+* masked makes the points outside the new grid to be masked if is set to True, or an arbitrary value if given
+* order sets the interpolation method:
+	* 0 uses the nearest neighbour method
+	* 1 uses a bilinear interpolation
+	* 3 uses a cubic spline, and requires scipy.ndimage to be installed
+
+.. note:: When the input matrix is not regular in longitude-latitude (i.e. is not a cylindric projection), this method can't be used properly, since the longitude-latitude grid won't be resular. See the :ref:`interp` example for a solution.
+
+.. literalinclude:: ../code_examples/utilities/transform_vector.py
+
+.. image:: images/utilities/transform_vector.png
+
+* lons and lats are created in an equal spaced grid covering all the globe, using `linspace <http://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html>`_
+* v10 and u10 are created so they represent a south to north wind (v10 = 10, u10 = 0). They are transformed to a 2D array using numpy.meshgrid
+* Once the data is created, the rotated and interpolated vectors and the new grid are created using transform_vector
+	* Setting nx and ny to 15, the new grid will be 15x15 in the map projection, so this is the final number of points visible in the final map
+* The original and rotated-interpolated fields are drawn

@@ -18,7 +18,7 @@ Basic functions:
 	* `Adding small images to basemap <http://stackoverflow.com/questions/11487797/python-matplotlib-basemap-overlay-small-image-on-map-plot>`_
 	* `Image rotation using imshow <http://stackoverflow.com/questions/14320159/matplotlib-imshow-data-rotated>`_
 	* `Complex example using imshow, shiftgrid and transform_scalar <http://matplotlib.org/basemap/users/examples.html>`_
-
+* `Vector rotation without regular grids using numpy <http://stackoverflow.com/questions/8878564/how-can-i-rotate-vectors-onto-a-basemap-map-projection>`_
 Zoom:
 
 * `Zooming in Basemap <http://www.geophysique.be/2010/05/05/matplotlib-basemap-tutorial-part-03-masked-arrays-zoom/>`_

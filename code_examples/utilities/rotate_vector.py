@@ -33,8 +33,8 @@ map.barbs(x, y, u10, v10,
 ax = fig.add_subplot(122)
 ax.set_title('Rotated vectors')
 
-map.drawmapboundary(fill_color='aqua')
-map.fillcontinents(color='#cc9955', lake_color='aqua', zorder = 0)
+map.drawmapboundary(fill_color='9999FF')
+map.fillcontinents(color='#ddaa66', lake_color='9999FF', zorder = 0)
 map.drawcoastlines(color = '0.15')
 
 map.barbs(x, y, u10_rot, v10_rot, 
