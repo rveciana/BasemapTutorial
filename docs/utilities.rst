@@ -370,9 +370,53 @@ Tissot's indicatrices for the Albers Equal Area projection:
 
 .. _transform_vector:
 
+transform_scalar
+----------------
+Given a matrix with scalar values in a cylindrical projection, and the longitude and latitude of the points, interpolates the points to a new matrix..
+
+`transform_scalar(datin, lons, lats, nx, ny, returnxy=False, checkbounds=False, order=1, masked=False) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.transform_scalar>`_
+
+* datain is a 2d numpy array with the scalar values
+* lons, lats are 1D numpy arrays with the positions of the uin an vin matrices, in geographical coordinates. The input lon-lat grid has to be regular (projections cyl, merc, mill, cea and gall)
+* nx and ny are the x any y domensions of the output grid. The output grid covers all the map, not the original points outside its domain. So the final number of points visible on the map will be nx x ny
+* returnxy makes the method to return the lons and lats matrices reprojected to the map coordinates. Just as calling the basemap instance
+* checkbounds if set to True, the xin and yin values are checked to be in the bounds of xout and yout. If False, and there are values outside the bounds, the output data array values will be clipped to the boundary values
+* masked makes the points outside the new grid to be masked if is set to True, or an arbitrary value if given
+* order sets the interpolation method:
+	* 0 uses the nearest neighbour method
+	* 1 uses a bilinear interpolation
+	* 3 uses a cubic spline, and requires scipy.ndimage to be installed
+
+.. note:: When the input matrix is not regular in longitude-latitude (i.e. is not a cylindric projection), this method can't be used properly, since the longitude-latitude grid won't be resular. See the :ref:`interp` example for a solution.
+
+.. literalinclude:: ../code_examples/utilities/transform_scalar.py
+
+.. image:: images/utilities/transform_scalar.png
+
+* The data taken for this example is a dem data for another region and projection, but we'll use fake longitudes and latitudes so it can be used. 
+* `numpy linspace <http://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html>`_ is used to generate an equal spaced longitudes and latitudes arrays. They have to be 1D to use transform_scalar, so the projection has to be cylindrical (projections cyl, merc, mill, cea and gall)
+* The original field is drawn on the first map
+	* lons and lats are converted first to 2D arrays using `meshgrid <http://docs.scipy.org/doc/numpy/reference/generated/numpy.meshgrid.html>`_
+	* The longitudes and latitudes are converted to the mercator projection using the basemap instance
+	* :ref:`pcolormesh` is used to draw the result, taking care to set the maximum and minimum values, so the two maps behave the same way  
+* transform_scalar is applyied
+	* The returnxy argument set to true, so the new grid positions can be get easily
+	* The size of the new grid will be 40x40, so the pixels are still visible, but small. A bigger number would make the pixels to be much smaller
+* The same ref:`pcolormesh` is used to plot the data. The maximum and minimum valeus are the same as in the later case. If not, the function would assume only the valeus in the map region, so the colors would be different
+
+..  note:: Masked doesn't seem to work
+
+.. literalinclude:: ../code_examples/utilities/transform_scalar_globe.py
+
+.. image:: images/utilities/transform_scalar_globe.png
+
+* In this case, the data is the same as the used in the :ref:`shiftdata` example
+* Since the map covers the whole world, some of the points in the output grid are outside the world
+	* Using masked = True, those points should have nodata values, but this doesn't seem to work, and the points are drawn anyway, creating a very strange effect
+	
 transform_vector
 ----------------
-Given two matrices of the east-west and north-south components of a vectorial field, and the longitude and latitude of the points, rotates the vectors so they represent the direction properly on the map projection, while interpolates the points to a new matrix..
+Given two matrices of the east-west and north-south components of a vectorial field in a cylindrical projection, and the longitude and latitude of the points, rotates the vectors so they represent the direction properly on the map projection, while interpolates the points to a new matrix..
 
 Some functions, such as barbs, quiver or streamplot, that use vectorial data, aske the vector components to be in the map coordinates i.e. u is from left to right, v from up do down. If the available data is in geographical coordinates i.e. west-east and north-south, these coordinates have to be rotated or the vector direction won't be plot properly. This is the aim of the rotate_vector method.
 
