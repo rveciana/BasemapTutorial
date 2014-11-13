@@ -304,6 +304,8 @@ shiftdata
 
 Adds values to the longitudes so they can fit the correct map origin. Changes also the data array so it can fit the new origin. Sometimes, the longitude data is given in an interval different from -180, 180. From 0 to 360, for instance. To draw the data properly, this values must be shifted.
 
+.. note: The main difference from :ref:`shiftgrid`is that the input values must be in a cylindric projection with regular grids
+
 `shiftdata(lonsin, datain=None, lon_0=None) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.shiftdata>`_
 
 * lonsin the original longitudes. They have to be either a one dimension or two dimension arrays, but always in a regular lat/lon grid
@@ -338,6 +340,38 @@ Adds values to the longitudes so they can fit the correct map origin. Changes al
     :figclass: align-center
 
     The result whitout applying shiftdata. Note that the result is not as expected, since the longitudes are outside the right interval
+
+.. _shiftgrid:
+
+shiftgrid
+---------
+This function, similar to :ref:`shiftdata`, moves all the longitudes and data east or west.
+
+`basemap.shiftgrid(lon0, datain, lonsin, start=True, cyclic=360.0) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.shiftgrid>`_
+
+* Note that it's not a basemap method, but a separate function
+* lon0 The starting or ending longitude for the final grid. The value must be in the interval of the input longitudes, so sometimes must be set as the starting, and others as the ending with the start argument
+* datain the input data array, that will be re-ordered according to the longitudes
+* lonsin the input longitudes to be shifted. It's a 1D nump arra, but doesn't have to be in a regular interval
+* start argument, which is True by default, sets if the lon0 is the longitude of the initial longitude or the final one at the output array
+* cyclic sets the longitude value where the longitudes start again to lon0
+* The function returns the re-ordered data and the shifted longitudes
+
+..note: The main difference from :ref:`shiftdata`, is that the projection doesn't need to be cylindrical, since it's not a method from the basemap instance, and that the longitudes don't need to have a uniform incerement
+
+.. literalinclude:: ../code_examples/utilities/shiftgrid.py
+
+.. image:: images/utilities/shiftgrid.png
+
+
+* The coordinates and data arrays are fake data. Coordinates are created with a simple range, and the data array is the sumatory of the x and y positions, so the llower left position will be the one with a lower data value, and the highest, the upper right
+    * Note that longitudes start at 30
+    * The second element should be 60, but is changedd to 70 to show that the interval doesn't have to be regular, not as in :ref:`shiftdata`
+* The longitudes and data is shifted using the shiftgrid method
+    * The lon0 is set to 180, and the start to False, so the final longitude will be 180, and the ones passing this value, will be passed to -180
+    * It's not possible to set lon0 to -180, since is outside the input longitudes interval, so the avobe trick must be used
+* The new coordinated are passed to 2d using meshgrid, and re-projeccted to the map projection using the basemap instance
+* The filled contour can be now created
 
 tissot
 ------
