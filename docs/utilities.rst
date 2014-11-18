@@ -1,10 +1,5 @@
 Basemap utility functions
 =========================
-.. _makegrid:
-
-makegrid 
---------
-makegrid method creates an arbitrary grid of equally spaced points in the map projection
 
 .. _addcyclic:
 
@@ -189,6 +184,29 @@ The alternative way, which accepts multiple points and, in fact could be used wi
 * locations is a numpy array containing numpy arrays with the projected points
 * The PATH objects are calculated for each of the polygons 
 * For each PATH, all the points are evaluated using contains_points. The result is casted into a numpy array so can be added with the previous evaluations. If one of the polygons contains the point, the result element will be true
+
+.. _makegrid:
+
+makegrid 
+--------
+makegrid method creates an arbitrary grid of equally spaced points in the map projection. Used to get the longitudes and latitudes that would form an an equally spaced grid using the map projection.
+
+`makegrid(nx, ny, returnxy=False) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.makegrid>`_
+
+* nx and n define the size of the output grid
+* If returnxy is set to True, the positions of the grid in the map projection are also returned
+* returns the longitudes and latitudes 2D numpy arrays, and the x and y in the map coordinates arrays if returnxy is set to True
+
+.. note: In some old basemap versions, the returnxy argument doesn't work, so map(lons, lats) has to be applied to get the output positions
+
+.. literalinclude:: ../code_examples/utilities/makegrid.py
+
+.. image:: images/utilities/makegrid.png
+
+* Two maps are created, one using the same projection as in the regular grid, and the other with another projection to show how to use the created longitudes and latitudes matrices
+* makegrid is used with the returnxy set to True
+    * The first map uses the x and y matrices directly, since is in the same projection. As expected, the created points form a regular grid of 30x30
+    * The second map uses the lons and lats matrices, reprojecting them into the new projection using the basemap instance. The scatter shows that in the new projection, the grid is not regular
 
 .. _maskoceans:
 
