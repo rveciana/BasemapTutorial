@@ -9,7 +9,7 @@ Creates text with an arrow indicating the point of interest. To create a :ref:`t
 
 `annotate(*args, **kwargs) <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.annotate>`_
 
-* The text method does not belong to Basemap, but directly to matplotlib, so it must be called from the plot or axe instance
+* The text method does not belong to Basemap, but directly to matplotlib, so it must be called from the plot or axis instance
 * The first argument is the text string
 * xy is a list with the x and y coordinates of the point pointed by the arrow. This will be interprete depending on the xycoords argument
 * xycoords indicates the type of coordinates used in xy:
@@ -36,7 +36,7 @@ Plots wind barbs on the map
 
 `The barbs docs from the matplotlib documentation <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.barbs>`_ is much more detailed.
 
-* x and y give the positions of the grid data if the latlon argument is true, the valeus are supposed to be in geographical coordinates. If not, in the map coordinates
+* x and y give the positions of the grid data if the latlon argument is true, the values are supposed to be in geographical coordinates. If not, in the map coordinates
 * u and v are the left-right and up-down magnitudes of the wind in knots (the values to create the barbs are 5, 10, 15 and so on). 
 	* Note that they are NOT in north-south ans west-east. If the input projection has non-cylindrical projections (those other than cyl, merc, cyl, gall and mill), the u and v should be rotated, using :ref:`rotate_vector` or :ref:`transform_vector` methods
 
@@ -66,7 +66,7 @@ Creates a contour plot.
 
 * x and y are matrices of the same size as data, containing the positions of the elements in the map coordinates
 * data is the matrix containing the data values to plot
-* The default colormap is *jet*, but the argument *cmap* can be used to change the behaviour
+* The default colormap is *jet*, but the argument *cmap* can be used to change the behavior
 * The argument tri = True makes the grid to be assumed as unstructured. See `this post <http://matplotlib.org/examples/pylab_examples/tricontour_vs_griddata.html>`_ to check the differences
 * Other possible arguments are documented in the `matplotlib function docs <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.contour>`__
 * Labels can be added to the contour result, as in the :ref:`basic_contour` example at basic functions section
@@ -83,7 +83,7 @@ Creates a filled contour plot.
 
 * x and y are matrices of the same size as data, containing the positions of the elements in the map coordinates
 * data is the matrix containing the data values to plot
-* The default colormap is *jet*, but the argument *cmap* can be used to change the behaviour
+* The default colormap is *jet*, but the argument *cmap* can be used to change the behavior
 * The argument tri = True makes the grid to be assumed as unstructured. See `this post <http://matplotlib.org/examples/pylab_examples/tricontour_vs_griddata.html>`_ to check the differences
 * Other possible arguments are documented in the `matplotlib function docs <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.contourf>`__
 
@@ -95,7 +95,7 @@ Creates a filled contour plot.
 
 hexbin
 ------
-Plots an hexagonal bin from a set of positions. Can plot the number of occurrences in each bin (hexagon) or give a weight to each occurence
+Plots an hexagonal bin from a set of positions. Can plot the number of occurrences in each bin (hexagon) or give a weight to each occurrence
 
 `hexbin(x, y, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.hexbin>`_
 
@@ -105,7 +105,7 @@ The information is much better at `the matplotlib.hexbin docs <http://matplotlib
 * gridsize sets the number of bins (hexagons) in the x direction. By default is 100
 * C argument is also a numpy array with the values at each point. Those values are processed by default with numpy.mean function at each bin (hexagon)
 * reduce_C_function is the function applied to the elements in each bin (hexagon). By default, is numpy.mean
-* bins argument can change the behaviour of the counting function. 
+* bins argument can change the behavior of the counting function. 
 	* By default is None, which means that the number of occurrences are plotted. 
 	* 'log' makes the logarithm of the number of occurrences is plotted
 	* An integer value divides the number of occurrences by this number (useful for percentages if the number is the total of points) 
@@ -122,8 +122,8 @@ The information is much better at `the matplotlib.hexbin docs <http://matplotlib
 	:linenos:
 	
 * The example creates four examples to show different options
-* Lines 14 to 25 read all the points, corresponding to lighning data, as explained at the section :ref:`shapefile_points`.
-* The first example shows the minimum use of hexbin. Note that the bins are quite small, that the zones with no occurrences are plotted with dark blue while the zones outsode the shaefile data bounding box stay without data
+* Lines 14 to 25 read all the points, corresponding to lightning data, as explained at the section :ref:`shapefile_points`.
+* The first example shows the minimum use of hexbin. Note that the bins are quite small, that the zones with no occurrences are plotted with dark blue while the zones outside the shapefile data bounding box stay without data
 * The second example changes the bin (hexagon) size using the gridsize argument, sets a minimum of occurrences to plot the data with mincnt and makes the colors to behave in a logarithmic scale with bins. Note that the color bar shows the value of the logarithm
 * To avoid the color bar to show the logarithm value, I found `this solution at StackOverflow <http://stackoverflow.com/questions/17201172/a-logarithmic-colorbar-in-matplotlib-scatter-plot>`_ that substitutes the bins argument but draws the same while getting a better color bar
 * The last example shows how to use the C argument. 
@@ -157,7 +157,7 @@ The information is much better at `the matplotlib.hexbin docs <http://matplotlib
 
 imshow
 ------
-Plots an image on the map. The image can be a regular rgb image, or a field coloured with a cmap.
+Plots an image on the map. The image can be a regular rgb image, or a field colored with a cmap.
 
 `imshow(*args, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.imshow>`_ 
 
@@ -180,7 +180,7 @@ The first example shows hot to use jpg image and a field as a pseudocolored imag
 * The elevation data is plotted with the terrain colormap and with an alpha value to allow viewing both layers at once
 * Note that the extent hasn't been set, since the map extent is the same as the image extension
 
-The second example shows how to add a logo directly on the map or on a new created axie:
+The second example shows how to add a logo directly on the map or on a new created axis:
 
 .. literalinclude:: ../code_examples/plotting_data/imshow_logo.py
 
@@ -188,15 +188,15 @@ The second example shows how to add a logo directly on the map or on a new creat
 
 * The first icon is drawn on the map using the extent argument. The coordinates have been converted to the map units
 * The second logo is outside the globe, so no map coordinates can be used to place it properly
-	* An axis named axicon is created. The numbers set the x and y position, and width and heoght of the axis. All them un fractions of the plot size.
+	* An axis named axicon is created. The numbers set the x and y position, and width and height of the axis. All them in fractions of the plot size.
 	* The image is plotted, but with the argument origin to avoid to have upside down
 	* xticks and ytixcks are set to null, so they are not drawn on the logo
 
-I learnt how to do it from these examples: `1 <http://stackoverflow.com/questions/3765056/combine-picture-and-plot-with-python-matplotlib>`_ and `2 <http://stackoverflow.com/questions/11487797/python-matplotlib-basemap-overlay-small-image-on-map-plot>`_
+I learned how to do it from these examples: `1 <http://stackoverflow.com/questions/3765056/combine-picture-and-plot-with-python-matplotlib>`_ and `2 <http://stackoverflow.com/questions/11487797/python-matplotlib-basemap-overlay-small-image-on-map-plot>`_
 
 pcolor
 ------
-The behaviour of this function is almost the same as in :ref:`pcolormesh`. A good explanation `here <http://thomas-cokelaer.info/blog/2014/05/matplotlib-difference-between-pcolor-pcolormesh-and-imshow/>`_
+The behavior of this function is almost the same as in :ref:`pcolormesh`. A good explanation `here <http://thomas-cokelaer.info/blog/2014/05/matplotlib-difference-between-pcolor-pcolormesh-and-imshow/>`_
 
 .. _pcolormesh:
 
@@ -208,7 +208,7 @@ Creates a pseudo-color plot
 
 * x and y are matrices of the same size as data, containing the positions of the elements in the map coordinates
 * data is the matrix containing the data values to plot
-* The default colormap is *jet*, but the argument *cmap* can be used to change the behaviour
+* The default colormap is *jet*, but the argument *cmap* can be used to change the behavior
 * Other possible arguments are documented in the `matplotlib function docs <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.pcolormesh>`__
 
 .. literalinclude:: ../code_examples/basic_functions/pcolormesh.py
@@ -224,7 +224,7 @@ The function has the following arguments:
 `plot(x, y, *args, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.plot>`_
 
 * x and y can be either a float with the position of a marker in the projection units, or lists with the points form drawing a line
-* If latlon keyword is set to True, x,y are intrepreted as longitude and latitude in degrees. Won't work in old *basemap* versions
+* If latlon keyword is set to True, x,y are interpreted as longitude and latitude in degrees. Won't work in old *basemap* versions
 * By default, the marker is a point. `This page explains all the options <http://matplotlib.org/api/markers_api.html>`_
 * By default, the color is black (k). `This page explains all the color options <http://matplotlib.org/api/colors_api.html>`_
 
@@ -242,13 +242,13 @@ If the arguments are arrays, the output is a line (without markers in this case)
 
 quiver
 ------
-Plots a vector field on the map. Many of the behaviour is similar to the :ref:`barbs` method.
+Plots a vector field on the map. Many of the behavior is similar to the :ref:`barbs` method.
 
 `quiver(x, y, u, v, *args, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.quiver>`_
 
 The `documentation at matplotlib <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.quiver>`_ is much more detailed than at the basemap docs. 
 
-* x and y give the positions of the grid data if the latlon argument is true, the valeus are supposed to be in geographical coordinates. If not, in the map coordinates
+* x and y give the positions of the grid data if the latlon argument is true, the values are supposed to be in geographical coordinates. If not, in the map coordinates
 * u and v are the left-right and up-down magnitudes
 	* Note that they are NOT in north-south ans west-east. If the input projection has non-cylindrical projections (those other than cyl, merc, cyl, gall and mill), the u and v should be rotated, using :ref:`rotate_vector` or :ref:`transform_vector` methods
 * The fifth argument, which is optional, sets a value to assign the color to the arrow
@@ -274,7 +274,7 @@ Plot multiple markers on the map
 `scatter(x, y, *args, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.scatter>`_
 
 * x and y is a list of points to add to the map as markers
-* If latlon keyword is set to True, x,y are intrepreted as longitude and latitude in degrees. Won't work in old *basemap* versions
+* If latlon keyword is set to True, x,y are interpreted as longitude and latitude in degrees. Won't work in old *basemap* versions
 * By default, the marker is a point. `This page explains all the options <http://matplotlib.org/api/markers_api.html>`_
 * By default, the color is black (k). `This page explains all the color options <http://matplotlib.org/api/colors_api.html>`_
 
@@ -303,7 +303,7 @@ Plots streamlines from a vectorial field.
 	* If is an array, the streamline width will change according to the values of the array
 * density sets the closeness of streamlines to plot. a 1 value means the domains is divided in 30x30, with only one streamline crossing each sector. If a list with two elements is passed, the x and y densities are set to different values
 * norm  Normalizes the scale to set luminance data
-* arrowsize scales thearrow size
+* arrowsize scales the arrow size
 * arrowstyle stes the arrow style. The docs are at `FancyArrowPatch <http://matplotlib.org/1.3.0/api/artist_api.html#matplotlib.patches.FancyArrowPatch>`_
 * minlength sets the minimum length of the streamline in the map coordinates
 * The best documentation for the function is not `the one in Basemap <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.streamplot>`_, but in `matplotlib <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.streamplot>`_
@@ -322,8 +322,8 @@ Plots a text on the map
 
 `text(x, y, s, fontdict=None, withdash=False, **kwargs) <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.text>`_
 
-* The text method does not belong to Basemap, but directly to matplotlib, so it must be called from the plot or axe instance
-* x and y are the coordinates in the map projection. Arrays of coordinates are not accepted, so to add multiple labels, call the metho multiple times
+* The text method does not belong to Basemap, but directly to matplotlib, so it must be called from the plot or axis instance
+* x and y are the coordinates in the map projection. Arrays of coordinates are not accepted, so to add multiple labels, call the method multiple times
 * s is the text string
 * withdash creates a text with a dash when set to true
 * fontdict can be used to group the text properties
@@ -331,7 +331,7 @@ Plots a text on the map
 The text can have many many options such as:
 
 * fontsize the font size
-* fontweight font wheight, such as bold
+* fontweight font weight, such as bold
 * ha horitzontal align, like center, left or right
 * va vertical align, like center, top or bottom
 * color the color. `This page explains all the color options <http://matplotlib.org/api/colors_api.html>`_

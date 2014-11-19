@@ -9,7 +9,7 @@ Drawing a point in a map is usually done using the `plot method <http://matplotl
 .. image:: images/basic_functions/point.png
 
 * Use the Basemap instance to calculate the position of the point in the map coordinates when you have the longitude and latitude of the point
-	* If latlon keyword is set to True, x,y are intrepreted as longitude and latitude in degrees. Won't work in old *basemap* versions
+	* If latlon keyword is set to True, x,y are interpreted as longitude and latitude in degrees. Won't work in old *basemap* versions
 * The *plot* method needs the x and y position in the map coordinates, the marker and the color
 	* By default, the marker is a point. `This page explains all the options <http://matplotlib.org/api/markers_api.html>`_
 	* By default, the color is black (k). `This page explains all the color options <http://matplotlib.org/api/colors_api.html>`_
@@ -25,7 +25,7 @@ If you have more than one point, you may prefer the `scatter method <http://matp
 
 Plotting raster data
 --------------------
-There are two main methods for plotting a raster, *contour/contourf*, that plots contour lines or filled contour lines (isobands) and *pcolor/pcolormesh*, that creates a pseudocolor plot.
+There are two main methods for plotting a raster, *contour/contourf*, that plots contour lines or filled contour lines (isobands) and *pcolor/pcolormesh*, that creates a pseudo-color plot.
 
 .. _basic_contourf:
 
@@ -90,5 +90,5 @@ The output will be:
 	(20015077.3712, 20015077.3712)
 	(10.000000000000002, 50.000000000000014)
 	
-When inverse is False, the input is a point in longitude and latitude, and the output is the point in the map coordinates. When inverse is True, the behaviour is the opposite.
+When inverse is False, the input is a point in longitude and latitude, and the output is the point in the map coordinates. When inverse is True, the behavior is the opposite.
 	 

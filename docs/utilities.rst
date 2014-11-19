@@ -29,8 +29,8 @@ Draws the color legend at one of the edges of the map. The use is almost the sam
 
 * mappable is the most important argument. Is the field on the map to be explained with the colorscale. It can be a contourf, a pcolormesh, contour, etc. If the value is None, the last drawn field is represented
 * location sets the border of the map where the color scale is drawn. Can be top, right, left or bottom
-* size sets the width of the color bar, in % of the parent axe
-* pad sets the separation between the axes and the color bar, also in % of the parent axe
+* size sets the width of the color bar, in % of the parent axis
+* pad sets the separation between the axes and the color bar, also in % of the parent axis
 * fig is the figure the colorbar is associated with
 
 Most of the matplotlib.colorbar arguments will work too, such as label
@@ -44,7 +44,7 @@ The colorbar method returns an object, which has some interesting methods too:
 
 .. image:: images/utilities/colorbar.png 
 
-* A colormesh and a contour fields are plotted, to be able to use some advenced colorbar attributes
+* A colormesh and a contour fields are plotted, to be able to use some advanced colorbar attributes
 * The first colorbar (line 27), shows the default use of the colorbar. The pcolormesh is passed as the argument, to force the method to draw this one instead of the contour field
 * The second colorbar uses some more arguments
 	* The position is changed to bottom
@@ -104,7 +104,7 @@ greatcircle
 
 * lon1 and lat1 are the longitude and latitude of the starting point
 * lon2 and lat2 are the longitude and latitude of the ending point
-* del_s is the number of kilometers that separe each point of the great circle. Defaults to 100
+* del_s is the number of kilometers that separate each point of the great circle. Defaults to 100
 * linewidth argument sets the width of the line
 * color sets the color of the line. `This page explains all the color options <http://matplotlib.org/api/colors_api.html>`_
 
@@ -112,7 +112,7 @@ greatcircle
 
 .. literalinclude:: ../code_examples/utilities/drawgreatcircle_mercator.py
 
-When using mercator projection, the meridians and parallels are straight lines, but the great circles usually are not
+When using Mercator projection, the meridians and parallels are straight lines, but the great circles usually are not
 
 .. image:: images/utilities/drawgreatcircle_mercator.png
 
@@ -132,16 +132,16 @@ Useful to create smoother plots or to have more elements when using barbs or qui
 
 `interp(datain, xin, yin, xout, yout, checkbounds=False, masked=False, order=1) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.interp>`_
 
-* This function is not a method of the basemap instance, but a separate one in the baemap module
+* This function is not a method of the basemap instance, but a separate one in the basemap module
 * datain is the data array to interpolate. It has to be a 2d numpy array
-* xin and yin are the coordinates of the input data array, in one dimendion each. 
+* xin and yin are the coordinates of the input data array, in one dimension each. 
 	* This point is important, since implies that the input grid has to be regular (so no lon-lat grid in a different projection)
 	* y has to be in increasing order
 * xout and yout are the coordinates of the output data array. They have to be 2d numpy arrays.
 * checkbounds if set to True, the xin and yin values are checked to be in the bounds of xout and yout. If False, and there are values outside the bounds, the output data array values will be clipped to the boundary values
 * masked makes the points outside the new grid to be masked if is set to True, or an arbitrary value if given
 * order sets the interpolation method:
-	* 0 uses the nearest neighbour method
+	* 0 uses the nearest neighbor method
 	* 1 uses a bilinear interpolation
 	* 3 uses a cubic spline, and requires scipy.ndimage to be installed 
 
@@ -206,7 +206,7 @@ makegrid method creates an arbitrary grid of equally spaced points in the map pr
 * Two maps are created, one using the same projection as in the regular grid, and the other with another projection to show how to use the created longitudes and latitudes matrices
 * makegrid is used with the returnxy set to True
     * The first map uses the x and y matrices directly, since is in the same projection. As expected, the created points form a regular grid of 30x30
-    * The second map uses the lons and lats matrices, reprojecting them into the new projection using the basemap instance. The scatter shows that in the new projection, the grid is not regular
+    * The second map uses the lons and lats matrices, re-projecting them into the new projection using the basemap instance. The scatter shows that in the new projection, the grid is not regular
 
 .. _maskoceans:
 
@@ -216,7 +216,7 @@ Takes a data array and masks the values at the points in the oceans and lakes
 
 `mpl_toolkits.basemap.maskoceans(lonsin, latsin, datain, inlands=True, resolution='l', grid=5) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.maskoceans>`_
 
-* This function is not a method of the basemap instance, but a separate one in the baemap module
+* This function is not a method of the basemap instance, but a separate one in the basemap module
 * lonsin and latsin are the location of the points in 2 dimensions arrays. Only latlon projections can be used with this method
 * datain is the array containing the values to mask with the oceans
 * inland sets if the lakes have to be masked too (true by default)
@@ -272,7 +272,7 @@ rotate_vector
 
 Given two matrices of the east-west and north-south components of a vectorial field, and the longitude and latitude of the points, rotates the vectors so they represent the direction properly on the map projection
 
-Some functions, such as barbs, quiver or streamplot, that use vectorial data, aske the vector components to be in the map coordinates i.e. u is from left to right, v from up do down. If the available data is in geographical coordinates i.e. west-east and north-south, these coordinates have to be rotated or the vector direction won't be plot properly. This is the aim of the rotate_vector method.
+Some functions, such as barbs, quiver or streamplot, that use vectorial data, asks the vector components to be in the map coordinates i.e. u is from left to right, v from up do down. If the available data is in geographical coordinates i.e. west-east and north-south, these coordinates have to be rotated or the vector direction won't be plot properly. This is the aim of the rotate_vector method.
 
 The method :ref:`transform_vector` does the same function, but changing the grid size at the same time (interpolating the points)
 
@@ -327,17 +327,17 @@ Adds values to the longitudes so they can fit the correct map origin. Changes al
 `shiftdata(lonsin, datain=None, lon_0=None) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.shiftdata>`_
 
 * lonsin the original longitudes. They have to be either a one dimension or two dimension arrays, but always in a regular lat/lon grid
-* datain is the data array. If the longitudes have to be cut (-180 becomes 360, for instance), the order of the data array has to be cnahged. If the data is given, this opration is done
+* datain is the data array. If the longitudes have to be cut (-180 becomes 360, for instance), the order of the data array has to be changed. If the data is given, this operation is done
 * lon_0 is the map origin. The longitudes will be fit in the interval [lon_0-180,lon_0+180]
 
 .. note: The longitudes must be in a regular interval, even though they are a 1d or a 2d array
 
 .. literalinclude:: ../code_examples/utilities/shiftdata.py
 
-* The coordinates and data arrays are fake data. Coordinates are created with a simple range, and the data array is the sumatory of the x and y positions, so the llower left position will be the one with a lower data value, and the highest, the upper right
+* The coordinates and data arrays are fake data. Coordinates are created with a simple range, and the data array is the sum of the x and y positions, so the lower left position will be the one with a lower data value, and the highest, the upper right
 	* Note that longitudes start at 30
 * The longitudes and data is shifted using the shiftdata method
-* The new coordinated are passed to 2d using meshgrid, and re-projeccted to the map projection using the basemap instance
+* The new coordinated are passed to 2d using meshgrid, and re-projected to the map projection using the basemap instance
 * The filled contour can be now created
 * The final result has a white band, which could be avoided using the addcyclic method: :ref:`addcyclic`
 
@@ -357,7 +357,7 @@ Adds values to the longitudes so they can fit the correct map origin. Changes al
     :alt: The result whitout applying shiftdata
     :figclass: align-center
 
-    The result whitout applying shiftdata. Note that the result is not as expected, since the longitudes are outside the right interval
+    The result without applying shiftdata. Note that the result is not as expected, since the longitudes are outside the right interval
 
 .. _shiftgrid:
 
@@ -370,7 +370,7 @@ This function, similar to :ref:`shiftdata`, moves all the longitudes and data ea
 * Note that it's not a basemap method, but a separate function
 * lon0 The starting or ending longitude for the final grid. The value must be in the interval of the input longitudes, so sometimes must be set as the starting, and others as the ending with the start argument
 * datain the input data array, that will be re-ordered according to the longitudes
-* lonsin the input longitudes to be shifted. It's a 1D nump arra, but doesn't have to be in a regular interval
+* lonsin the input longitudes to be shifted. It's a 1D numpy array, but doesn't have to be in a regular interval
 * start argument, which is True by default, sets if the lon0 is the longitude of the initial longitude or the final one at the output array
 * cyclic sets the longitude value where the longitudes start again to lon0
 * The function returns the re-ordered data and the shifted longitudes
@@ -382,13 +382,13 @@ This function, similar to :ref:`shiftdata`, moves all the longitudes and data ea
 .. image:: images/utilities/shiftgrid.png
 
 
-* The coordinates and data arrays are fake data. Coordinates are created with a simple range, and the data array is the sumatory of the x and y positions, so the llower left position will be the one with a lower data value, and the highest, the upper right
+* The coordinates and data arrays are fake data. Coordinates are created with a simple range, and the data array is the sumatory of the x and y positions, so the lower left position will be the one with a lower data value, and the highest, the upper right
     * Note that longitudes start at 30
-    * The second element should be 60, but is changedd to 70 to show that the interval doesn't have to be regular, not as in :ref:`shiftdata`
+    * The second element should be 60, but is changed to 70 to show that the interval doesn't have to be regular, not as in :ref:`shiftdata`
 * The longitudes and data is shifted using the shiftgrid method
     * The lon0 is set to 180, and the start to False, so the final longitude will be 180, and the ones passing this value, will be passed to -180
     * It's not possible to set lon0 to -180, since is outside the input longitudes interval, so the avobe trick must be used
-* The new coordinated are passed to 2d using meshgrid, and re-projeccted to the map projection using the basemap instance
+* The new coordinated are passed to 2d using meshgrid, and re-projected to the map projection using the basemap instance
 * The filled contour can be now created
 
 tissot
@@ -430,31 +430,31 @@ Given a matrix with scalar values in a cylindrical projection, and the longitude
 
 * datain is a 2d numpy array with the scalar values
 * lons, lats are 1D numpy arrays with the positions of the uin an vin matrices, in geographical coordinates. The input lon-lat grid has to be regular (projections cyl, merc, mill, cea and gall)
-* nx and ny are the x any y domensions of the output grid. The output grid covers all the map, not the original points outside its domain. So the final number of points visible on the map will be nx x ny
+* nx and ny are the x any y dimensions of the output grid. The output grid covers all the map, not the original points outside its domain. So the final number of points visible on the map will be nx x ny
 * returnxy makes the method to return the lons and lats matrices reprojected to the map coordinates. Just as calling the basemap instance
 * checkbounds if set to True, the xin and yin values are checked to be in the bounds of xout and yout. If False, and there are values outside the bounds, the output data array values will be clipped to the boundary values
 * masked makes the points outside the new grid to be masked if is set to True, or an arbitrary value if given
 * order sets the interpolation method:
-	* 0 uses the nearest neighbour method
+	* 0 uses the nearest neighbor method
 	* 1 uses a bilinear interpolation
 	* 3 uses a cubic spline, and requires scipy.ndimage to be installed
 
-.. note:: When the input matrix is not regular in longitude-latitude (i.e. is not a cylindric projection), this method can't be used properly, since the longitude-latitude grid won't be resular. See the :ref:`interp` example for a solution.
+.. note:: When the input matrix is not regular in longitude-latitude (i.e. is not a cylindric projection), this method can't be used properly, since the longitude-latitude grid won't be regular. See the :ref:`interp` example for a solution.
 
 .. literalinclude:: ../code_examples/utilities/transform_scalar.py
 
 .. image:: images/utilities/transform_scalar.png
 
-* The data taken for this example is a dem data for another region and projection, but we'll use fake longitudes and latitudes so it can be used. 
+* The data taken for this example is a DEM data for another region and projection, but we'll use fake longitudes and latitudes so it can be used. 
 * `numpy linspace <http://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html>`_ is used to generate an equal spaced longitudes and latitudes arrays. They have to be 1D to use transform_scalar, so the projection has to be cylindrical (projections cyl, merc, mill, cea and gall)
 * The original field is drawn on the first map
 	* lons and lats are converted first to 2D arrays using `meshgrid <http://docs.scipy.org/doc/numpy/reference/generated/numpy.meshgrid.html>`_
 	* The longitudes and latitudes are converted to the mercator projection using the basemap instance
 	* :ref:`pcolormesh` is used to draw the result, taking care to set the maximum and minimum values, so the two maps behave the same way  
-* transform_scalar is applyied
+* transform_scalar is applied
 	* The returnxy argument set to true, so the new grid positions can be get easily
 	* The size of the new grid will be 40x40, so the pixels are still visible, but small. A bigger number would make the pixels to be much smaller
-* The same ref:`pcolormesh` is used to plot the data. The maximum and minimum valeus are the same as in the later case. If not, the function would assume only the valeus in the map region, so the colors would be different
+* The same ref:`pcolormesh` is used to plot the data. The maximum and minimum values are the same as in the later case. If not, the function would assume only the values in the map region, so the colors would be different
 
 ..  note:: Masked doesn't seem to work
 
@@ -464,13 +464,13 @@ Given a matrix with scalar values in a cylindrical projection, and the longitude
 
 * In this case, the data is the same as the used in the :ref:`shiftdata` example
 * Since the map covers the whole world, some of the points in the output grid are outside the world
-	* Using masked = True, those points should have nodata values, but this doesn't seem to work, and the points are drawn anyway, creating a very strange effect
+	* Using masked = True, those points should have no-data values, but this doesn't seem to work, and the points are drawn anyway, creating a very strange effect
 	
 transform_vector
 ----------------
 Given two matrices of the east-west and north-south components of a vectorial field in a cylindrical projection, and the longitude and latitude of the points, rotates the vectors so they represent the direction properly on the map projection, while interpolates the points to a new matrix..
 
-Some functions, such as barbs, quiver or streamplot, that use vectorial data, aske the vector components to be in the map coordinates i.e. u is from left to right, v from up do down. If the available data is in geographical coordinates i.e. west-east and north-south, these coordinates have to be rotated or the vector direction won't be plot properly. This is the aim of the rotate_vector method.
+Some functions, such as barbs, quiver or streamplot, that use vectorial data, asks the vector components to be in the map coordinates i.e. u is from left to right, v from up do down. If the available data is in geographical coordinates i.e. west-east and north-south, these coordinates have to be rotated or the vector direction won't be plot properly. This is the aim of the rotate_vector method.
 
 When drawing barbs, quiver or stream lines, the number of available points may be too low, so interpolating them to a new matrix with more elements can be used to get a plot with a nice number of elements.
  
@@ -480,12 +480,12 @@ The method :ref:`rotate_vector` does the same function, but without interpolatin
 
 * uin and vin are the input data matrices. The directions are the geographical, so the u component is west-east and the v component, north-south
 * lons, lats are 1D numpy arrays with the positions of the uin an vin matrices, in geographical coordinates. The input lon-lat grid has to be regular (projections cyl, merc, mill, cea and gall)
-* nx and ny are the x any y domensions of the output grid. The output grid covers all the map, not the original points outside its domain. So the final number of points visible on the map will be nx x ny
+* nx and ny are the x any y dimensions of the output grid. The output grid covers all the map, not the original points outside its domain. So the final number of points visible on the map will be nx x ny
 * returnxy makes the method to return the lons and lats matrices reprojected to the map coordinates. Just as calling the basemap instance
 * checkbounds if set to True, the xin and yin values are checked to be in the bounds of xout and yout. If False, and there are values outside the bounds, the output data array values will be clipped to the boundary values
 * masked makes the points outside the new grid to be masked if is set to True, or an arbitrary value if given
 * order sets the interpolation method:
-	* 0 uses the nearest neighbour method
+	* 0 uses the nearest neighbor method
 	* 1 uses a bilinear interpolation
 	* 3 uses a cubic spline, and requires scipy.ndimage to be installed
 

@@ -9,7 +9,7 @@ Downloads and plots an image using the `arcgis REST API service <http://server.a
 `arcgisimage(server='http://server.arcgisonline.com/ArcGIS', service='ESRI_Imagery_World_2D', xpixels=400, ypixels=None, dpi=96, verbose=False, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.arcgisimage>`_
 
 * server can be used to connect to another server using the same REST API
-* service is the layer to draw. To get the full list of available layers, check the `API webpage <http://server.arcgisonline.com/arcgis/rest/services>`_, 
+* service is the layer to draw. To get the full list of available layers, check the `API web page <http://server.arcgisonline.com/arcgis/rest/services>`_, 
 * xpixels actually sets the zoom of the image. A bigger number will ask a bigger image, so the image will have more detail. So when the zoom is bigger, the xsize must be bigger to maintain the resolution
 * ypixels can be used to force the image to have a different number of pixels in the y direction that the ones defined with the aspect ratio. By default, the aspect ratio is maintained, which seems a good value
 * dpi is the image resolution at the output device. Changing its value will change the number of pixels, but not the zoom level 
@@ -36,7 +36,7 @@ Plots the `bluemarble image <http://visibleearth.nasa.gov/>`_ on the map.
 `bluemarble(ax=None, scale=None, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.bluemarble>`_
 
 * The scale is useful to downgrade the original image resolution to speed up the process. A value of 0.5 will divide the size of the image by 4
-* The image is warped to the final projection, so all projectinos work properly with this method
+* The image is warped to the final projection, so all projections work properly with this method
 
 .. literalinclude:: ../code_examples/backgrounds/bluemarble.py
 
@@ -51,7 +51,7 @@ The function has the following arguments:
 `drawcoastlines(linewidth=1.0, linestyle='solid', color='k', antialiased=1, ax=None, zorder=None) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawcoastlines>`_
 
 * linewidth sets, of course, the line width in pixels
-* linestyle sets the line type. By default is solid, but can be dashed, o rany matplotlib option
+* linestyle sets the line type. By default is solid, but can be dashed, or any matplotlib option
 * color is k (black) by default. Follows also matplotlib conventions
 * antialiased is true by default
 * zorder sets the layer position. By default, the order is set by Basemap
@@ -67,17 +67,17 @@ Draws the USA counties from the layer included with the library
 `drawcounties(linewidth=0.1, linestyle='solid', color='k', antialiased=1, facecolor='none', ax=None, zorder=None, drawbounds=False) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawcounties>`_
 
 * linewidth sets, of course, the line width in pixels
-* linestyle sets the line type. By default is solid, but can be dashed, o rany matplotlib option
+* linestyle sets the line type. By default is solid, but can be dashed, or any matplotlib option
 * color is k (black) by default. Follows also matplotlib conventions
 * antialiased is true by default
 * zorder sets the layer position. By default, the order is set by Basemap
 
-.. note:: facecolor argument, which is supposed to colour the counties, doesn't seem to work at least in some Basemap versions.
+.. note:: facecolor argument, which is supposed to color the counties, doesn't seem to work at least in some Basemap versions.
 
 Note that:
 
 * The resolution is fix, and doesn't depend on the resolution parameter passed to the class constructor
-* The coastline is in another function, and the country coasts are not considered coast, which makes necessary to combine the the moethod with others to get a good map
+* The coastline is in another function, and the country coasts are not considered coast, which makes necessary to combine the method with others to get a good map
 
 .. literalinclude:: ../code_examples/backgrounds/drawcounties.py
 	:emphasize-lines: 10
@@ -101,7 +101,7 @@ The function has the following arguments:
 Note that:
 
 * The resolution indicated when creating the :ref:`basemap` instance makes the layer to have a better or coarser resolution
-* The coastline is in another function, and the country coasts are not considered coast, which makes necessary to combine the the moethod with others to get a good map
+* The coastline is in another function, and the country coasts are not considered coast, which makes necessary to combine the method with others to get a good map
 
 .. literalinclude:: ../code_examples/backgrounds/drawcountries.py
 	:emphasize-lines: 10
@@ -120,7 +120,7 @@ A difference from the other methods is that the zorder can't be set in this meth
 
 `drawlsmask(land_color='0.8', ocean_color='w', lsmask=None, lsmask_lons=None, lsmask_lats=None, lakes=True, resolution='l', grid=5, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.drawlsmask>`_
 
-* land_color sets the color assigned to the land (a grey by default)
+* land_color sets the color assigned to the land (a gray by default)
 * ocean_color sets the colors of the oceans (white by default)
 * lsmask An array with alternative data. If None, the default data from the library is taken. The array must contain 0's for oceans and 1's for land
 * lsmask_lons the longitudes for the alternative land sea mask
@@ -169,7 +169,7 @@ Draws the meridians on the map
 * meridians is a list with the longitudes to plot. This can be created with *range()* if the values are integers. If you need floats, *np.arange()* is a good option
 * color sets the color of the line. `This page explains all the color options <http://matplotlib.org/api/colors_api.html>`_
 * linewidth sets, of course, the line width in pixels
-* zorder changes the position of the lines, to be able, fot instance, to make the land to cover the meridians, or the opposite
+* zorder changes the position of the lines, to be able, for instance, to make the land to cover the meridians, or the opposite
 * Sets the dashing style. The first element is the number of pixels to draw, and the second, the number of pixels to skip
 * labels change the positions where the labels are drawn. Setting the value to 1 makes the labels to be drawn at the selected edge of the map. The four positions are [left, right, top, bottom]
 
@@ -190,7 +190,7 @@ Draws the parallels on the map
 * parallels is a list with the longitudes to plot. This can be created with *range()* if the values are integers. If you need floats, *np.arange()* is a good option
 * color sets the color of the line. `This page explains all the color options <http://matplotlib.org/api/colors_api.html>`_
 * linewidth sets, of course, the line width in pixels
-* zorder changes the position of the lines, to be able, fot instance, to make the land to cover the parallels, or the opposite
+* zorder changes the position of the lines, to be able, for instance, to make the land to cover the parallels, or the opposite
 * Sets the dashing style. The first element is the number of pixels to draw, and the second, the number of pixels to skip
 * labels change the positions where the labels are drawn. Setting the value to 1 makes the labels to be drawn at the selected edge of the map. The four positions are [left, right, top, bottom]
 
@@ -264,7 +264,7 @@ Draws filled polygons with the continents
 
 * color sets the continent color. By default is a gry color. `This page explains all the color options <http://matplotlib.org/api/colors_api.html>`_
 * lake color sets the color of the lakes. By default doesn't draw them, but you may set it to aqua to plot them blue
-* alpha is a vaue from 0 to 1 to set the transparency
+* alpha is a value from 0 to 1 to set the transparency
 * zorder sets the position of the layer related to others. It can be used to hide (or show) a contourf layer, that should be only on the sea, for instance
 
 .. literalinclude:: ../code_examples/first_map/first_map_fill.py
@@ -279,7 +279,7 @@ Plots a shaded relief image. The origin is the www-shadedrelief.com web page. Th
 `shadedrelief(ax=None, scale=None, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.shadedrelief>`_
 
 * The scale is useful to downgrade the original image resolution to speed up the process. A value of 0.5 will divide the size of the image by 4. The original size is quite big, 10800x5400 pixels
-* The image is warped to the final projection, so all projectinos work properly with this method
+* The image is warped to the final projection, so all projections work properly with this method
 
 .. literalinclude:: ../code_examples/backgrounds/shadedrelief.py
 
@@ -327,7 +327,7 @@ The problem is that using only these parameters won't add the layer properly. Th
 
 .. note:: The method requires `OWSLib <https://pypi.python.org/pypi/OWSLib>`_. To install it, just type *sudo pip install OWSLib*
 
-The `Basemap test files <https://github.com/matplotlib/basemap/blob/master/examples/testwmsimage.py>`_ shows how to use the method wuite well.  
+The `Basemap test files <https://github.com/matplotlib/basemap/blob/master/examples/testwmsimage.py>`_ shows how to use the method quite well.  
 
 .. literalinclude:: ../code_examples/backgrounds/wmsimage.py
 
