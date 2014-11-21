@@ -1,7 +1,7 @@
 colorbar i explicar tema versions ( <1 no va bé )
 colorbar personalitzada
 
-subplots http://stackoverflow.com/questions/3584805/in-matplotlib-what-does-111-means-in-fig-add-subplot111
+subplots http://stackoverflow.com/questions/3584805/in-matplotlib-what-does-111-means-in-fig-add-subplot111, http://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb#Figures-with-multiple-subplots-and-insets
 
 WRF o GRIB
 
@@ -10,10 +10,14 @@ GDAL
 http://stackoverflow.com/questions/8878564/how-can-i-rotate-vectors-onto-a-basemap-map-projection 
 
 3d Charts on map http://matplotlib.org/examples/mplot3d/index.html
+http://stackoverflow.com/questions/23785408/3d-cartopy-similar-to-matplotlib-basemap
+http://matplotlib.org/mpl_toolkits/mplot3d/api.html#mpl_toolkits.mplot3d.axes3d.Axes3D.bar3d
+http://matplotlib.org/mpl_toolkits/mplot3d/api.html
 
 http://matplotlib.org/api/sankey_api.html Napoleó Russia
 
 http://matplotlib.org/examples/axes_grid/inset_locator_demo2.html
+http://stackoverflow.com/questions/13583153/how-to-zoomed-a-portion-of-image-and-insert-in-the-same-plot-in-matplotlib
 
 -----EPSG A projection
 ----- inverse projection & map(x, y)
