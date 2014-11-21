@@ -25,6 +25,13 @@ Zoom:
 * `Zooming in Basemap <http://www.geophysique.be/2010/05/05/matplotlib-basemap-tutorial-part-03-masked-arrays-zoom/>`_
 * `Matplotlib portion zooming techniques <http://stackoverflow.com/questions/13583153/how-to-zoomed-a-portion-of-image-and-insert-in-the-same-plot-in-matplotlib>`_
 
+3D:
+
+* `mplot3d home page <http://matplotlib.org/mpl_toolkits/mplot3d/>`_
+* `Matplotlib 3d examples (no maps yet) <http://matplotlib.org/examples/mplot3d/index.html>`_
+* `Matplotlib 3d (Axes3D) API <http://matplotlib.org/mpl_toolkits/mplot3d/api.html>`_
+* `StackOverflow question explaining how to fill the polygons in matplotlib3d and basemap <http://stackoverflow.com/questions/23785408/3d-cartopy-similar-to-matplotlib-basemap>`_
+
 Clipping:
 
 * `The entry at GeoExamples <http://geoexamples.blogspot.com.es/2014/10/basemap-raster-clipping-with-shapefile.html>`_

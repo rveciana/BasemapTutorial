@@ -9,10 +9,9 @@ GDAL
 
 http://stackoverflow.com/questions/8878564/how-can-i-rotate-vectors-onto-a-basemap-map-projection 
 
-3d Charts on map http://matplotlib.org/examples/mplot3d/index.html
-http://stackoverflow.com/questions/23785408/3d-cartopy-similar-to-matplotlib-basemap
+3d Charts on map 
 http://matplotlib.org/mpl_toolkits/mplot3d/api.html#mpl_toolkits.mplot3d.axes3d.Axes3D.bar3d
-http://matplotlib.org/mpl_toolkits/mplot3d/api.html
+
 
 http://matplotlib.org/api/sankey_api.html Napoleó Russia
 

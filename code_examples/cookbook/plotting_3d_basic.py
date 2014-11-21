@@ -6,6 +6,7 @@ map = Basemap()
 
 fig = plt.figure()
 ax = Axes3D(fig)
+
 '''
 ax.azim = 270
 ax.elev = 90

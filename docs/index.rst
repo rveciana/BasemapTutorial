@@ -28,6 +28,7 @@ Cookbook
 .. toctree::
    :maxdepth: 1
 
+   basemap3d
    clip
    wrf
    

@@ -256,6 +256,8 @@ Plots a relief image called *etopo* taken from the `NOAA <http://www.ngdc.noaa.g
 
 .. image:: images/backgrounds/etopo.png
 
+.. _fillcontinents:
+
 fillcontinents
 --------------
 Draws filled polygons with the continents
