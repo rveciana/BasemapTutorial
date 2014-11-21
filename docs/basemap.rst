@@ -30,10 +30,10 @@ An other option is setting the bounding box, but using the projected units:
 ========= ===========
 Argument  Description
 ========= ===========
-llcrnrx   The lower left corner x coordinate, in the projectino units
-llcrnry   The lower left corner y coordinate, in the projectino units
-urcrnrx   The upper right corner x coordinate, in the projectino units
-urcrnry   The upper right corner y coordinate, in the projectino units
+llcrnrx   The lower left corner x coordinate, in the projection units
+llcrnry   The lower left corner y coordinate, in the projection units
+urcrnrx   The upper right corner x coordinate, in the projection units
+urcrnry   The upper right corner y coordinate, in the projection units
 ========= ===========
 
 Finally, the last option is to set the bounding box giving the center point in geographical coordinates, and the width and height of the domain in the projection units
@@ -42,7 +42,7 @@ Finally, the last option is to set the bounding box giving the center point in g
 Argument  Description
 ========= ===========
 width     The width of the map in the projection units
-height    The heoght of the map in the projection units
+height    The height of the map in the projection units
 lon_0     The longitude of the center of the map
 lat_0     The latitude  of the center of the map
 ========= ===========
@@ -66,11 +66,11 @@ The output will be:
 	(20015077.3712, 20015077.3712)
 	(10.000000000000002, 50.000000000000014)
 
-When inverse is False, which is its default value, the input values are a longitude and a latitude, and the output, the position of this point in the map coordinates. When *inverse* is set to true, the behaviour is the opposite, the arguments are an x and y positions in the map coordinates, and the output is the position of this point in geographical coordinates.
+When inverse is False, which is its default value, the input values are a longitude and a latitude, and the output, the position of this point in the map coordinates. When *inverse* is set to true, the behavior is the opposite, the arguments are an x and y positions in the map coordinates, and the output is the position of this point in geographical coordinates.
 
 Basemap object fields
 ^^^^^^^^^^^^^^^^^^^^^
-When a Basemap objet is created, has some fields with data:
+When a Basemap object is created, has some fields with data:
 
 * Some of them contain the polygons with the resolution set with the resolution parameter. They are all matplotlib Polygon objects:
 	* landpolygons
@@ -86,5 +86,5 @@ When a Basemap objet is created, has some fields with data:
 	* rmajor The semi-major axis of the ellipsoid used with the projection
 	* rminor The semi-minor axis of the ellipsoid used with the projection
 	* xmax, ymax, xmin, ymin The bounding box in the projection units
-	* anchor The point on the map where the axis coords start. By default is the center of the map, but can be chnged to any corner or side
+	* anchor The point on the map where the axis coordinates start. By default is the center of the map, but can be changed to any corner or side
 	* celestial indicates if the longitudes west of Greenwich are negative 

@@ -19,7 +19,7 @@ Many projections require extra arguments:
     :emphasize-lines: 4
 .. image:: images/projections/aeqd.png
 
-The map has now an equidistant projection centered at longitude = 10 and laitude = 50, which is over Europe. Some projections require more parameters, described in `each projection page at the manual <http://matplotlib.org/basemap/users/mapsetup.html>`_.
+The map has now an equidistant projection centered at longitude = 10 and latitude = 50, which is over Europe. Some projections require more parameters, described in `each projection page at the manual <http://matplotlib.org/basemap/users/mapsetup.html>`_.
 
 The Basemap object has the field *proj4string* that has the string to be used with `proj4 <http://trac.osgeo.org/proj/>`_ for calculating the projection parameters without using Basemap. 
 
@@ -27,7 +27,7 @@ The Basemap object has the field *proj4string* that has the string to be used wi
 
 Using epsg to set the projection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The EPSG code is a `standard to name projections using a numerical code <http://spatialreference.org/ref/epsg/>`_. Basemap allows to create the maps using this notation, but only in certain cases. To use it, pass the *epsg* argument to the *Basemap* contructor with the code.
+The EPSG code is a `standard to name projections using a numerical code <http://spatialreference.org/ref/epsg/>`_. Basemap allows to create the maps using this notation, but only in certain cases. To use it, pass the *epsg* argument to the *Basemap* constructor with the code.
 
 The epsg codes supported by Basemap are at the file *<python_packages_path>/mpl_toolkits/basemap/data/epsg*. Even if the desired epsg appears in the file, sometimes the library can't use the projection, raising the error 
 
@@ -47,7 +47,7 @@ Extension
 ---------
 All the examples until now take the whole globe. Drawing only a region can be done either passing a bounding box or the center of the map and the map size. The official docs say that both methods can be used most of the times, but there are many exceptions.
 
-.. note:: Using cyl, merc, mill, cea and gall projections, the corners are assumed to be -180, -90, 180, 90 (all the globe) by default if they are not set. The other projection need the extension to be set by ont of the three methods.
+.. note:: Using cyl, merc, mill, cea and gall projections, the corners are assumed to be -180, -90, 180, 90 (all the globe) by default if they are not set. The other projection need the extension to be set by one of the three methods.
 
 
 Passing the bounding box
@@ -78,10 +78,10 @@ Passing the center, width and height
     :emphasize-lines: 4-8
 .. image:: images/projections/regioncenter.png
 
-In this case, the center of the projection, the width and height of the projection are passed as paramters.
+In this case, the center of the projection, the width and height of the projection are passed as parameters.
 
 The center is easy, just pass it in longitude-latitude. The size is a bit more tricky:
 
 The units are the projection units in meters. The point *(0, 0)* is the lower left corner, and the point *(width, height)* is the upper right. So the origin of the positions is *not* the one defined by the projection as in GDAL. The projection just defines the size of the units used, not the origin.
 
-The example shows the position of several points using the *plot* function to show how the coordinates range from 0 to width and heght.
+The example shows the position of several points using the *plot* function to show how the coordinates range from 0 to width and height.

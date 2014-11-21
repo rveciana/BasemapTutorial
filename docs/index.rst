@@ -1,6 +1,6 @@
 Basemap tutorial
 ================
-Basemap is a grat tool for creating simple maps using python. There's some documentation, but some things are a bit more difficult to find. This tutorial will put them togheter. Since I'm used to use *GDAL*, I'll try to show how to apply some features from *GDAL/OGR* to *Basemap*.
+Basemap is a great tool for creating simple maps using python. There's some documentation, but some things are a bit more difficult to find. This tutorial will put them together. Since I'm used to use *GDAL*, I'll try to show how to apply some features from *GDAL/OGR* to *Basemap*.
 
 Getting started
 ------------------
@@ -28,6 +28,7 @@ Cookbook
 .. toctree::
    :maxdepth: 1
 
+   basemap3d
    clip
    wrf
    
