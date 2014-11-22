@@ -9,11 +9,13 @@ map.drawmapboundary(fill_color='aqua')
 map.fillcontinents(color='coral',lake_color='aqua', zorder=0)
 map.drawcoastlines()
 
-#http://www.cdc.gov/vhf/ebola/outbreaks/2014-west-africa/case-counts.html
-lons = np.array([-13.7, -10.8, -13.2, -17.3, -3.6, -84.3, -8., 7.5])
-lats = np.array([9.6, 6.3, 8.5, 14.7, 40.4, 33.7, 12.6, 9.8])
-cases = np.array([1612, 2553, 4523, 1, 19, 1, 4, 2])
-deaths = np.array([1142, 2836, 1169, 0, 8, 0, 1, 4])
+#http://www.cdc.gov/vhf/ebola/outbreaks/2014-west-africa/case-counts.html,  22 Nov 2014
+lons = np.array([-13.7, -10.8, -13.2, -96.8, -7.99, 7.5, -17.3, -3.7])
+lats = np.array([9.6, 6.3, 8.5, 32.7, 12.5, 8.9, 14.7, 40.39])
+cases = np.array([1971, 7069, 6073, 4, 6, 20, 1, 1])
+deaths = np.array([1192, 2964, 1250, 1, 5, 8, 0, 0])
+places = np.array(['Guinea', 'Liberia', 'Sierra Leone','United States', 'Mali', 'Nigeria', 'Senegal', 'Spain'])
+
 
 colors = np.random.rand(len(deaths))
 x, y = map(lons, lats)
