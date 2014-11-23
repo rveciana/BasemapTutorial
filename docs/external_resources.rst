@@ -51,6 +51,7 @@ Styling:
 * `Colors in matplotlib <http://matplotlib.org/api/colors_api.html>`_
 * `Arrow styles in matplotlib <http://matplotlib.org/1.3.0/api/artist_api.html#matplotlib.patches.FancyArrowPatch>`_
 * `How Bad Is Your Colormap? <https://jakevdp.github.io/blog/2014/10/16/how-bad-is-your-colormap/>`_
+* `Creating custom color maps <http://matplotlib.org/examples/pylab_examples/custom_cmap.html>`_
 
 Colorbar:
 

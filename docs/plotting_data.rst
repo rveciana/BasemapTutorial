@@ -267,6 +267,8 @@ The `documentation at matplotlib <http://matplotlib.org/api/pyplot_api.html#matp
 * u and v are supposed to be in the map coordinates, not north-south or west-east. If they were in geographical coordinates, :ref:`rotate_vector` could be used to rotate them properly
 * The wind speed is calculated to pass the color values to the quiver method. The length of the array must be the same as in x, y, u & v, of course
 
+.. _scatter:
+
 scatter
 -------
 Plot multiple markers on the map

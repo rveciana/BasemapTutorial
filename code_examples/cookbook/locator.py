@@ -14,7 +14,6 @@ map.drawmapboundary(fill_color='#7777ff')
 map.fillcontinents(color='#ddaa66', lake_color='#7777ff', zorder=0)
 map.drawcoastlines()
 
-#http://www.cdc.gov/vhf/ebola/outbreaks/2014-west-africa/case-counts.html,  22 Nov 2014
 lons = np.array([-13.7, -10.8, -13.2, -96.8, -7.99, 7.5, -17.3, -3.7])
 lats = np.array([9.6, 6.3, 8.5, 32.7, 12.5, 8.9, 14.7, 40.39])
 cases = np.array([1971, 7069, 6073, 4, 6, 20, 1, 1])
