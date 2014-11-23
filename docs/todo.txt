@@ -9,23 +9,17 @@ GDAL
 
 http://stackoverflow.com/questions/8878564/how-can-i-rotate-vectors-onto-a-basemap-map-projection 
 
-3d Charts on map 
-http://matplotlib.org/mpl_toolkits/mplot3d/api.html#mpl_toolkits.mplot3d.axes3d.Axes3D.bar3d
-
-
 http://matplotlib.org/api/sankey_api.html Napoleó Russia
 
-http://matplotlib.org/examples/axes_grid/inset_locator_demo2.html
-http://stackoverflow.com/questions/13583153/how-to-zoomed-a-portion-of-image-and-insert-in-the-same-plot-in-matplotlib
-
+----- http://matplotlib.org/examples/axes_grid/inset_locator_demo2.html
+----- http://stackoverflow.com/questions/13583153/how-to-zoomed-a-portion-of-image-and-insert-in-the-same-plot-in-matplotlib
 -----EPSG A projection
 ----- inverse projection & map(x, y)
 ----- símbols amb lletres, etc
 ----- http://matplotlib.org/basemap/users/mapcoords.html
-
+----- 3d Charts on map http://matplotlib.org/mpl_toolkits/mplot3d/api.html#mpl_toolkits.mplot3d.axes3d.Axes3D.bar3d
 
 ------------------------------------------------------------------------
-
 
 Functions:
 

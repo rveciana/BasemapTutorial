@@ -29,6 +29,7 @@ Cookbook
    :maxdepth: 1
 
    basemap3d
+   locator
    clip
    wrf
    

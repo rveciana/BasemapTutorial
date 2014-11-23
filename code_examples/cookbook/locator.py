@@ -1,12 +1,17 @@
 from mpl_toolkits.basemap import Basemap
 import matplotlib.pyplot as plt
+from mpl_toolkits.axes_grid1.inset_locator import zoomed_inset_axes
+from mpl_toolkits.axes_grid1.inset_locator import mark_inset
 import numpy as np
+
+fig = plt.figure()
+ax = fig.add_subplot(111)
 
 map = Basemap(projection='cyl', 
               lat_0=0, lon_0=0)
 
-map.drawmapboundary(fill_color='aqua')
-map.fillcontinents(color='coral',lake_color='aqua', zorder=0)
+map.drawmapboundary(fill_color='#7777ff')
+map.fillcontinents(color='#ddaa66', lake_color='#7777ff', zorder=0)
 map.drawcoastlines()
 
 #http://www.cdc.gov/vhf/ebola/outbreaks/2014-west-africa/case-counts.html,  22 Nov 2014
@@ -16,11 +21,25 @@ cases = np.array([1971, 7069, 6073, 4, 6, 20, 1, 1])
 deaths = np.array([1192, 2964, 1250, 1, 5, 8, 0, 0])
 places = np.array(['Guinea', 'Liberia', 'Sierra Leone','United States', 'Mali', 'Nigeria', 'Senegal', 'Spain'])
 
-
-colors = np.random.rand(len(deaths))
 x, y = map(lons, lats)
 
-map.scatter(x, y, s=cases, c=colors, alpha=0.5)
+map.scatter(x, y, s=cases, c='r', alpha=0.5)
 
-print cases, np.log(cases), colors
+axins = zoomed_inset_axes(ax, 7, loc=1)
+axins.set_xlim(-20, 0)
+axins.set_ylim(3, 18)
+
+plt.xticks(visible=False)
+plt.yticks(visible=False)
+
+map2 = Basemap(llcrnrlon=-20,llcrnrlat=3,urcrnrlon=0,urcrnrlat=18, ax=axins)
+map2.drawmapboundary(fill_color='#7777ff')
+map2.fillcontinents(color='#ddaa66', lake_color='#7777ff', zorder=0)
+map2.drawcoastlines()
+map2.drawcountries()
+
+map2.scatter(x, y, s=cases/5., c='r', alpha=0.5)
+
+mark_inset(ax, axins, loc1=2, loc2=4, fc="none", ec="0.5")
+
 plt.show()
