@@ -32,3 +32,5 @@ The file **wrf.tiff** is a converted version from the [original WRF in NetCDF fo
     band = ds.GetRasterBand(5)
     band.SetMetadataItem("var","lat")
     ds = None
+
+The file Ebola.py has the information of the 2014 ebola cases, taken from the web http://www.cdc.gov/vhf/ebola/outbreaks/2014-west-africa/case-counts.html the  22th November 2014

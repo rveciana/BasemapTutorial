@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from mpl_toolkits.basemap import Basemap
-from matplotlib.collections import PatchCollection
 from matplotlib.collections import PolyCollection
 
 map = Basemap()
@@ -25,5 +24,6 @@ lc = PolyCollection(polys, edgecolor='black',
                     facecolor='#DDDDDD', closed=False)
 
 ax.add_collection3d(lc)
+
 
 plt.show()

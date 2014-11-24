@@ -28,7 +28,9 @@ Cookbook
 .. toctree::
    :maxdepth: 1
 
+   cmap
    basemap3d
+   locator
    clip
    wrf
    
