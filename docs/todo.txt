@@ -1,7 +1,4 @@
 
-
-subplots http://stackoverflow.com/questions/3584805/in-matplotlib-what-does-111-means-in-fig-add-subplot111, http://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb#Figures-with-multiple-subplots-and-insets
-
 WRF o GRIB
 
 GDAL
@@ -19,6 +16,8 @@ http://www.migrationdrc.org/research/typesofmigration/global_migrant_origin_data
 ----- http://matplotlib.org/basemap/users/mapcoords.html
 ----- 3d Charts on map http://matplotlib.org/mpl_toolkits/mplot3d/api.html#mpl_toolkits.mplot3d.axes3d.Axes3D.bar3d
 ----- colorbar personalitzada
+----- subplots http://stackoverflow.com/questions/3584805/in-matplotlib-what-does-111-means-in-fig-add-subplot111, http://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb#Figures-with-multiple-subplots-and-insets
+
 
 ------------------------------------------------------------------------
 
@@ -26,7 +25,7 @@ Functions:
 
 ----- Constructor (Basemap) 
 
-Explain all the options, such as anchor
+----- Explain all the options, such as anchor
 
 ----- interp(): bilinear interpolation between rectilinear grids.
 

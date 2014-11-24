@@ -57,6 +57,11 @@ Colorbar:
 
 * `Colorbar official docs <http://matplotlib.org/api/colorbar_api.html>`_
 
+Subplots:
+
+* `Nice matplotlib tutorial with a good subplots section <http://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb#Figures-with-multiple-subplots-and-insets>`_
+* `GridSpec and SubplotSpec detailed explanation <http://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb#Figures-with-multiple-subplots-and-insets>`_
+
 Crontab:
 
 * `Generating matplotlib graphs without a running X server <http://stackoverflow.com/questions/4931376/generating-matplotlib-graphs-without-a-running-x-server>`_
