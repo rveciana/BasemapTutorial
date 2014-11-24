@@ -66,6 +66,7 @@ Creates a contour plot.
 
 * x and y are matrices of the same size as data, containing the positions of the elements in the map coordinates
 * data is the matrix containing the data values to plot
+* A fourth argument can be passed, containing a list of the levels to use when creating the contour
 * The default colormap is *jet*, but the argument *cmap* can be used to change the behavior
 * The argument tri = True makes the grid to be assumed as unstructured. See `this post <http://matplotlib.org/examples/pylab_examples/tricontour_vs_griddata.html>`_ to check the differences
 * Other possible arguments are documented in the `matplotlib function docs <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.contour>`__
@@ -84,6 +85,7 @@ Creates a filled contour plot.
 * x and y are matrices of the same size as data, containing the positions of the elements in the map coordinates
 * data is the matrix containing the data values to plot
 * The default colormap is *jet*, but the argument *cmap* can be used to change the behavior
+* A fourth argument can be passed, containing a list of the levels to use when creating the contourf
 * The argument tri = True makes the grid to be assumed as unstructured. See `this post <http://matplotlib.org/examples/pylab_examples/tricontour_vs_griddata.html>`_ to check the differences
 * Other possible arguments are documented in the `matplotlib function docs <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.contourf>`__
 

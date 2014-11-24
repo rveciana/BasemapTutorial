@@ -61,6 +61,6 @@ When the number of subplots is bigger, or the subplots must have different sizes
 Inset locators
 ^^^^^^^^^^^^^^
 
-A small map inside the main map can be created using an :ref:`inset_locator`, explained in an other section. The result is better than just creating a small subplot inside the main plot:
+A small map inside the main map can be created using :ref:`inset_locator`, explained in an other section. The result is better than just creating a small subplot inside the main plot:
 
 .. image:: images/cookbook/locator.png
