@@ -31,10 +31,6 @@ map3.drawcoastlines()
 
 
 #Drawing the zoom rectangles:
-#http://matplotlib.org/users/path_tutorial.html
-#https://docs.python.org/2/tutorial/controlflow.html#unpacking-argument-lists
-
-#xmax, ymax, xmin, ymin
 
 lbx1, lby1 = map1(*map2(map2.xmin, map2.ymin, inverse= True))
 ltx1, lty1 = map1(*map2(map2.xmin, map2.ymax, inverse= True))

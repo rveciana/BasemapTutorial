@@ -1,3 +1,5 @@
+.. _inset_locator:
+
 Inset locators
 --------------
 Insert locator is a cool class that zooms a part of the plot and draws it on the plot itself, showing the zoomed zone.

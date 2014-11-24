@@ -29,6 +29,7 @@ Cookbook
    :maxdepth: 1
 
    cmap
+   subplots
    basemap3d
    locator
    clip

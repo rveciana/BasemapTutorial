@@ -47,6 +47,8 @@ lon_0     The longitude of the center of the map
 lat_0     The latitude  of the center of the map
 ========= ===========
 
+.. _converting_units:
+
 Using the Basemap instance to convert units
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The basemap instance can be used to calculate positions on the map and the inverse operation, converting positions on the map to geographical coordinates.
