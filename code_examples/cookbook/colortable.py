@@ -7,28 +7,28 @@ from os.path import exists
 from matplotlib.colors import LinearSegmentedColormap
 
 
-def readColorTable(color_file):
+def read_color_table(color_file):
     '''
     The method for reading the color file.
     '''
-    color_table = {}
+    colors = []
+    levels = []
     if exists(color_file) is False:
         raise Exception("Color file " + color_file + " does not exist")
     fp = open(color_file, "r")
     for line in fp:
         if line.find('#') == -1 and line.find('/') == -1:
             entry = line.split()
-            if len(entry) == 5:
-                alpha = int(entry[4])
-            else:
-                alpha=255
-            color_table[eval(entry[0])]=[int(entry[1]),int(entry[2]),int(entry[3]),alpha]
+            levels.append(eval(entry[0]))
+            colors.append((int(entry[1])/255.,int(entry[2])/255.,int(entry[3])/255.))
+       
     fp.close()
 
-    return color_table
+    cmap = LinearSegmentedColormap.from_list("my_colormap",colors, N=len(levels), gamma=1.0)
+    
+    return levels, cmap
 
-readColorTable("../sample_files/colorfile.clr")
-cmap1 = LinearSegmentedColormap.from_list("my_colormap", ((0, 0, 0), (1, 1, 1)), N=200, gamma=1.0)
+levels, cmap = read_color_table("../sample_files/colorfile.clr")
 
 map = Basemap(projection='tmerc', 
               lat_0=0, lon_0=3,
@@ -42,9 +42,8 @@ data = ds.ReadAsArray()
 
 x = linspace(0, map.urcrnrx, data.shape[1])
 y = linspace(0, map.urcrnry, data.shape[0])
-
 xx, yy = meshgrid(x, y)
 
-map.contourf(xx, yy, data, cmap=cmap1)
+map.contourf(xx, yy, data, levels, cmap=cmap)
 
-#plt.show()
+plt.show()

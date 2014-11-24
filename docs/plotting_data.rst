@@ -76,6 +76,8 @@ Creates a contour plot.
 
 .. image:: images/plotting_data/contour.png
 
+.. _contourf:
+
 contourf
 --------
 Creates a filled contour plot.
