@@ -48,11 +48,11 @@ The solution, of course, is to create a list of PolyCollection:
 Adding 3D bars
 --------------
 
-Creating a 3D map hasn't got sense if no 3D data is drawn on it. The `Axes3D class <http://matplotlib.org/mpl_toolkits/mplot3d/api.html>`_ has the bar3d method that draws 3D bars. It can be addded on the map using the 3rd dimension:
+Creating a 3D map hasn't got sense if no 3D data is drawn on it. The `Axes3D class <http://matplotlib.org/mpl_toolkits/mplot3d/api.html>`_ has the bar3d method that draws 3D bars. It can be added on the map using the 3rd dimension:
 
 .. literalinclude:: ../code_examples/cookbook/plotting_3d_bars.py 
 
-* The map is zoomed to fit the needs of the ebola cases dataset
+* The map is zoomed to fit the needs of the Ebola cases dataset
 * The axes are eliminated with the method set_axis_off
 * The bar3d needs the x, y and z positions, plus the delta x, y and z. To be properly drawn, the z position must be 0, and the delta z, the final value
 
