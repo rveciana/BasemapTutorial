@@ -4,7 +4,7 @@ Basemap is a great tool for creating maps using python in a simple way. It's a `
 
 Basemap has got `some documentation <http://matplotlib.org/basemap/index.html>`_, but some things are a bit more difficult to find. I started this documentation to extend a little the original documentation and examples, but it grew a little, and now covers many of the basemap possibilities. 
 
-I started writing Basemap examples for a talk given during the `2014 SIGTE <http://www.sigte.udg.edu/jornadassiglibre/programa/jornadas/>`_ meetings and I posted some examples in my blog (`geoexamples.blogspot.com <http://geoexamples.blogspot.com/search/label/basemap>`_). I would really appreciate some feedback if somebody finds an error, or thinks that some section should be added. You can leave a comment at the `blog post announcing this tutorial <http://geoexamples.blogspot.com/2014/11/basemap-tutorial.html>`_.
+I started writing Basemap examples for a talk given during the `2014 SIGTE <http://www.sigte.udg.edu/jornadassiglibre2014/>`_ meetings and I posted some examples in my blog (`geoexamples.com <http://geoexamples.com/tags/basemap/>`_). I would really appreciate some feedback if somebody finds an error, or thinks that some section should be added. You can leave a comment at the `blog post announcing this tutorial <http://geoexamples.blogspot.com/2014/11/basemap-tutorial.html>`_.
 
 Getting started
 ------------------
