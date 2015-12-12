@@ -1,6 +1,6 @@
 External resources
 ====================
-* `Official basemap documentation <http://matplotlib.org/basemap/>`_
+* `Official basemap documentation <http://matplotlib.org/basemap/>`_ Some parts of the tutorial are taken directly from there.
 
 Installation:
 

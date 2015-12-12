@@ -5,12 +5,12 @@ Matplotlib color maps are `really powerful <http://matplotlib.org/api/colors_api
 
 .. literalinclude:: ../code_examples/cookbook/cmap.py
 	:emphasize-lines: 8, 25
-	
+
 * The way to create the contourf plot is taken from the :ref:`contourf` example
 * The color map is created using the `LinearSegmentedColormap.from_list <http://matplotlib.org/api/colors_api.html#matplotlib.colors.LinearSegmentedColormap.from_list>`_ static method. This method has the following arguments:
-	# The name given to the color map
-	# The color list. This is a list or sequence, each element containing three floats in the range 0 to 1, which are the red, green and blue values of the color
-	# N is the number of color levels to create. If the number is lower than the list of colors length, the list will be truncated If it's longer, some colors will be repeated
+	1. The name given to the color map
+	2. The color list. This is a list or sequence, each element containing three floats in the range 0 to 1, which are the red, green and blue values of the color
+	3. N is the number of color levels to create. If the number is lower than the list of colors length, the list will be truncated If it's longer, some colors will be repeated
 * In our example, the values will go from black to white, in six levels
 * The contourf is created forcing a level in each of the elements of the sequence
 
