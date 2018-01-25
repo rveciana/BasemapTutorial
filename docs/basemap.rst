@@ -8,7 +8,7 @@ Any map created with the Basemap library must start with the creation of a Basem
 
 The class constructor has many possible arguments, and all of them are optional:
 
-* resolution: The resolution of he included coastlines, lakes, and so on. The options are c (crude, the default), l (low), i (intermediate), h (high), f (full) or None.
+* resolution: The resolution of the included coastlines, lakes, and so on. The options are c (crude, the default), l (low), i (intermediate), h (high), f (full) or None.
 	* None option is a good one if a Shapefile will be used instead of the included files, since no data must be loaded and the performance rises a lot.
 * area_thresh: The threshold under what no coast line or lake will be drawn. Default 10000,1000,100,10,1 for resolution c, l, i, h, f.
 * rsphere: Radius of the sphere to be used in the projections. Default is 6370997 meters. If a sequence is given, the first two elements are taken as the radius of the ellipsoid.
